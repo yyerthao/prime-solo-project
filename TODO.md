@@ -25,9 +25,9 @@ Landing View:
 ---------------------------------------- ### Tuesday 1-12-2021 --------------------------------------
 Home View: (inside this repo, it is located in file UserPage.js)
     - [] Nav Bar 
-    - [] Add Dream Link
-    - [] View Dreams Link
-    - [] Welcome Message
+    - [x] Add Dream Link
+    - [x] View Dreams Link
+    - [x] Welcome Message
 
 Add Dream:
     - [] Nav Links up top: Main, Add Dream, View Dreams

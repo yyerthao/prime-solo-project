@@ -17,9 +17,9 @@ class AddDream extends Component {
   };
 
 
+  // testing to ensure add dream component was working
 componentDidMount(){
   console.log('Inside AddDream component');
-  
 }
 
 
@@ -27,17 +27,19 @@ componentDidMount(){
 handleSubmit = (event) =>{
   event.preventDefault();
   console.log('Submitting dream');
-  this.props.dispatch({type: 'POST_DREAM', payload: this.state})
+  // this.props.dispatch({type: 'POST_DREAM', payload: this.state})
   
 }
 
 handleChange = (event, input) => {
+  console.log('Details of dreams:', this.state);
+  
   console.log('Handling change');
   event.preventDefault();
   this.setState({
-    [input]: event.target.value 
-  })
-  
+    ...this.state,
+      [input]: event.target.value 
+    })
 }
 
 
@@ -45,10 +47,22 @@ handleChange = (event, input) => {
     return (
       <div className="center">
         <h2>Add Dream</h2>
-        <form onSubmit={this.handleSubmit}>
-              <input placeholder="Title"></input>
-              <input placeholder="Date"></input>
-              <input placeholder="Image Url"></input>
+        <form onSubmit={(event) => this.handleSubmit(event)}>
+              <input 
+                placeholder="Title" 
+                onChange={(event) => this.handleChange(event, 'title')}>
+              </input>
+              <input 
+                placeholder="Date"
+                onChange={(event) => this.handleChange(event, 'date')}>
+
+            
+              </input>
+              <input 
+                placeholder="Image Url"
+                onChange={(event) => this.handleChange(event, 'url')}>
+
+              </input>
             <textarea 
               rows="5" 
               cols="80" 
@@ -57,13 +71,15 @@ handleChange = (event, input) => {
               type="text" 
               placeholder="Dream details"
               value={this.comments} 
-              onChange={this.handleChange}>
+              onChange={(event) => this.handleChange (event, 'details')}>
             </textarea>
             <br></br>
               <button 
                 className="submit-dream-btn"
                 type="submit">Submit Dream
               </button>
+
+        
 
           {
             /* ----------------- TODO -----------------

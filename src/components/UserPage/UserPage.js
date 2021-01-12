@@ -30,7 +30,7 @@ viewDreams = () => {
   render() {
     return (
       <div>
-        <h1 className="center-text" id="welcome">Welcome, {this.props.store.user.username}!</h1>
+        <h4 className="center-text" id="welcome">Welcome, {this.props.store.user.username}!</h4>
         <p className="center-text"> Your ID is: {this.props.store.user.id}</p>
 
       {
