@@ -6,7 +6,10 @@ import { connect } from 'react-redux';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import '../UserPage/UserPage.css';
-
+// importing HashRouter,Router,Route, Link to utilize this.props.history.push
+import {HashRouter as Router, Route, Link} from 'react-router-dom';
+// importing component AddDream from file
+import AddDream from "../AddDream/AddDream";
 class UserPage extends Component {
   // this component doesn't do much to start, just renders some user info to the DOM
 
@@ -14,14 +17,15 @@ class UserPage extends Component {
 
 addDream = () => {
   console.log('Add dream button clicked');
-  this.props.history.push('/addDream')
-  
+
 }
 
 viewDreams = () => {
   console.log('View dreams button clicked');
-  
+
 }
+
+
 
 
 
@@ -40,12 +44,22 @@ viewDreams = () => {
         - [] STRETCH: time lapse video 
         - [] STRETCH: add a random quotes generator inside of here
       */}
+      <Router>
+        <Link to="/addDream" replace>
+          <span className="center-button add-dream-btn" onClick={this.button}>Add Dream</span>
+        </Link>
 
-      <button className="center-button add-dream-btn" onClick={this.addDream}>Add Dream</button>
-      <button className="center-button" onClick={this.viewDreams}>View Dreams</button>
+        <Link to="/viewDreams">
+          <span className="center-button" onClick={this.button}>View Dreams</span>
+        </Link>
+
+        <Route exact path="/addDream" component={AddDream}></Route>
+        {/* <Route exact path="/viewDreams" component={ViewDreams}></Route> */}
 
 
-        <LogOutButton className="log-in center" />
+      </Router>
+        <LogOutButton className="log-in center"/>
+
       </div>
     );
   }

@@ -19,6 +19,9 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import AddDream from '../AddDream/AddDream';
+import ViewDreams from '../ViewDreams/ViewDreams';
+
 
 import './App.css';
 
@@ -92,6 +95,23 @@ class App extends Component {
               component={LandingPage}
               authRedirect="/user"
             />
+
+            <ProtectedRoute
+              // logged in shows UserPage else shows LoginPage
+              exact
+              path="/addDream"
+              component={AddDream}
+            />
+
+
+            <ProtectedRoute
+            // logged in shows UserPage else shows LoginPage
+            exact
+            path="/viewDreams"
+            component={ViewDreams}
+          />
+
+
 
             {/* If none of the other routes matched, we will show a 404. */}
             <Route render={() => <h1>404</h1>} />
