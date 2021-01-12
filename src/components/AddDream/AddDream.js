@@ -8,7 +8,12 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 // component.
 class AddDream extends Component {
   state = {
-    heading: 'Add Dream',
+    // heading: 'Add Dream',
+    title: '',
+    date: '',
+    image: '',
+    details: '',
+    genre: '',
   };
 
 
@@ -19,26 +24,31 @@ componentDidMount(){
 
 
 
-submit = () =>{
+handleSubmit = (event) =>{
+  event.preventDefault();
   console.log('Submitting dream');
-  // this.props.dispatch({type: ''})
+  this.props.dispatch({type: 'POST_DREAM', payload: this.state})
+  
+}
+
+handleChange = (event, input) => {
+  console.log('Handling change');
+  event.preventDefault();
+  this.setState({
+    [input]: event.target.value 
+  })
   
 }
 
 
   render() {
     return (
-      <div>
-        <h2>{this.state.heading}</h2>
-        <form onSubmit={this.submitDream}>
-          <label>Title</label>
-            <input></input>
-          <label>Date</label>
-            <input></input>
-          <label>Image Url</label>
-            <input></input>
-            <br></br>
-          <label>Details</label>
+      <div className="center">
+        <h2>Add Dream</h2>
+        <form onSubmit={this.handleSubmit}>
+              <input placeholder="Title"></input>
+              <input placeholder="Date"></input>
+              <input placeholder="Image Url"></input>
             <textarea 
               rows="5" 
               cols="80" 
@@ -49,6 +59,11 @@ submit = () =>{
               value={this.comments} 
               onChange={this.handleChange}>
             </textarea>
+            <br></br>
+              <button 
+                className="submit-dream-btn"
+                type="submit">Submit Dream
+              </button>
 
           {
             /* ----------------- TODO -----------------
