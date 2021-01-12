@@ -1,4 +1,4 @@
-// this is the view users will face upon loading application
+// this is the view users will face upon loading application 
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
