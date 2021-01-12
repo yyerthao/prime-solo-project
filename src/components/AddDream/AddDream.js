@@ -2,6 +2,41 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
+// Material-UI information
+import { withStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import { FormControl } from '@material-ui/core';
+// import InputLabel from '@material-ui/core/InputLabel';
+// import Select from '@material-ui/core/Select';
+// import MenuItem from '@material-ui/core/MenuItem';
+
+
+
+const styles = theme => ({
+    container: {
+        display: 'flex',
+        flexWrap: 'wrap',
+    },
+    textField: {
+        marginLeft: theme.spacing(),
+        marginRight: theme.spacing(),
+        width: 1000,
+        background: "rgb(66, 116, 175, 0.2)"
+    },
+    dense: {
+        marginTop: 29,
+    },
+    menu: {
+        width: 400,
+    },
+    button: {
+        margin: theme.spacing(),
+    },
+});
+
+
+
 // Basic class component structure for React with default state
 // value setup. When making a new component be sure to replace
 // the component name TemplateClass with the name for the new
@@ -27,8 +62,7 @@ componentDidMount(){
 handleSubmit = (event) =>{
   event.preventDefault();
   console.log('Submitting dream');
-  // this.props.dispatch({type: 'POST_DREAM', payload: this.state})
-  
+  this.props.dispatch({type: 'POST_DREAM', payload: this.state})
 }
 
 handleChange = (event, input) => {
@@ -44,40 +78,49 @@ handleChange = (event, input) => {
 
 
   render() {
+    // const { classes } = this.props;
+
     return (
       <div className="center">
         <h2>Add Dream</h2>
-        <form onSubmit={(event) => this.handleSubmit(event)}>
-              <input 
+
+        {/* ----------------------------------------------------------------------------------------- */}
+        <FormControl onSubmit={(event) => this.handleSubmit(event)}>
+              <TextField 
                 placeholder="Title" 
                 onChange={(event) => this.handleChange(event, 'title')}>
-              </input>
-              <input 
+              </TextField>
+
+              <TextField 
                 placeholder="Date"
                 onChange={(event) => this.handleChange(event, 'date')}>
 
             
-              </input>
-              <input 
+              </TextField>
+
+              <TextField 
                 placeholder="Image Url"
                 onChange={(event) => this.handleChange(event, 'url')}>
 
-              </input>
-            <textarea 
-              rows="5" 
-              cols="80" 
-              id="comment"
-              className="dream-input-box" 
-              type="text" 
-              placeholder="Dream details"
-              value={this.comments} 
-              onChange={(event) => this.handleChange (event, 'details')}>
-            </textarea>
+              </TextField>
+
+              <textarea
+                rows="10" 
+                cols="80" 
+                id="comment"
+                className="dream-input-box" 
+                type="text" 
+                placeholder="Dream details"
+                value={this.comments} 
+                onChange={(event) => this.handleChange (event, 'details')}>
+              </textarea>
             <br></br>
-              <button 
+
+              <Button 
                 className="submit-dream-btn"
-                type="submit">Submit Dream
-              </button>
+                type="submit">
+                  Submit Dream
+              </Button>
 
         
 
@@ -91,17 +134,10 @@ handleChange = (event, input) => {
 
 
 
+        </FormControl>
 
+        {/* ----------------------------------------------------------------------------------------- */}
 
-
-
-
-
-
-
-
-
-        </form>
 
 
 
@@ -111,4 +147,4 @@ handleChange = (event, input) => {
   }
 }
 
-export default connect(mapStoreToProps)(AddDream);
+export default connect(mapStoreToProps)(withStyles(styles)(AddDream));
