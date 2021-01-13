@@ -67,8 +67,6 @@ handleSubmit = (event) =>{
 
 handleChange = (event, input) => {
   console.log('Details of dreams:', this.state);
-  
-  console.log('Handling change');
   event.preventDefault();
   this.setState({
     ...this.state,
@@ -100,10 +98,10 @@ handleChange = (event, input) => {
 
               <TextField 
                 placeholder="Image Url"
-                onChange={(event) => this.handleChange(event, 'url')}>
+                onChange={(event) => this.handleChange(event, 'image')}>
 
               </TextField>
-
+                <br></br>
               <textarea
                 rows="10" 
                 cols="80" 
@@ -124,16 +122,12 @@ handleChange = (event, input) => {
 
         
 
-          {
-            /* ----------------- TODO -----------------
+          {/* ----------------- TODO -----------------
                 - Add a genre drop down menu here
                 - MAP out genre here
                 - 
-            --------------------------------------------*/
-          }
-
-
-
+            --------------------------------------------*/}
+            
         </FormControl>
 
         {/* ----------------------------------------------------------------------------------------- */}

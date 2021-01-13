@@ -4,20 +4,20 @@ import axios from 'axios';
 
 
 function* postDream(action) {
-    console.log('Adding movie from user');
+    console.log('Adding dream from user');
     try {
-        yield axios.post('/api/movie', action.payload);
+        yield axios.post('/api/dream', action.payload);
         console.log('------------------- ', action.payload);
         // yield getDream();
 
     } catch (error) {
-        console.log('error with posting movie request', error);
+        console.log('error with posting dream request', error);
     }
 }
 
 
-function* addDream() {
+function* dream() {
     yield takeLatest('POST_DREAM', postDream);
 }
 
-export default addDream;
+export default dream;
