@@ -1,9 +1,9 @@
-const dreamReducer = (state = {}, action) => {
+const dreamReducer = (state = [], action) => {
     switch (action.type) {
         case 'SET_DREAM':
             return action.payload;
         case 'DELETE_DREAM':
-            return {};
+            return [];
         default:
             return state;
     }

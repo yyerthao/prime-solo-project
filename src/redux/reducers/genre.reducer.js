@@ -1,4 +1,4 @@
-const genreReducer = (state = {}, action) => {
+const genreReducer = (state = [], action) => {
   switch (action.type) {
       case 'SET_GENRE':
           return action.payload;

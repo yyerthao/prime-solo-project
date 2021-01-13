@@ -132,6 +132,9 @@ handleChange = (event, input) => {
                       </textarea><br></br>
 {/* ----------------------------------------------- DROP DOWN MENU -------------------------------------------------------------------- */ }
              <div> 
+               {/* {
+                 JSON.stringify(this.props)
+               } */}
                     {/* START OF DROP DOWN MENU */}
                     <FormControl>
                         <InputLabel>
@@ -141,9 +144,9 @@ handleChange = (event, input) => {
                             className="dropdown"
                             value={this.state.genre_id} 
                             onChange={(event) => this.handleChange(event, 'genre_id')}>
-
                         {/* ------------------------------------------------------------------MAPPING OUT ARRAY OF GENRES REDUCER */}
-                            {this.props.store.genre.genreReducer.map((genre, i) =>
+                            
+                            {this.props.store.genre.map((genre, i) =>
                                 <MenuItem key={i} value={genre.id}>
                                     {genre.name}
                                 </MenuItem>)}
