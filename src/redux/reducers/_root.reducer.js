@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
 import errors from './errors.reducer';
 import user from './user.reducer';
-import dreamReducer from './dream.reducer';
+import dream from './dream.reducer';
+import genre from './genre.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -12,7 +13,8 @@ import dreamReducer from './dream.reducer';
 const rootReducer = combineReducers({
   errors, // contains registrationMessage and loginMessage
   user, // will have an id and username if someone is logged in
-  dreamReducer
+  dream, // accesses dreams from DB "dream" table
+  genre // accesses genre ids from DB "genre" table
 });
 
 export default rootReducer;

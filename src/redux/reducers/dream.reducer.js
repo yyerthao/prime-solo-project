@@ -1,6 +1,6 @@
 const dreamReducer = (state = {}, action) => {
     switch (action.type) {
-        case 'POST_DREAM':
+        case 'SET_DREAM':
             return action.payload;
         case 'DELETE_DREAM':
             return {};

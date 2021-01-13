@@ -2,9 +2,26 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 const { rejectUnauthenticated,} = require('../modules/authentication-middleware');
+
+
+
+// ---------------------------- GET FOR GENRE ID ----------------------------
+router.get('/', (req, res) => {
+  // GET route code here
+});
+
 /**
- * GET route template
+ * POST route template
  */
+router.post('/', (req, res) => {
+  // POST route code here
+});
+
+
+
+
+// ---------------------------- GET FOR DREAM ----------------------------
+
 router.get('/', rejectUnauthenticated, (req, res) => {
   // GET route code here
   let sqlText = `SELECT * FROM "dreams";`;
@@ -38,20 +55,25 @@ router.post('/', (req, res) => {
       VALUES  ($1, $2);`;
 
   // SECOND QUERY MAKES GENRE FOR NEW DREAM   
-  pool.query(dreamGenreQuery, [createdDreamId, req.body.genre])
-  .then(result => {
-    res.sendStatus(201);
-  }).catch(err => {
-    console.log(err);
-    res.sendStatus(500);
+  // pool.query(dreamGenreQuery, [createdDreamId, req.body.genre])
+  // .then(result => {
+  //   res.sendStatus(201);
+  // }).catch(err => {
+  //   console.log(err);
+  //   res.sendStatus(500);
+  // })
+  // })
+
+
+
+
+
+
+
+
+
+
   })
-  })
-
-
-
-
-
-
 });
 
 module.exports = router;

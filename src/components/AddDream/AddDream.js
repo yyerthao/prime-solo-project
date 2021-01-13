@@ -7,9 +7,9 @@ import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { FormControl } from '@material-ui/core';
-// import InputLabel from '@material-ui/core/InputLabel';
-// import Select from '@material-ui/core/Select';
-// import MenuItem from '@material-ui/core/MenuItem';
+import InputLabel from '@material-ui/core/InputLabel';
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
 
 
 
@@ -48,22 +48,41 @@ class AddDream extends Component {
     date: '',
     image: '',
     details: '',
-    genre: '',
+    genre_id: '',
   };
 
 
   // testing to ensure add dream component was working
 componentDidMount(){
-  console.log('Inside AddDream component');
+    this.props.dispatch({type:'FETCH_GENRE'});
 }
 
 
+cancelSubmit = () => {
+  console.log('Cancelled submission');
+    this.setState({
+      title: '',
+      date: '',
+      image: '',
+      details: '',
+      genre_id: ''
+    })
+}
 
 handleSubmit = (event) =>{
   event.preventDefault();
   console.log('Submitting dream');
   this.props.dispatch({type: 'POST_DREAM', payload: this.state})
+    this.setState({
+      title: '',
+      date: '',
+      image: '',
+      details: '',
+      genre_id: ''
+  });
+  // this.props.history.push('/');  // takes us view dream page
 }
+
 
 handleChange = (event, input) => {
   console.log('Details of dreams:', this.state);
@@ -77,64 +96,75 @@ handleChange = (event, input) => {
 
   render() {
     // const { classes } = this.props;
-
     return (
       <div className="center">
         <h2>Add Dream</h2>
 
-        {/* ----------------------------------------------------------------------------------------- */}
-        <FormControl onSubmit={(event) => this.handleSubmit(event)}>
+{/* ------------------------------------------------- INPUT FIELDS ------------------------------------------------------------------ */ }
+        <FormControl>
               <TextField 
                 placeholder="Title" 
+                value={this.state.title}
                 onChange={(event) => this.handleChange(event, 'title')}>
               </TextField>
 
-              <TextField 
-                placeholder="Date"
-                onChange={(event) => this.handleChange(event, 'date')}>
-
-            
-              </TextField>
+                      <TextField 
+                        placeholder="Date"
+                        value={this.state.date}
+                        onChange={(event) => this.handleChange(event, 'date')}>
+                      </TextField>
 
               <TextField 
                 placeholder="Image Url"
+                value={this.state.image}
                 onChange={(event) => this.handleChange(event, 'image')}>
+              </TextField><br></br>
 
-              </TextField>
-                <br></br>
-              <textarea
-                rows="10" 
-                cols="80" 
-                id="comment"
-                className="dream-input-box" 
-                type="text" 
-                placeholder="Dream details"
-                value={this.comments} 
-                onChange={(event) => this.handleChange (event, 'details')}>
-              </textarea>
-            <br></br>
+                      <textarea
+                        rows="10" 
+                        cols="80" 
+                        id="textarea"
+                        className="dream-input-box" 
+                        type="text" 
+                        placeholder="Enter dream here"
+                        value={this.state.details}
+                        onChange={(event) => this.handleChange (event, 'details')}>
+                      </textarea><br></br>
+{/* ----------------------------------------------- DROP DOWN MENU -------------------------------------------------------------------- */ }
+             <div> 
+                    {/* START OF DROP DOWN MENU */}
+                    <FormControl>
+                        <InputLabel>
+                            Genre
+                        </InputLabel>
+                        <Select 
+                            className="dropdown"
+                            value={this.state.genre_id} 
+                            onChange={(event) => this.handleChange(event, 'genre_id')}>
+
+                        {/* ------------------------------------------------------------------MAPPING OUT ARRAY OF GENRES REDUCER */}
+                            {this.props.store.genre.genreReducer.map((genre, i) =>
+                                <MenuItem key={i} value={genre.id}>
+                                    {genre.name}
+                                </MenuItem>)}
+                        </Select>
+                    </FormControl>
+              </div>
+{/* ------------------------------------------------ BUTTONS ------------------------------------------------------------------- */ }
+
+
+            <Button
+              className="submit-dream-btn"
+              onSubmit={this.cancelSubmit}>
+                Cancel
+            </Button>
 
               <Button 
                 className="submit-dream-btn"
-                type="submit">
+                onSubmit={this.handleSubmit}>
                   Submit Dream
               </Button>
-
-        
-
-          {/* ----------------- TODO -----------------
-                - Add a genre drop down menu here
-                - MAP out genre here
-                - 
-            --------------------------------------------*/}
-            
         </FormControl>
-
-        {/* ----------------------------------------------------------------------------------------- */}
-
-
-
-
 
       </div>
     );
