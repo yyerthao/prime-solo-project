@@ -1,9 +1,11 @@
-.dream-input-box{
-    width: 100px;
-}
+
+/* ------------------------------------- ADD DREAM CSS  -------------------------------------*/
 
 
-.submit-dream-btn{
+.center-button,
+.view-dream-btn,
+.submit-dream-btn {
+    text-align: center;
     float: right;
     margin-right: 15rem;
     margin-left: 15rem;
@@ -14,6 +16,22 @@ footer{
     margin-top: 80px;
 }
 
-a{
-    text-decoration: none;
+.dream-input-box{
+    width: 100px;
 }
+
+.center{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+
+.add-dream-div{
+    margin-left: 10rem;
+}
+
+
+
+
+
+/* ------------------------------------- ADD DREAM CSS  -------------------------------------*/

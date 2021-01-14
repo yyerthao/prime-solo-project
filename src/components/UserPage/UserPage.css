@@ -1,32 +1,30 @@
-.center-text{
-    text-align: center;
+.log-in{
+  margin-top: 3rem;
+      color: white;
+      box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.253);
+      margin-left: 5px;
+      margin-right: 5px;
+      background-color: rgb(196, 193, 193);
+      border-radius: 2.5px;
+
 }
 
-.center{
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  }
 
-  .center-button{
-    margin: 0;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-
-  }
-
-  .add-dream-btn{
-    margin: 1rem 1rem;
-  }
-
+  .add-dream-btn,
   .view-dream-btn{
-    margin: 1rem 1rem;
+    text-align: center;
+    border: 1px solid rgb(68, 68, 68);
+    width: 20px;
+    height: 10px;
+    padding: 2px 30px;
+    border-radius: 2.5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: grey;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.253);
+    color: white;
+    justify-content: center;
   }
 
-  .log-in{
-    margin-top: 3rem;
-  }
+
+  

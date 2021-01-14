@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
+import '../ViewDreams/ViewDreams.css';
 
 // Basic class component structure for React with default state
 // value setup. When making a new component be sure to replace
@@ -16,11 +17,11 @@ console.log('Inside View Dreams');
 this.props.dispatch({type: 'FETCH_DREAM'});
 }
 
-// selectDream = (id) => {
-// console.log('Getting id details')
-// // this.props.dispatch({type: 'GET_DREAM', payload: id})
-// // this.props.history.push('/onedream') 
-// }
+selectDream = (id) => {
+console.log('Getting id details: ', id)
+this.props.dispatch({type: 'GET_DREAM', payload: id})
+// this.props.history.push('/onedream') 
+}
 
 render(){
     return(
@@ -31,10 +32,11 @@ render(){
                 return (
                     <div className="img-div" key={i}>
                         <h4>{dream.title}</h4>
+                        <h5>Genre: {dream.id}</h5>
                         <img
                             src={dream.image}
-                            alt="Dream Image"
-                            // onClick={() => this.selectDream(dream.id)}
+                            alt="Dream"
+                            onClick={() => this.selectDream(dream.id)}
                             >
                         </img>
                     </div>
@@ -42,10 +44,8 @@ render(){
             })
           }
 
-
-{
-  JSON.stringify(this.props.store.dream)
-}
+{/* Just troubleshooting on DOM  */}
+{/* {JSON.stringify(this.props.store.dream)} */}
 
 
 

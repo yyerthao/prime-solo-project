@@ -81,9 +81,8 @@ handleSubmit = () => {
 handleChange = (event, input) => {
   console.log('Details of dreams:', this.state);
   this.setState({
-    ...this.state, // spread
+    ...this.state, 
     [input]: event.target.value
-    // brackets enables input to act like a variable to store value
   })
 }
 
@@ -91,7 +90,7 @@ handleChange = (event, input) => {
   render() {
     // const { classes } = this.props;
     return (
-      <div className="center">
+      <div className="add-dream-div">
         <h2>Add Dream</h2>
 
 {/* ------------------------------------------------- INPUT FIELDS ------------------------------------------------------------------ */ }

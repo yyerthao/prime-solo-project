@@ -30,7 +30,7 @@ viewDreams = () => {
   render() {
     return (
       <div>
-        <h4 className="center-text" id="welcome">Welcome, {this.props.store.user.username}!</h4>
+        <h2 className="center-text" id="welcome">Welcome, {this.props.store.user.username}!</h2>
         <p className="center-text"> Your ID is: {this.props.store.user.id}</p>
 
       {
@@ -41,23 +41,23 @@ viewDreams = () => {
         - [] STRETCH: time lapse video 
         - [] STRETCH: add a random quotes generator inside of here
       */}
-      <Router>
-        <Link to="/addDream" replace>
-          <span className="center-button add-dream-btn" onClick={this.button}>Add Dream</span>
-        </Link>
-        <Link to="/viewDreams">
-          <span className="center-button view-dream-btn" onClick={this.button}>View Dreams</span>
-        </Link>
+        <div className="center-text">
+        <Router>
+          <Link to="/addDream" replace>
+            <span className="add-dream-btn" onClick={this.button}>Add Dream</span>
+          </Link>
+          <Link to="/viewDreams">
+            <span className="view-dream-btn" onClick={this.button}>View Dreams</span>
+          </Link>
 
-        <Route exact path="/addDream" component={AddDream}></Route>
-        {/* <Route exact path="/viewDreams" component={ViewDreams}></Route> */}
-
-
-      </Router>
-        <LogOutButton className="log-in center"/>
+          <Route exact path="/addDream" component={AddDream}></Route>
+          {/* <Route exact path="/viewDreams" component={ViewDreams}></Route> */}
 
 
-
+        </Router>
+          <br></br>
+          <LogOutButton className="log-in center"/>
+        </div>
       </div>
     );
   }
