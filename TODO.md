@@ -31,22 +31,22 @@ Home View: (inside this repo, it is located in file UserPage.js)
 
 Add Dream:
     - [] Nav Links up top: Main, Add Dream, View Dreams
-    - [] Header: Add Dreams
-    - [] Input forms for: Title, Date, Image Url, Details, 
-    - [] Genre dropdown menu
-    - [] Button: Submit
+    - [x] Header: Add Dreams
+    - [x] Input forms for: Title, Date, Image Url, Details, 
+    - [x] Genre dropdown menu
+    - [x] Button: Submit
+    - [x] Button: Cancel
+    - [x] GET ROUTE to DB
     - [] POST ROUTE to DB
 
 View Dreams View:
     - [] Nav Links up top: Main, Add Dream, View Dreams
     - [] Header: View Dreams
-    - [] 
-    - [] 
-    - [] 
-    - []     
+    - [] Click handler on photo of 
+    - [] GET ROUTE TO DB to junction table of dream_genre  
 
 Styling:
- - [] Npm install @material-ui/core
+ - [x] Npm install @material-ui/core
 
 
 ----------------------------------------------------------------------------------------------------

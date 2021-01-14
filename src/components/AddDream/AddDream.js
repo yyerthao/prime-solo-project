@@ -43,7 +43,6 @@ const styles = theme => ({
 // component.
 class AddDream extends Component {
   state = {
-    // heading: 'Add Dream',
     title: '',
     date: '',
     image: '',
@@ -60,37 +59,32 @@ componentDidMount(){
 
 cancelSubmit = () => {
   console.log('Cancelled submission');
-    this.setState({
-      title: '',
-      date: '',
-      image: '',
-      details: '',
-      genre_id: ''
-    })
+  // add a pop up here
 }
 
-handleSubmit = (event) =>{
-  event.preventDefault();
-  console.log('Submitting dream');
-  this.props.dispatch({type: 'POST_DREAM', payload: this.state})
+handleSubmit = () => {
+  console.log('handleSubmit working')
+    this.props.dispatch({type: 'POST_DREAM', payload: this.state});
     this.setState({
-      title: '',
-      date: '',
-      image: '',
-      details: '',
-      genre_id: ''
-  });
-  // this.props.history.push('/');  // takes us view dream page
+        title: '',
+        date: '',
+        image: '',
+        details: '',
+        genre_id: ''
+    })
+    // after clicking on button 'Save', goes to viewDream page
+    // this.props.history.push('/viewDreams');
 }
+
 
 
 handleChange = (event, input) => {
   console.log('Details of dreams:', this.state);
-  event.preventDefault();
   this.setState({
-    ...this.state,
-      [input]: event.target.value 
-    })
+    ...this.state, // spread
+    [input]: event.target.value
+    // brackets enables input to act like a variable to store value
+  })
 }
 
 
@@ -158,13 +152,13 @@ handleChange = (event, input) => {
 
             <Button
               className="submit-dream-btn"
-              onSubmit={this.cancelSubmit}>
+              onClick={this.cancelSubmit}>
                 Cancel
             </Button>
 
               <Button 
                 className="submit-dream-btn"
-                onSubmit={this.handleSubmit}>
+                onClick={this.handleSubmit}>
                   Submit Dream
               </Button>
         </FormControl>
@@ -173,5 +167,6 @@ handleChange = (event, input) => {
     );
   }
 }
+
 
 export default connect(mapStoreToProps)(withStyles(styles)(AddDream));
