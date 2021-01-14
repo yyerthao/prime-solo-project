@@ -27,7 +27,7 @@ render(){
       <div>
         <h2>View Dreams</h2>
         {/* ----------------------------------------------------------------- */}
-          {/* {this.props.store.dream.map((dream, i) => {
+          {this.props.store.dream.map((dream, i) => {
                 return (
                     <div className="img-div" key={i}>
                         <h4>{dream.title}</h4>
@@ -40,7 +40,7 @@ render(){
                     </div>
                 )
             })
-          } */}
+          }
 
 
 {

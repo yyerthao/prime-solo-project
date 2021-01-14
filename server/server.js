@@ -25,17 +25,17 @@ app.use(sessionMiddleware);
 app.use(passport.initialize());
 app.use(passport.session());
 
-/* Routes ----------------------------- */
+/*  ---------------------------- Routes ---------------------------------- */
+
 app.use('/api/user', userRouter);
 app.use('/api/dream', dreamRouter);
-app.use('/api/genre', genreRouter)
+app.use('/api/genre', genreRouter);
 
 
 
 
 
-
-
+/* ----------------------------------------------------------------------- */
 // Serve static files
 app.use(express.static('build'));
 

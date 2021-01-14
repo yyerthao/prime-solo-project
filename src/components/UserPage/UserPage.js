@@ -45,9 +45,8 @@ viewDreams = () => {
         <Link to="/addDream" replace>
           <span className="center-button add-dream-btn" onClick={this.button}>Add Dream</span>
         </Link>
-
         <Link to="/viewDreams">
-          <span className="center-button" onClick={this.button}>View Dreams</span>
+          <span className="center-button view-dream-btn" onClick={this.button}>View Dreams</span>
         </Link>
 
         <Route exact path="/addDream" component={AddDream}></Route>
@@ -56,6 +55,8 @@ viewDreams = () => {
 
       </Router>
         <LogOutButton className="log-in center"/>
+
+
 
       </div>
     );

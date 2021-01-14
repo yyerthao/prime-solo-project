@@ -5,8 +5,15 @@
 
 .submit-dream-btn{
     float: right;
+    margin-right: 15rem;
+    margin-left: 15rem;
+    position: relative;
 }
 
 footer{
     margin-top: 80px;
+}
+
+a{
+    text-decoration: none;
 }

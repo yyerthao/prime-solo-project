@@ -34,40 +34,47 @@ router.get('/', rejectUnauthenticated, (req, res) => {
     })
   })
 
-/**
+
 // ---------------------------- POST A DREAM ----------------------------
- */
-router.post('/', (req, res) => {
+
+
+router.post('/', rejectUnauthenticated, (req, res) => {
+  console.log('made it to the dream POST route')
   console.log(req.body)
-  // POST route code here
-  const dreamSql = `
-  INSERT INTO "dream" ("title", "date", "image", "details")
-  VALUES ($1, $2, $3, $4, $5)
-  RETURNING "id";`;
-
-  pool.query(dreamSql, [req.body.title, req.body.date, req.body.image, req.body.details])
-  .then(result => {
-    console.log('New Dream Id:', result.rows[0].id); // ID is here!
-
-
+  console.log('isAuthenticated?', req.isAuthenticated());
+  let id = req.user.id;
+  let queryText = `
+      INSERT INTO "dream" ("title", "date", "image", "details")
+      VALUES ($1, $2, $3, $4)
+      RETURNING "id";`;
+  pool.query(queryText, [req.body.title, req.body.date, req.body.image, req.body.details])
+    .then(() => {
+      res.sendStatus(201); //do 201 
+    }).catch((error) => {
+      console.log(error);
+      res.sendStatus(500);
+    });
+});
 
 // -------------------------------- MAKING NEW GENRE ID FOR THE MOVIE ADDED
-  
-    // const createdDreamId = result.rows[0].id
-    // const dreamGenreQuery = `
-    // INSERT INTO "dream_genre" ("dream_id", "genre_id")
-    // VALUES  ($1, $2);`;
-  // -------------------------------- SECOND QUERY MAKES GENRE FOR NEW DREAM    
-  // pool.query(dreamGenreQuery, [createdDreamId, req.body.genre])
-  //   .then(result => {
-  //     res.sendStatus(201);
-  //   }).catch(err => {
-  //     console.log(err);
-  //     res.sendStatus(500);
-  //   })
-
-
+  router.post('/', rejectUnauthenticated, (req, res) => {
+      const createdDreamId = result.rows[0].id
+      const dreamGenreQuery = `
+      INSERT INTO "dream_genre" ("dream_id", "genre_id")
+      VALUES  ($1, $2);`;
+    // -------------------------------- SECOND QUERY MAKES GENRE FOR NEW DREAM    
+    pool.query(dreamGenreQuery, [createdDreamId, req.body.genre])
+      .then(result => {
+        res.sendStatus(201);
+      }).catch(err => {
+        console.log(err);
+        res.sendStatus(500);
+  // catches first query
+    }).catch(err => {
+      console.log(err);
+      res.sendStatus(500)
+    })
   })
-})
+
 
 module.exports = router;

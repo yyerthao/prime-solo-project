@@ -7,8 +7,6 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
   }
 
   .center-button{
@@ -22,6 +20,10 @@
   }
 
   .add-dream-btn{
+    margin: 1rem 1rem;
+  }
+
+  .view-dream-btn{
     margin: 1rem 1rem;
   }
 
