@@ -16,25 +16,40 @@ console.log('Inside View Dreams');
 this.props.dispatch({type: 'FETCH_DREAM'});
 }
 
-selectDream = (id) => {
-console.log('Getting id details')
-// this.props.dispatch({type: 'GET_DREAM', payload: id})
-// this.props.history.push('/onedream') 
-}
+// selectDream = (id) => {
+// console.log('Getting id details')
+// // this.props.dispatch({type: 'GET_DREAM', payload: id})
+// // this.props.history.push('/onedream') 
+// }
 
 render(){
     return(
       <div>
         <h2>View Dreams</h2>
-        {/* {this.props.store.dream.map((dream, i) => (
-          <div className="dream-cards" key={i}>
-            <h4>{dream.title}</h4>
-            <img  src={dream.image}
-                  alt="Dream Image"
-                  onClick={() => this.selectDream(dream.id)}>
-            </img>
-          </div> 
-        ))} */}
+        {/* ----------------------------------------------------------------- */}
+          {/* {this.props.store.dream.map((dream, i) => {
+                return (
+                    <div className="img-div" key={i}>
+                        <h4>{dream.title}</h4>
+                        <img
+                            src={dream.image}
+                            alt="Dream Image"
+                            // onClick={() => this.selectDream(dream.id)}
+                            >
+                        </img>
+                    </div>
+                )
+            })
+          } */}
+
+
+{
+  JSON.stringify(this.props.store.dream)
+}
+
+
+
+
       </div>
     )
   }

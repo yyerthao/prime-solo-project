@@ -27,7 +27,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
   let sqlText = `SELECT * FROM "dream";`;
   pool.query(sqlText)
     .then((result) => {
-      res.send(result.rows[0]);
+      res.send(result.rows);
     }).catch((error) => {
       console.log('Error fetching dream', error);
       res.sendStatus(500);

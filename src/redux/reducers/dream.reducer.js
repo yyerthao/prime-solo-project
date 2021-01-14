@@ -2,8 +2,6 @@ const dreamReducer = (state = [], action) => {
     switch (action.type) {
         case 'SET_DREAM':
             return action.payload;
-        case 'DELETE_DREAM':
-            return [];
         default:
             return state;
     }
