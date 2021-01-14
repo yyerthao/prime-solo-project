@@ -6,21 +6,21 @@ const { rejectUnauthenticated,} = require('../modules/authentication-middleware'
 
 
 // ---------------------------- GET FOR GENRE ID ----------------------------
-router.get('/', (req, res) => {
-  // GET route code here
-});
+// router.get('/', (req, res) => {
+//   // GET route code here
+// });
 
-/**
- * POST route template
- */
-router.post('/', (req, res) => {
-  // POST route code here
-});
-
-
+// /**
+//  * POST route template
+//  */
+// router.post('/', (req, res) => {
+//   // POST route code here
+// });
 
 
-// ---------------------------- GET FOR DREAM ----------------------------
+
+
+// ---------------------------- GET ALL DREAMs ----------------------------
 
 router.get('/', rejectUnauthenticated, (req, res) => {
   // GET route code here
@@ -35,7 +35,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
   })
 
 /**
-// ---------------------------- POST DREAM ----------------------------
+// ---------------------------- POST A DREAM ----------------------------
  */
 router.post('/', (req, res) => {
   console.log(req.body)
@@ -49,12 +49,15 @@ router.post('/', (req, res) => {
   .then(result => {
     console.log('New Dream Id:', result.rows[0].id); // ID is here!
 
-      // const createdDreamId = result.rows[0].id;
-      // const dreamGenreQuery = `
-      // INSERT INTO "movies_genres" ("movie_id", "genre_id")
-      // VALUES  ($1, $2);`;
 
-  // SECOND QUERY MAKES GENRE FOR NEW DREAM   
+
+// -------------------------------- MAKING NEW GENRE ID FOR THE MOVIE ADDED
+  
+    // const createdDreamId = result.rows[0].id
+    // const dreamGenreQuery = `
+    // INSERT INTO "dream_genre" ("dream_id", "genre_id")
+    // VALUES  ($1, $2);`;
+  // -------------------------------- SECOND QUERY MAKES GENRE FOR NEW DREAM    
   // pool.query(dreamGenreQuery, [createdDreamId, req.body.genre])
   //   .then(result => {
   //     res.sendStatus(201);
@@ -62,6 +65,8 @@ router.post('/', (req, res) => {
   //     console.log(err);
   //     res.sendStatus(500);
   //   })
+
+
   })
 })
 

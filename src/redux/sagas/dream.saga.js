@@ -27,6 +27,7 @@ function* postDream(action) {
 
 function* dream() {
     yield takeLatest('POST_DREAM', postDream);
+    yield takeLatest('FETCH_DREAM', getDream)
 }
 
 export default dream;
