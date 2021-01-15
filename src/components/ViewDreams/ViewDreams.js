@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import '../ViewDreams/ViewDreams.css';
+import Nav from '../Nav/Nav';
+
 
 // Basic class component structure for React with default state
 // value setup. When making a new component be sure to replace
@@ -26,6 +28,7 @@ this.props.dispatch({type: 'GET_DREAM', payload: id})
 render(){
     return(
       <div>
+        <Nav/>
         <h2>View Dreams</h2>
         {/* ----------------------------------------------------------------- */}
           {this.props.store.dream.map((dream, i) => {

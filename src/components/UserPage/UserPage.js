@@ -3,13 +3,19 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import LogOutButton from '../LogOutButton/LogOutButton';
+// import LogOutButton from '../LogOutButton/LogOutButton';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import '../UserPage/UserPage.css';
 // importing HashRouter,Router,Route, Link to utilize this.props.history.push
 import {HashRouter as Router, Route, Link} from 'react-router-dom';
 // importing component AddDream from file
 import AddDream from "../AddDream/AddDream";
+import Nav from '../Nav/Nav';
+
+
+
+
+
 class UserPage extends Component {
   // this component doesn't do much to start, just renders some user info to the DOM
 
@@ -30,9 +36,8 @@ viewDreams = () => {
   render() {
     return (
       <div>
-        <h2 className="center-text" id="welcome">Welcome, {this.props.store.user.username}!</h2>
-        <p className="center-text"> Your ID is: {this.props.store.user.id}</p>
-
+        <Nav/>
+        <h2 className="center-text" id="welcome">Welcome, {this.props.store.user.username}! Your ID is {this.props.store.user.id}</h2>
       {
         /*  ------------------------- TO DO -------------------------
         - [] LINK to add dream -> brings users to add dream view
@@ -41,7 +46,7 @@ viewDreams = () => {
         - [] STRETCH: time lapse video 
         - [] STRETCH: add a random quotes generator inside of here
       */}
-        <div className="center-text">
+        <div className="container center-text">
         <Router>
           <Link to="/addDream" replace>
             <span className="add-dream-btn" onClick={this.button}>Add Dream</span>
@@ -55,8 +60,8 @@ viewDreams = () => {
 
 
         </Router>
-          <br></br>
-          <LogOutButton className="log-in center"/>
+
+          {/* <LogOutButton className="log-in center"/> */}
         </div>
       </div>
     );

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
+import Nav from '../Nav/Nav';
+
 
 // Material-UI information
 import { withStyles } from '@material-ui/core/styles';
@@ -91,6 +93,7 @@ handleChange = (event, input) => {
     // const { classes } = this.props;
     return (
       <div className="add-dream-div">
+        <Nav/>
         <h2>Add Dream</h2>
 
 {/* ------------------------------------------------- INPUT FIELDS ------------------------------------------------------------------ */ }

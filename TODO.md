@@ -37,13 +37,13 @@ Add Dream:
     - [x] Button: Submit
     - [x] Button: Cancel
     - [x] GET ROUTE to DB
-    - [] POST ROUTE to DB
+    - [x] POST ROUTE to DB
 
 View Dreams View:
     - [] Nav Links up top: Main, Add Dream, View Dreams
     - [] Header: View Dreams
-    - [] Click handler on photo of 
-    - [] GET ROUTE TO DB to junction table of dream_genre  
+    - [P] Click handler on photo of 
+    - [x] GET ROUTE TO DB to junction table of dream_genre  
 
 Styling:
  - [x] Npm install @material-ui/core
