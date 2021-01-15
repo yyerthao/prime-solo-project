@@ -42,7 +42,7 @@ render(){
                             onClick={() => this.selectDream(dream.id)}
                             >
                         </img>
-                        <h5>{dream.date}</h5>
+                        <h5>{dream.to_char}</h5>
                     </div>
                 )
             })

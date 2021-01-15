@@ -4,8 +4,8 @@
 Initial SET UP:
     - [x] create DB called prime_app
     - [x] create table in DB called "user"
-    - [] create table in DB called "dream"
-    - [] create table in DB called "genre"
+    - [x] create table in DB called "dream"
+    - [x] create table in DB called "genre"
     - [x] create file at root called .env
     - [x] paste SERVER_SESSION_SECRET=superDuperSecret into .env file
     - [x] change superDuperSecret to a long random text to ensure a tad bit security of app
@@ -24,13 +24,13 @@ Landing View:
 -----------------------------------------------------------------------------------------------------
 ---------------------------------------- ### Tuesday 1-12-2021 --------------------------------------
 Home View: (inside this repo, it is located in file UserPage.js)
-    - [] Nav Bar 
+    - [x] Nav Bar 
     - [x] Add Dream Link
     - [x] View Dreams Link
     - [x] Welcome Message
 
 Add Dream:
-    - [] Nav Links up top: Main, Add Dream, View Dreams
+    - [x] Nav Links up top: Main, Add Dream, View Dreams
     - [x] Header: Add Dreams
     - [x] Input forms for: Title, Date, Image Url, Details, 
     - [x] Genre dropdown menu
@@ -40,14 +40,13 @@ Add Dream:
     - [x] POST ROUTE to DB
 
 View Dreams View:
-    - [] Nav Links up top: Main, Add Dream, View Dreams
-    - [] Header: View Dreams
+    - [x] Nav Links up top: Main, Add Dream, View Dreams
+    - [x] Header: View Dreams
     - [P] Click handler on photo of 
     - [x] GET ROUTE TO DB to junction table of dream_genre  
 
 Styling:
  - [x] Npm install @material-ui/core
-
 
 ----------------------------------------------------------------------------------------------------
 ---------------------------------------- ### Wednesday 1-13-2021 -----------------------------------
@@ -64,10 +63,17 @@ Styling:
 
 ----------------------------------------------------------------------------------------------------
 ---------------------------------------- ### Friday 1-15-2021 --------------------------------------
-    - [] DB final set up for dream_genre junction table
+    - [x] DB final set up for dream_genre junction table
     - [] GET dream by ID for the Dream Item View 
 
-
+----------------------------------------------------------------------------------------------------
+-------------------------------------------- ### WEEKEND -------------------------------------------
+    - [] GET dream by ID for the Dream Item View 
+    - [] PUT ROUTE
+    - [] DELETE ROUTE
+    - [] MATERIAL-UI cards
+    - [] Sweet Alerts for cancel confirmation.
+    - [] 
 
 
 

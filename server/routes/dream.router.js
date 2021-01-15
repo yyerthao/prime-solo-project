@@ -80,4 +80,33 @@ router.post('/', rejectUnauthenticated, (req, res) => {
   })
 
 
+
+// -------------------------------- SECOND QUERY MAKES GENRE FOR NEW DREAM    
+// router.get('/:id', rejectUnauthenticated, (req, res) => {
+//   let id = req.params.id;
+//   console.log('Id of chosen dream', id);
+//   // Add query to get all genres
+//   let sqlText = `
+//       SELECT * FROM dream WHERE user_id = $1 `;
+//   pool.query(sqlText, [id])
+//     .then((result) => {
+//       console.log(result.rows[0])
+//       res.send(result.rows[0]);
+//     }).catch((error) => {
+//       console.log('Error GET genre of chosen movie', error)
+//       res.sendStatus(500);
+//     });
+// })
+
+
+
+// add put route here
+
+
+// add delete route
+
+
+
+
+
 module.exports = router;

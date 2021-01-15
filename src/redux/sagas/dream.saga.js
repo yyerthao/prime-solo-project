@@ -25,9 +25,25 @@ function* postDream(action) {
 }
 
 
+
+function* getDetail(action) {
+    console.log('Fetching dream by id');
+    try {
+        // sending id of dream selected
+        const response = yield axios.get('/api/dream/' + action.payload)
+        yield put({
+            type: 'SET_DETAIL',
+            payload: response.data
+        })
+    } catch (error) {
+        console.log('--------- error with DREAM fetch request', error);
+    }
+}
+
 function* dream() {
     yield takeLatest('POST_DREAM', postDream);
-    yield takeLatest('FETCH_DREAM', getDream)
+    yield takeLatest('FETCH_DREAM', getDream);
+    yield takeLatest('GET_DETAIL', getDetail)
 }
 
 export default dream;
