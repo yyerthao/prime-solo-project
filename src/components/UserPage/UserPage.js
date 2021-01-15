@@ -38,6 +38,7 @@ viewDreams = () => {
       <div>
         <Nav/>
         <h2 className="center-text" id="welcome">Hello, {this.props.store.user.username}!</h2>
+        <h3 className="center-text">What would you like to do?</h3>
         {/* Your ID is {this.props.store.user.id} */}
       {
         /*  ------------------------- TO DO -------------------------

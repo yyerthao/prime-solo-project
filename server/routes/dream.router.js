@@ -24,8 +24,11 @@ const { rejectUnauthenticated,} = require('../modules/authentication-middleware'
 
 router.get('/', rejectUnauthenticated, (req, res) => {
   // GET route code here
-  let sqlText = `SELECT * FROM "dream";`;
-  pool.query(sqlText)
+  let sqlText = `SELECT TO_CHAR(NOW() :: DATE, 'mm/dd/yyyy'), dream.title, dream.image, dream.details FROM "user"
+	JOIN dream ON dream.user_id = "user".id
+	WHERE "user".id = $1;
+	`;
+  pool.query(sqlText, [req.user.id])
     .then((result) => {
       res.send(result.rows);
     }).catch((error) => {
@@ -47,7 +50,7 @@ router.post('/', rejectUnauthenticated, (req, res) => {
       INSERT INTO "dream" ("title", "date", "image", "details", "user_id", "genre_id")
       VALUES ($1, $2, $3, $4, $5, $6)
       RETURNING "id";`;
-  pool.query(queryText, [req.body.title, req.body.date, req.body.image, req.body.details, req.body.user_id, req.body.genre_id])
+  pool.query(queryText, [req.body.title, req.body.date, req.body.image, req.body.details, id, req.body.genre_id])
     .then(() => {
       res.sendStatus(201); //do 201 
     }).catch((error) => {
