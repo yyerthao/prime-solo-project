@@ -21,7 +21,7 @@ this.props.dispatch({type: 'FETCH_DREAM'});
 
 selectDream = (id) => {
 console.log('Getting id details: ', id)
-this.props.dispatch({type: 'GET_DREAM', payload: id})
+// this.props.dispatch({type: 'GET_DREAM', payload: id})
 // this.props.history.push('/onedream') 
 }
 
@@ -42,6 +42,7 @@ render(){
                             onClick={() => this.selectDream(dream.id)}
                             >
                         </img>
+                        <h5>{dream.date}</h5>
                     </div>
                 )
             })

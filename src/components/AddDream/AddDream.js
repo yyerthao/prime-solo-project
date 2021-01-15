@@ -82,7 +82,7 @@ handleSubmit = () => {
         genre_id: ''
     })
     // after clicking on button 'Save', goes to viewDream page
-    // this.props.history.push('/viewDreams');
+    this.props.history.push('/viewDreams');
 }
 
 
