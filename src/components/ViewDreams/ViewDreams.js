@@ -21,8 +21,8 @@ this.props.dispatch({type: 'FETCH_DREAM'});
 
 selectDream = (id) => {
 console.log('Getting id details: ', id)
-// this.props.dispatch({type: 'GET_DREAM', payload: id})
-// this.props.history.push('/onedream') 
+this.props.dispatch({type: 'GET_DETAIL', payload: id})
+this.props.history.push('/dreamItem') 
 }
 
 render(){

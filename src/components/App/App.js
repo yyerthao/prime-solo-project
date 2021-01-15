@@ -21,7 +21,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import AddDream from '../AddDream/AddDream';
 import ViewDreams from '../ViewDreams/ViewDreams';
-
+import DreamItem from '../DreamItem/DreamItem';
 
 import './App.css';
 
@@ -111,6 +111,13 @@ class App extends Component {
             component={ViewDreams}
           />
 
+
+            <ProtectedRoute
+            // logged in shows UserPage else shows LoginPage
+            exact
+            path="/dreamItem"
+            component={DreamItem}
+          />
 
 
             {/* If none of the other routes matched, we will show a 404. */}
