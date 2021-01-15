@@ -25,8 +25,6 @@ const AboutPage = () => (
       <p>
       encountered, things we simply looked at without a second thought on.
       </p>
-
-
     </div>
   </div>
 );

@@ -26,12 +26,35 @@ class LandingPage extends Component {
     return (
       <div className="center">
         <h1 className ="app-name"> The Dream App </h1>
+          <hr></hr>
         <div>
           {/* There used to be text inside here, all the text in here were originally 
           on the left side of the DOM ... reediting to utilize my links onto DOM */}
 
+          <div>
+            <p>
+            The human mind always ticks. It interprets things in our wake and
+            </p>
+            <p>
+            it interprets things while we sleep. 
+            This process is called dreaming. 
+            </p>
+            <p>
+            While we sleep, our mind attempts to make sense of things we may have 
+            </p>
+            <p>
+            encountered, things we simply looked at without a second thought on.
+            </p>
+          </div>
           <div className="container-in-line">
-            <h4>Existing User?</h4><button onClick={this.onLogin}>Log In</button><h4>New User?</h4><button onClick={this.onRegister}>Register</button>
+            <h4>Existing User?</h4>
+              <button onClick={this.onLogin}>
+                  Log In
+              </button>
+              <h4>New User?</h4>
+                <button onClick={this.onRegister}>
+                    Register
+                </button>
 
 {/* ---------------------------------------------------------------------------------- */}
           {/* <div className="grid-col grid-col_8"> */}
@@ -42,7 +65,7 @@ class LandingPage extends Component {
             {/* <center className="center">
               <h4>Existing User?</h4>
               <button className="btn btn_sizeSm" onClick={this.onLogin}>
-                Login
+              Login
               </button>
               <h4>New User?</h4>
               <button className="btn btn_sizeSm" onClick={this.onRegister}>
