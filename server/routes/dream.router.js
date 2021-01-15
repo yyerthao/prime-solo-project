@@ -44,10 +44,10 @@ router.post('/', rejectUnauthenticated, (req, res) => {
   console.log('isAuthenticated?', req.isAuthenticated());
   let id = req.user.id;
   let queryText = `
-      INSERT INTO "dream" ("title", "date", "image", "details")
-      VALUES ($1, $2, $3, $4)
+      INSERT INTO "dream" ("title", "date", "image", "details", "user_id", "genre_id")
+      VALUES ($1, $2, $3, $4, $5, $6)
       RETURNING "id";`;
-  pool.query(queryText, [req.body.title, req.body.date, req.body.image, req.body.details])
+  pool.query(queryText, [req.body.title, req.body.date, req.body.image, req.body.details, req.body.user_id, req.body.genre_id])
     .then(() => {
       res.sendStatus(201); //do 201 
     }).catch((error) => {
