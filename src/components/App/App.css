@@ -2,14 +2,11 @@ html,
 body,
 #react-root {
   height: 100%;
-  font-family: 'Assistant',
-  sans-serif;
+  font-family: 'IBM Plex Mono', monospace;
   font-weight: bold;
 }
 
-.container{
-  margin-top: 10rem;
-}
+
 
 body {
   margin: 0px;
@@ -25,9 +22,7 @@ img {
 Container
 -------------------------------------------------------------------------------- */
 
-.container {
-  padding: 20px;
-}
+
 
 /* --------------------------------------------------------------------------------
 Button
@@ -62,7 +57,7 @@ Button
 }
 
 .btn:hover {
-  background-color: #008183;
+  background-color: #83868669;
   text-decoration: none;
 }
 

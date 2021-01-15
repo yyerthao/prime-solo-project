@@ -24,18 +24,22 @@ class LandingPage extends Component {
 
   render() {
     return (
-      <div className="container">
-        <h2>{this.state.heading}</h2>
-
-        <div className="grid">
+      <div className="center">
+        <h1 className = "app-name" > The Dream App </h1>
+        <div>
           {/* There used to be text inside here, all the text in here were originally 
           on the left side of the DOM ... reediting to utilize my links onto DOM */}
+
+          <div className="container-in-line">
+            <h4>Existing User?</h4><button onClick={this.onLogin}>Log In</button><h4>New User?</h4><button onClick={this.onRegister}>Register</button>
+
+{/* ---------------------------------------------------------------------------------- */}
           {/* <div className="grid-col grid-col_8"> */}
           {/* </div> */}
-          <div className="grid-col grid-col_4">
+          {/* <div className="grid-col grid-col_6"> */}
             {/* <RegisterForm /> */}
 
-            <center>
+            {/* <center className="center">
               <h4>Existing User?</h4>
               <button className="btn btn_sizeSm" onClick={this.onLogin}>
                 Login
@@ -44,9 +48,8 @@ class LandingPage extends Component {
               <button className="btn btn_sizeSm" onClick={this.onRegister}>
                 Register
               </button>
-            </center>
-
-
+            </center> */}
+{/* ---------------------------------------------------------------------------------- */}
           </div>
         </div>
       </div>

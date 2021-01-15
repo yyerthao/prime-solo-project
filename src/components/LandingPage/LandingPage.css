@@ -78,3 +78,20 @@ Grid
   flex-basis: 100%;
   max-width: 100%;
 }
+
+
+
+
+
+.center{
+  font-family: 'IBM Plex Mono', monospace;
+  text-align: center;
+}
+
+.app-name{
+    font-size: 75px;
+}
+
+.container-in-line{
+  display: inline-block
+}

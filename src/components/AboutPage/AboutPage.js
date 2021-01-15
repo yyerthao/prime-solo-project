@@ -8,7 +8,7 @@ import Nav from '../Nav/Nav';
 // or even care what the redux state is, so it doesn't need 'connect()'
 
 const AboutPage = () => (
-  <div className="container">
+  <div className="about-page-container">
     <Nav/>
     <div>
       <p>This about page is for anyone to read!</p>
