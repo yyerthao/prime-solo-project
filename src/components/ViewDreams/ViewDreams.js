@@ -35,7 +35,7 @@ render(){
                 return (
                     <div className="img-div" key={i}>
                         <h4>{dream.title}</h4>
-                        <h5>Genre: {dream.id}</h5>
+                        {/* <h5>Genre: {dream.id}</h5> */}
                         <img
                             src={dream.image}
                             alt="Dream"

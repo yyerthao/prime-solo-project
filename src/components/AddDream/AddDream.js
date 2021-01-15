@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import Nav from '../Nav/Nav';
-
+import '../AddDream/AddDream.css';
 
 // Material-UI information
 import { withStyles } from '@material-ui/core/styles';
@@ -30,7 +30,7 @@ const styles = theme => ({
         marginTop: 29,
     },
     menu: {
-        width: 400,
+        width: 600,
     },
     button: {
         margin: theme.spacing(),
@@ -61,7 +61,14 @@ componentDidMount(){
 
 cancelSubmit = () => {
   console.log('Cancelled submission');
-  // add a pop up here
+  // this.props.dispatch({type:'CANCEL_ADD_MOVIE'})
+    this.setState({
+      title: '',
+      date: '',
+      image: '',
+      details: '',
+      genre_id: ''
+    })
 }
 
 handleSubmit = () => {
@@ -118,7 +125,7 @@ handleChange = (event, input) => {
 
                       <textarea
                         rows="10" 
-                        cols="80" 
+                        cols="80"
                         id="textarea"
                         className="dream-input-box" 
                         type="text" 
