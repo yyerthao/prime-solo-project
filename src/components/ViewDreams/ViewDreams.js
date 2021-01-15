@@ -19,11 +19,11 @@ console.log('Inside View Dreams');
 this.props.dispatch({type: 'FETCH_DREAM'});
 }
 
-selectDream = (id) => {
-console.log('Getting id details: ', id)
-this.props.dispatch({type: 'GET_DETAIL', payload: id})
-this.props.history.push('/dreamItem') 
-}
+// selectDream = (id) => {
+// console.log('Getting id details: ', id)
+// this.props.dispatch({type: 'GET_DETAIL', payload: id})
+// this.props.history.push('/dreamItem') 
+// }
 
 render(){
     return(
@@ -39,7 +39,7 @@ render(){
                         <img
                             src={dream.image}
                             alt="Dream"
-                            onClick={() => this.selectDream(dream.id)}
+                            // onClick={() => this.selectDream(dream.id)}
                             >
                         </img>
                         <h5>{dream.to_char}</h5>
