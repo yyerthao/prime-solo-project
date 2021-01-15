@@ -33,7 +33,7 @@ class LoginForm extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <h2 className="instruction-text">Please Enter Your Credentials</h2>
       <form className="formPanel" onSubmit={this.login}>
         <h2>Login</h2>

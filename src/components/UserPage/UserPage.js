@@ -1,4 +1,4 @@
-// HOME VIEW 
+
 // first page user sees when logged into the application
 
 import React, { Component } from 'react';
@@ -37,7 +37,8 @@ viewDreams = () => {
     return (
       <div>
         <Nav/>
-        <h2 className="center-text" id="welcome">Welcome, {this.props.store.user.username}! Your ID is {this.props.store.user.id}</h2>
+        <h2 className="center-text" id="welcome">Hello, {this.props.store.user.username}!</h2>
+        {/* Your ID is {this.props.store.user.id} */}
       {
         /*  ------------------------- TO DO -------------------------
         - [] LINK to add dream -> brings users to add dream view

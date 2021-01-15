@@ -25,7 +25,7 @@ class LandingPage extends Component {
   render() {
     return (
       <div className="center">
-        <h1 className = "app-name" > The Dream App </h1>
+        <h1 className ="app-name"> The Dream App </h1>
         <div>
           {/* There used to be text inside here, all the text in here were originally 
           on the left side of the DOM ... reediting to utilize my links onto DOM */}

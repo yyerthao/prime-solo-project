@@ -11,7 +11,13 @@ const AboutPage = () => (
   <div className="about-page-container">
     <Nav/>
     <div>
-      <p>This about page is for anyone to read!</p>
+      <h1>About</h1>
+      <p>Dreams are an intriguing thing.</p>
+      <p>Dreams are an intriguing thing.</p>
+      <p>Dreams are an intriguing thing.</p>
+      <p>Dreams are an intriguing thing.</p>
+      <p>Dreams are an intriguing thing.</p>
+      <p>Dreams are an intriguing thing.</p>
     </div>
   </div>
 );
