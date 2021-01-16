@@ -33,12 +33,13 @@ this.props.history.push('/dreamItem')
 
 
 render(){
+    const {dream} = this.props.store;
     return(
       <div>
         <Nav/>
         <h2>View Dreams</h2>
         {/* ----------------------------------------------------------------- */}
-          {this.props.store.dream.map((dream, i) => {
+          {dream.map((dream, i) => {
                 return (
                   // move below to new component 
                   // utilize props
@@ -49,9 +50,8 @@ render(){
                         <img
                             src={dream.image}
                             alt="Dream"
-                            onClick={() => this.selectDream(dream.id)}
+                            onClick={() => this.selectDream(dream.id)} // dream.id has nothing to latch onto 
                             >
-                              
                         </img>
                         <h5>{dream.to_char}</h5>
                     </div>

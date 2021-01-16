@@ -20,13 +20,20 @@ class DreamItem extends Component {
   // }
 
   render() {
+    // const {details} = this.props;
     return (
       <div>
         <Nav/>
         {JSON.stringify(this.props.store.details)}
         {/* <h2>{details.title}</h2> */}
-
-
+                  {/* {this.props.store.details.map((details, i) => {
+                    return (
+                    <img
+                        src={details.image}
+                        alt="Detail">
+                    </img>
+                    )
+                  })} */}
       </div>
     );
   }
