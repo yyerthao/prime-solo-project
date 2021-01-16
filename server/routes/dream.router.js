@@ -30,7 +30,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
   // `;
   
 let sqlText =
-`SELECT TO_CHAR(NOW() :: DATE, 'mm/dd/yyyy'), dream.title, dream.image, dream.details, genre.name FROM "user"
+`SELECT TO_CHAR(NOW() :: DATE, 'mm/dd/yyyy'), dream.title, dream.image, dream.details, genre.name, dream.id FROM "user"
 	JOIN dream ON dream.user_id = "user".id
 	JOIN genre ON genre.id = dream.genre_id
 	WHERE "user".id = $1;`
@@ -67,25 +67,26 @@ router.post('/', rejectUnauthenticated, (req, res) => {
     });
 });
 
-// -------------------------------- MAKING NEW GENRE ID FOR THE MOVIE ADDED
-  router.post('/', rejectUnauthenticated, (req, res) => {
-      const createdDreamId = result.rows[0].id
-      const dreamGenreQuery = `
-      INSERT INTO "dream_genre" ("dream_id", "genre_id")
-      VALUES  ($1, $2);`;
-    // -------------------------------- SECOND QUERY MAKES GENRE FOR NEW DREAM    
-    pool.query(dreamGenreQuery, [createdDreamId, req.body.genre])
-      .then(result => {
-        res.sendStatus(201);
-      }).catch(err => {
-        console.log(err);
-        res.sendStatus(500);
-  // catches first query
-    }).catch(err => {
-      console.log(err);
-      res.sendStatus(500)
-    })
-  })
+// ---------------------------- POST to dream_genre table ----------------------------
+
+  // router.post('/', rejectUnauthenticated, (req, res) => {
+  //     const createdDreamId = result.rows[0].id
+  //     const dreamGenreQuery = `
+  //     INSERT INTO "dream_genre" ("dream_id", "genre_id")
+  //     VALUES  ($1, $2);`;
+  //   // -------------------------------- SECOND QUERY MAKES GENRE FOR NEW DREAM    
+  //   pool.query(dreamGenreQuery, [createdDreamId, req.body.genre])
+  //     .then(result => {
+  //       res.sendStatus(201);
+  //     }).catch(err => {
+  //       console.log(err);
+  //       res.sendStatus(500);
+  // // catches first query
+  //   }).catch(err => {
+  //     console.log(err);
+  //     res.sendStatus(500)
+  //   })
+  // })
 
 
 
@@ -100,7 +101,7 @@ router.get('/:id', (req, res) => {
     WHERE dream.id = $1;`
   pool.query(queryText, [id])
     .then((result) => {
-    console.log(result.rows[0]);
+    console.log('----------$$$ ', result.rows[0]);
     res.send(result.rows[0]);
   })
   .catch((error) => {
@@ -153,12 +154,13 @@ router.get('/:id', (req, res) => {
 //   }
 //   pool.query(queryText, [itemID])
 //     .then(() => {
-//       res.sendStatus(202); 
+//       res.sendStatus(202); //do 201 because 202 means created //200 means deleted  200 = Okay, 202 = Aceepted
 //     }).catch((error) => {
 //       console.log(error);
-//       res.sendStatus(204); // 204 means there was no content to delete
+//       res.sendStatus(204); // do 204 becuase it means there was no content to delete
 //     });
 // });
+
 
 
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-import details from '../../redux/reducers/details.reducer';
+// import details from '../../redux/reducers/details.reducer';
 import Nav from '../Nav/Nav';
 
 // Basic class component structure for React with default state
@@ -15,16 +15,16 @@ class DreamItem extends Component {
   };
 
 
-  componentDidMount(){
-    this.props.dispatch({type: 'SET_DETAILS'});
-  }
+  // componentDidMount(){
+  //   this.props.dispatch({type: 'GET_DETAIL'});
+  // }
 
   render() {
     return (
       <div>
         <Nav/>
-        {JSON.stringify(this.props)}
-        <h2>{details.title}</h2>
+        {JSON.stringify(this.props.store.details)}
+        {/* <h2>{details.title}</h2> */}
 
 
       </div>

@@ -68,6 +68,8 @@ Styling:
 
 ----------------------------------------------------------------------------------------------------
 -------------------------------------------- ### WEEKEND -------------------------------------------
+    - [x] Update GET query in dream.router.js to retrieve correct genre to display on DOM
+    - [x] npm install sweetalert2 
     - [] GET dream by ID for the Dream Item View 
     - [] PUT ROUTE
     - [] DELETE ROUTE

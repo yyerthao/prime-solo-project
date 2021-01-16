@@ -27,10 +27,11 @@ function* postDream(action) {
 
 // --------------------------------------- COME BACK HERE AND FINISH GET ROUTE BY ID:
 function* getDetail(action) {
-    console.log('Fetching dream by id');
     try {
         // sending id of dream selected
-        const response = yield axios.get('/api/dream/' + action.payload)
+        console.log('--------- $$', action.payload);
+        
+        const response = yield axios.get(`/api/dream/${action.payload}`) // 
         yield put({
             type: 'SET_DETAIL',
             payload: response.data
