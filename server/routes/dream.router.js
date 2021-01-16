@@ -81,29 +81,76 @@ router.post('/', rejectUnauthenticated, (req, res) => {
 
 
 
-// -------------------------------- SECOND QUERY MAKES GENRE FOR NEW DREAM    
-// router.get('/:id', rejectUnauthenticated, (req, res) => {
-//   let id = req.params.id;
-//   console.log('Id of chosen dream', id);
-//   // Add query to get all genres
-//   let sqlText = `
-//       SELECT * FROM dream WHERE user_id = $1 `;
-//   pool.query(sqlText, [id])
-//     .then((result) => {
-//       console.log(result.rows[0])
-//       res.send(result.rows[0]);
-//     }).catch((error) => {
-//       console.log('Error GET genre of chosen movie', error)
-//       res.sendStatus(500);
-//     });
-// })
+// -------------------------------- GET 1 DREAM by ID   
+router.get('/:id', (req, res) => {
+  let id = req.params.id;
+  console.log(id);
+  const queryText =
+    `SELECT title, date, image, details, genre FROM dream_genre 
+    JOIN dream ON dream.id = dream_genre.dream_id 
+    JOIN genre ON dream_genre.genre_id = genre.id 
+    WHERE dream.id = $1;`
+  pool.query(queryText, [id])
+    .then((result) => {
+    console.log(result.rows[0]);
+    res.send(result.rows[0]);
+  })
+  .catch((error) => {
+    console.log('Error inside GET ID route:', error);
+    res.sendStatus(500);
+  });
+});
+
+
+
+
+
 
 
 
 // add put route here
+// router.put('/:id', rejectUnauthenticated, (req, res) => {
+//   console.log('body', req.body);
+//   console.log('user', req.user);
+//   let sqlText = `UPDATE "dream" SET "title" = $2, "date" = $3, "image" = $4, "details" = $5 WHERE id = $1;`
+//   pool.query(sqlText, [req.params.id, req.body.title, req.body.date, req.body.image])
+//     .then(() => res.sendStatus(201))
+//     .catch((error) => {
+//       console.log('ERROR inside PUT route', error)
+//       res.sendStatus(501)
+//     });
+// });
+
+
 
 
 // add delete route
+// router.delete('/:id/:user_id', rejectUnauthenticated, (req, res) => {
+//   // DELETE route code here
+//   console.log('made it to the shelf DELETE route');
+//   console.log('Payload in the route:', 'id:', req.params.id, 'user_id:', req.params.user_id)
+//   console.log('user_id not from a body at all', req.user.id)
+//   let itemID = req.params.id;
+//   let userID = req.params.user_id;
+//   //you can other compare item user_id from the item to the user that is logged in
+//   //or you can only render delete for items that match the logged in user_id 
+//   // req.body.user_id is from ITEM table
+//   // itemID is from USER table
+//   // if the item to delete matches the user logged in's ID, delete.
+//   let queryText = '';
+//   if (Number(userID) === req.user.id) {
+//     queryText = `DELETE FROM item WHERE id = $1;`;
+//   } else {
+//     console.log('You are not allowed to delete another user\'s item!');
+//   }
+//   pool.query(queryText, [itemID])
+//     .then(() => {
+//       res.sendStatus(202); 
+//     }).catch((error) => {
+//       console.log(error);
+//       res.sendStatus(204); // 204 means there was no content to delete
+//     });
+// });
 
 
 

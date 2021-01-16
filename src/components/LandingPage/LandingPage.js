@@ -39,12 +39,7 @@ class LandingPage extends Component {
             it interprets things while we sleep. 
             This process is called dreaming. 
             </p>
-            <p>
-            While we sleep, our mind attempts to make sense of things we may have 
-            </p>
-            <p>
-            encountered, things we simply looked at without a second thought on.
-            </p>
+            <br></br>
           </div>
           <div className="container-in-line">
             <h4>Existing User?</h4>
