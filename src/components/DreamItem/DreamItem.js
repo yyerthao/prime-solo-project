@@ -15,25 +15,38 @@ class DreamItem extends Component {
   };
 
 
-  // componentDidMount(){
-  //   this.props.dispatch({type: 'GET_DETAIL'});
-  // }
+
 
   render() {
-    // const {details} = this.props;
+        // const {details} = this.props;
     return (
       <div>
         <Nav/>
         {JSON.stringify(this.props.store.details)}
-        {/* <h2>{details.title}</h2> */}
-                  {/* {this.props.store.details.map((details, i) => {
-                    return (
-                    <img
-                        src={details.image}
-                        alt="Detail">
-                    </img>
-                    )
-                  })} */}
+          
+          {/* ---------------------------------------------  */}
+
+
+        {/* {details.map((details, i) => {
+          return (
+            <div>
+            <h2>{details.title}</h2>
+            <img 
+            src={details.image} 
+            alt="Dream">
+            </img>
+            <h4>
+
+            Genre: {details.name}
+            </h4>
+            <p>
+                {details.details}
+            </p>
+          </div>
+          )
+        })} */}
+
+
       </div>
     );
   }
