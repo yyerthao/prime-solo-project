@@ -3,16 +3,18 @@ import axios from 'axios';
 
 
 
-function* getDreamToUpdate() {
-    console.log('Fetching dream');
+function* getDreamToUpdate(action) {
     try {
-        const response = yield axios.get('/api/dream')
+        // sending id of dream selected
+        console.log('THIS is the movie you will update #:', action.payload);
+
+        const response = yield axios.get(`/api/dream/${action.payload}`) // 
         yield put({
             type: 'SET_NEW_DREAM',
             payload: response.data
         })
     } catch (error) {
-        console.log('error with dream fetch request', error);
+        console.log('GET ROUTE error from DB when attempting to get specific dream ID', error);
     }
 }
 

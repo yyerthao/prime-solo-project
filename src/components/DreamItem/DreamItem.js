@@ -16,12 +16,16 @@ const styles = theme => ({
 });
 
 
+
+
+
 // Basic class component structure for React with default state
 // value setup. When making a new component be sure to replace
 // the component name TemplateClass with the name for the new
 // component.
 class DreamItem extends Component {
 
+ 
 
   deleteDream = () => {
     console.log('Deleting dream')
@@ -47,7 +51,7 @@ class DreamItem extends Component {
 
   updateDream = (id) => {
       console.log('Selecting this dream to update: ', id);
-      this.props.dispatch({type: 'GET_DREAM_TO_UPDATE', payload: id});
+      this.props.dispatch({type:'GET_NEW_DREAM', payload: id});
       this.props.history.push('/updateDream')
   }
 
@@ -64,23 +68,21 @@ class DreamItem extends Component {
         <div className="center-div">
         {details.map((details, i) => {
           return (
-            <div key={i}>
-          <h1>ID: {details.id}</h1>
-          <h2>Title: {details.title}</h2>
-          <h5>Date: {details.to_char}</h5>
-          <img src={details.image} alt="Dream"></img>
-          <h5>Genre: {details.name}</h5>
-          <p>{details.details}</p>
-              <Button className="delete-button" onClick={this.deleteDream}>Delete</Button>
-              <Button className="update-button" onClick={() => this.updateDream(details.id)}>Update</Button>
-            </div>
-          )
-        })}
+          <div key={i}>
+              <h2>Title: {details.title}</h2>
+              <h5>Date: {details.to_char}</h5>
+              <img src={details.image} alt="Dream"></img>
+              <h5>Genre: {details.name}</h5>
+              <p>{details.details}</p>
+                  <Button className="delete-button" onClick={this.deleteDream}>Delete</Button>
+                  <Button className="update-button" onClick={() => this.updateDream(details.id)}>Update</Button>
+          </div>
+              )
+            })}
 
-          {/* The JSON STRINGIFY below is NOT working */}
-          {/* {JSON.stringify(details.id)}  */}
+  
 
-          {JSON.stringify(details)}
+          {/* {JSON.stringify(details)} */}
           <br></br>
 
         </div>

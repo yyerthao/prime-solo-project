@@ -44,6 +44,7 @@ const styles = theme => ({
 // the component name TemplateClass with the name for the new
 // component.
 class AddDream extends Component {
+  
   state = {
     title: '',
     date: '',
