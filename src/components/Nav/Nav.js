@@ -32,10 +32,10 @@ const Nav = (props) => {
         {props.store.user.id && (
           <>
             <Link className="nav-link" to="/addDream">
-              || Add Dream
+              || Add Dream ||
             </Link>
             <Link className="nav-link" to="/viewDreams">
-              || View Dreams ||
+              View Dreams ||
             </Link>
             <LogOutButton className="nav-link" />
           </>
