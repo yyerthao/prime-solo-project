@@ -17,11 +17,11 @@ body {
       /* background-repeat: no-repeat;
       background-image: cover;  */
 
-        background: url(background.jpg) no-repeat center center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
+      background: url(background.jpg) no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
       /* background-image: linear-gradient(-90deg, rgba(0, 0, 0, 0) 0, #211f46c4 100%); */
 }
 

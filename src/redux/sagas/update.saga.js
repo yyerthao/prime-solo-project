@@ -17,7 +17,7 @@ function* getDreamToUpdate() {
 }
 
 function* genre() {
-    yield takeLatest('GET_DREAM_TO_UPDATE', getDreamToUpdate);
+    yield takeLatest('GET_NEW_DREAM', getDreamToUpdate);
 }
 
 export default genre;

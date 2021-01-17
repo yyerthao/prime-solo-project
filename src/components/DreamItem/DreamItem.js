@@ -53,7 +53,6 @@ class DreamItem extends Component {
 
 
 
-
   render() {
         const {details} = this.props.store;
     return (
@@ -66,19 +65,24 @@ class DreamItem extends Component {
         {details.map((details, i) => {
           return (
             <div key={i}>
+          <h1>ID: {details.id}</h1>
           <h2>Title: {details.title}</h2>
           <h5>Date: {details.to_char}</h5>
           <img src={details.image} alt="Dream"></img>
           <h5>Genre: {details.name}</h5>
           <p>{details.details}</p>
+              <Button className="delete-button" onClick={this.deleteDream}>Delete</Button>
+              <Button className="update-button" onClick={() => this.updateDream(details.id)}>Update</Button>
             </div>
           )
         })}
 
+          {/* The JSON STRINGIFY below is NOT working */}
+          {/* {JSON.stringify(details.id)}  */}
+
           {JSON.stringify(details)}
-          <Button className="delete-button" onClick={this.deleteDream}>Delete</Button>
-          {JSON.stringify(details.id)}
-          <Button className="update-button" onClick={() => this.updateDream(details.id)}>Update</Button>
+          <br></br>
+
         </div>
 
       </div>

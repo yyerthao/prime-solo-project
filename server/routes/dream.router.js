@@ -99,21 +99,25 @@ router.get('/:id', rejectUnauthenticated, (req, res) => {
 // ---------------------------- PUT route to update specific dream ----------------------------
 
 router.put('/:id', rejectUnauthenticated, (req, res) => {
-  console.log('This is the dream you are trying to update: ', req.body);
+  console.log('This is the dream you are trying to update: ', req.body.id);
   let id = req.body.id;
   let sqlText = 
       `UPDATE "dream" SET 
-      "title" = $2, 
-      "date" = $3, 
-      "image" = $4, 
-      "details" = $5, 
+      "title" = $1, 
+      "date" = $2, 
+      "image" = $3, 
+      "details" = $4,
+      "user_id" = $5, 
       "genre_id" = $6 
-      WHERE id = $1`;
+      WHERE id = $7`;
+                      // OK THIS QUERY IS WORKING, tested it ON POSTMAN
+                      // 
   pool.query(sqlText, 
       [req.body.title, 
       req.body.date, 
       req.body.image, 
-      req.body.details, 
+      req.body.details,
+      req.body.user_id, 
       req.body.genre_id, 
       id])  
     .then(() => res.sendStatus(201))

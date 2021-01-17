@@ -22,7 +22,7 @@ class UpdateDream extends Component {
 
 
 componentDidMount(){
-  this.props.dispatch({type:'SET_NEW_DREAM'})
+  this.props.dispatch({type:'GET_NEW_DREAM'})
 }
 
 saveUpdate = () =>{
