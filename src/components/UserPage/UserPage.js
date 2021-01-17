@@ -7,11 +7,19 @@ import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import '../UserPage/UserPage.css';
 // importing HashRouter,Router,Route, Link to utilize this.props.history.push
-import {HashRouter as Router, Route, Link} from 'react-router-dom';
+// import {HashRouter as Router, Route, Link} from 'react-router-dom';
 // importing component AddDream from file
-import AddDream from "../AddDream/AddDream";
+// import AddDream from "../AddDream/AddDream";
 import Nav from '../Nav/Nav';
+import { withStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
 
+
+const styles = theme => ({
+  button: {
+    margin: theme.spacing(),
+  },
+});
 
 
 
@@ -23,12 +31,13 @@ class UserPage extends Component {
 
 addDream = () => {
   console.log('Add dream button clicked');
+  this.props.history.push('/addDream');
 
 }
 
 viewDreams = () => {
   console.log('View dreams button clicked');
-
+  this.props.history.push('/viewDreams');
 }
 
 
@@ -37,6 +46,7 @@ viewDreams = () => {
     return (
       <div>
         <Nav/>
+        <hr></hr>
         <h2 className="center-text" id="welcome">Hello, {this.props.store.user.username}!</h2>
         <h3 className="center-text">What would you like to do?</h3>
         {/* Your ID is {this.props.store.user.id} */}
@@ -49,19 +59,15 @@ viewDreams = () => {
         - [] STRETCH: add a random quotes generator inside of here
       */}
         <div className="container center-text">
-        <Router>
-          <Link to="/addDream" replace>
-            <span className="add-dream-btn" onClick={this.button}>Add Dream</span>
-          </Link>
-          <Link to="/viewDreams">
-            <span className="view-dream-btn" onClick={this.button}>View Dreams</span>
-          </Link>
 
-          <Route exact path="/addDream" component={AddDream}></Route>
+            <Button className="add-dream-btn" onClick={this.addDream}>Add Dream</Button>
+
+            <Button className="view-dream-btn" onClick={this.viewDreams}>View Dreams</Button>
+
+
           {/* <Route exact path="/viewDreams" component={ViewDreams}></Route> */}
 
 
-        </Router>
 
           {/* <LogOutButton className="log-in center"/> */}
         </div>
@@ -71,4 +77,4 @@ viewDreams = () => {
 }
 
 // this allows us to use <App /> in index.js
-export default connect(mapStoreToProps)(UserPage);
+export default connect(mapStoreToProps)(withStyles(styles)(UserPage));

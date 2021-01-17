@@ -4,6 +4,17 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 import Nav from '../Nav/Nav';
 import Swal from 'sweetalert2';
 
+import { withStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+
+
+const styles = theme => ({
+  button: {
+    margin: theme.spacing(),
+  },
+});
+
+
 // Basic class component structure for React with default state
 // value setup. When making a new component be sure to replace
 // the component name TemplateClass with the name for the new
@@ -27,7 +38,7 @@ class DreamItem extends Component {
         Swal.fire(
           'Deleted!',
           'Your dream has been deleted.',
-          'Success'
+          'success'
         )
       }
     })
@@ -36,6 +47,7 @@ class DreamItem extends Component {
   updateDream = () => {
     console.log('Updating dream')
     // will be dispatching action here for PUT route
+    this.props.history.push('/updateDream')
   }
 
 
@@ -44,6 +56,7 @@ class DreamItem extends Component {
     return (
       <div>
         <Nav/>
+        <hr></hr>
         {/* {JSON.stringify(this.props.store.details)} */}
           
           {/* ---------------------------------------------  */}
@@ -61,8 +74,8 @@ class DreamItem extends Component {
         })}
 
 
-          <button className="delete-button" onClick={this.deleteDream}>Delete</button>
-          <button className="update-button" onClick={this.updateDream}>Update</button>
+          <Button className="delete-button" onClick={this.deleteDream}>Delete</Button>
+          <Button className="update-button" onClick={this.updateDream}>Update</Button>
         </div>
 
       </div>
@@ -70,4 +83,4 @@ class DreamItem extends Component {
   }
 }
 
-export default connect(mapStoreToProps)(DreamItem);
+export default connect(mapStoreToProps)(withStyles(styles)(DreamItem));

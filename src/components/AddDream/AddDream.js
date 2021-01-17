@@ -99,10 +99,10 @@ handleChange = (event, input) => {
   render() {
     // const { classes } = this.props;
     return (
-      <div className="add-dream-div">
+      <div className="container">
         <Nav/>
-        <h2 className="sub-heading">Add Dream</h2>
         <hr></hr>
+        {/* <h2 className="sub-heading">Add Dream</h2> */}
 
 {/* ------------------------------------------------- INPUT FIELDS ------------------------------------------------------------------ */ }
         <div className="form-control-start">

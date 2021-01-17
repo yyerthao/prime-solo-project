@@ -34,8 +34,8 @@ render(){
     return(
       <div>
         <Nav/>
-        <h2 className="sub-heading">View Dreams</h2>
         <hr></hr>
+        {/* <h2 className="sub-heading">View Dreams</h2> */}
         {/* ----------------------------------------------------------------- */}
           <div className="center-div">
           {dream.map((dream, i) => {

@@ -33,5 +33,7 @@
 }
 
 .nav-right {
-  float: right;
+  display: flex;
+  justify-content: center;
 }
+
