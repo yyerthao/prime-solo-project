@@ -24,10 +24,10 @@ const { rejectUnauthenticated,} = require('../modules/authentication-middleware'
 
 router.get('/', rejectUnauthenticated, (req, res) => {
 let sqlText =
-`SELECT TO_CHAR(NOW() :: DATE, 'mm/dd/yyyy'), dream.title, dream.image, dream.details, genre.name, dream.id FROM "user"
-	JOIN dream ON dream.user_id = "user".id
-	JOIN genre ON genre.id = dream.genre_id
-	WHERE "user".id = $1;`
+    `SELECT TO_CHAR(NOW() :: DATE, 'mm/dd/yyyy'), dream.title, dream.image, dream.details, genre.name, dream.id FROM "user"
+    JOIN dream ON dream.user_id = "user".id
+    JOIN genre ON genre.id = dream.genre_id
+    WHERE "user".id = $1;`
   pool.query(sqlText, [req.user.id])
     .then((result) => {
       res.send(result.rows);
@@ -40,22 +40,22 @@ let sqlText =
 
 // ---------------------------- POST A DREAM ----------------------------
 router.post('/', rejectUnauthenticated, (req, res) => {
-  console.log('made it to the dream POST route')
-  console.log(req.body)
-  console.log('isAuthenticated?', req.isAuthenticated());
+    console.log('made it to the dream POST route')
+    console.log(req.body)
+    console.log('isAuthenticated?', req.isAuthenticated());
   let id = req.user.id;
   let queryText = `
       INSERT INTO "dream" ("title", "date", "image", "details", "user_id", "genre_id")
       VALUES ($1, $2, $3, $4, $5, $6)
       RETURNING "id";`;
   pool.query(queryText, [req.body.title, req.body.date, req.body.image, req.body.details, id, req.body.genre_id])
-    .then((result) => {
+      .then((result) => {
       console.log('RESULT: ', result)
       const createdDreamId = result.rows[0].id
       const dreamGenreQuery = `
         INSERT INTO "dream_genre" ("dream_id", "genre_id")
         VALUES  ($1, $2);`;
-        pool.query(dreamGenreQuery, [createdDreamId, req.body.genre_id])
+      pool.query(dreamGenreQuery, [createdDreamId, req.body.genre_id])
     })
     .then(result => {
     console.log('DREAM POST ROUTE AFTER GOING TO DB', result);      
@@ -71,11 +71,11 @@ router.post('/', rejectUnauthenticated, (req, res) => {
 
 
 // ---------------------------- GET one dream by ID----------------------------
-router.get('/:id', (req, res) => {
-  let id = req.params.id;
+router.get('/:id', rejectUnauthenticated, (req, res) => {
+    let id = req.params.id;
   // console.log('--- This is the ID of the dream you clicked on: ',id);
   const queryText =
-    `SELECT TO_CHAR(NOW()::DATE, 'mm/dd/yyyy'), dream.title, dream.image, dream.details, genre.name FROM dream_genre
+    `SELECT TO_CHAR(NOW()::DATE, 'mm/dd/yyyy'), dream.title, dream.image, dream.details, genre.name, dream.id FROM dream_genre
     JOIN dream ON dream.id = dream_genre.dream_id
     JOIN genre ON dream_genre.genre_id = genre.id
     WHERE dream.id = $1`
@@ -84,7 +84,7 @@ router.get('/:id', (req, res) => {
     console.log('This is the dream you\'ve selected: ', result.rows);
     res.send(result.rows);
   })
-  .catch((error) => {
+    .catch((error) => {
     console.log('Error inside GET ID route:', error);
     res.sendStatus(500);
   });
@@ -96,21 +96,32 @@ router.get('/:id', (req, res) => {
 
 
 
-// ---------------------------- PUT route to update one dream ----------------------------
+// ---------------------------- PUT route to update specific dream ----------------------------
 
 router.put('/:id', rejectUnauthenticated, (req, res) => {
-  console.log('body', req.body);
-  console.log('user', req.user);
-  let sqlText = `UPDATE "dream" SET "title" = $2, "date" = $3, "image" = $4, "details" = $5 WHERE id = $1;`
-  pool.query(sqlText, [req.params.id, req.body.title, req.body.date, req.body.image])
+  console.log('This is the dream you are trying to update: ', req.body);
+  let id = req.body.id;
+  let sqlText = 
+      `UPDATE "dream" SET 
+      "title" = $2, 
+      "date" = $3, 
+      "image" = $4, 
+      "details" = $5, 
+      "genre_id" = $6 
+      WHERE id = $1`;
+  pool.query(sqlText, 
+      [req.body.title, 
+      req.body.date, 
+      req.body.image, 
+      req.body.details, 
+      req.body.genre_id, 
+      id])  
     .then(() => res.sendStatus(201))
     .catch((error) => {
       console.log(' $$$ ---------------- ERROR inside PUT route', error)
       res.sendStatus(501)
     });
 });
-
-
 
 
 // add delete route

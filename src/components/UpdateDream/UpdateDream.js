@@ -21,17 +21,26 @@ const styles = theme => ({
 class UpdateDream extends Component {
 
 
-updateDream = () =>{
-  console.log('Update dream')
+componentDidMount(){
+  this.props.dispatch({type:'SET_NEW_DREAM'})
+}
+
+saveUpdate = () =>{
+  console.log('Updated dream')
   // dispatch to saga for put axios call
 }
 
   render() {
+    const{updatedDream} = this.props.store;
     return (
       <div>
         <Nav/>
         <h1>Update Dream Page</h1>
-        <Button onClick={this.updateDream}>Update</Button>
+
+        {JSON.stringify(updatedDream)}
+
+
+        <Button onClick={this.saveUpdate}>Update</Button>
       </div>
     );
   }

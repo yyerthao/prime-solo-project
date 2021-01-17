@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import '../DreamItem/DreamItem.css';
 
 
 const styles = theme => ({
@@ -44,11 +45,10 @@ class DreamItem extends Component {
     })
   }
 
-  updateDream = () => {
-    console.log('Updating dream')
-    // will be dispatching action here for PUT route
-    this.props.dispatch({type: 'FETCH_DREAM'})
-    this.props.history.push('/updateDream')
+  updateDream = (id) => {
+      console.log('Selecting this dream to update: ', id);
+      this.props.dispatch({type: 'GET_DREAM_TO_UPDATE', payload: id});
+      this.props.history.push('/updateDream')
   }
 
 
@@ -75,9 +75,10 @@ class DreamItem extends Component {
           )
         })}
 
-
+          {JSON.stringify(details)}
           <Button className="delete-button" onClick={this.deleteDream}>Delete</Button>
-          <Button className="update-button" onClick={this.updateDream}>Update</Button>
+          {JSON.stringify(details.id)}
+          <Button className="update-button" onClick={() => this.updateDream(details.id)}>Update</Button>
         </div>
 
       </div>

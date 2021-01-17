@@ -14,10 +14,10 @@ const AboutPage = () => (
     <div className="about-page-container">
       <h1>About</h1>
       <p>
-      The human mind always ticks. It interprets things in our wake and
+      The human mind always ticks. 
       </p>
       <p>
-      it interprets things while we sleep. 
+        It interprets things in our wake and while we sleep. 
       This process is called dreaming. 
       </p>
       <p>
