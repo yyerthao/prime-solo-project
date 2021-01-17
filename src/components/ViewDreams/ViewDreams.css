@@ -18,3 +18,7 @@ img{
     font-size: 2rem;
     text-shadow: 4px 4px 4px rgba(128, 128, 128, 0.514);
 }
+
+.card-layout{
+    position: inline-block;
+}

@@ -4,7 +4,7 @@ import axios from 'axios';
 
 
 function* getDream() {
-    console.log('Fetching dream');
+    console.log('Fetching dream from DB working OK');
     try{
         const response = yield axios.get('/api/dream')
         yield put({type: 'SET_DREAM', payload: response.data})

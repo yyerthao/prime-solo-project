@@ -11,21 +11,37 @@ import '../AboutPage/AboutPage.css';
 const AboutPage = () => (
   <div>
     <Nav/>
-    <div className="about-page-container">
-      <h1>About</h1>
-      <p>
-      The human mind always ticks. It interprets things in our wake and
-      </p>
-      <p>
-      it interprets things while we sleep. 
-      This process is called dreaming. 
-      </p>
-      <p>
-      While we sleep, our mind attempts to make sense of things we may have 
-      </p>
-      <p>
-      encountered, things we simply looked at without a second thought on.
-      </p>
+      <div className="about-page-container">
+        <h1>About</h1>
+        <p>
+          The human mind always ticks. 
+        </p>
+        <p>
+          It interprets things in our wake and while we sleep. 
+          This process is called dreaming. 
+        </p>
+        <p>
+          And while we sleep in our slumbers, our mind wanders, interprets
+        </p>
+        <p>
+          things we may have 
+          
+        </p>
+        <p>
+          
+        </p>
+        <p>
+          
+        </p>
+        <p>
+          
+        </p>
+        <p>
+          
+        </p>
+        <br></br>
+
+
     </div>
   </div>
 );

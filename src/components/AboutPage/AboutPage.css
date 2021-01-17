@@ -2,9 +2,15 @@
   /* display: flex; */
   /* justify-content: center; */
   text-align: center;
-  margin-top: 2rem;
+  margin: 2rem 20rem;
+  border-radius: 0.3rem;
+  background: rgba(255, 255, 255, 0.527);
 }
 
 h1{
     color: grey;
+}
+
+p{
+  padding: 0;
 }

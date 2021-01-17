@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import '../DreamItem/DreamItem.css';
 
 
 const styles = theme => ({
@@ -44,13 +45,11 @@ class DreamItem extends Component {
     })
   }
 
-  updateDream = () => {
-    console.log('Updating dream')
-    // will be dispatching action here for PUT route
-    this.props.dispatch({type: 'FETCH_DREAM'})
-    this.props.history.push('/updateDream')
+  updateDream = (id) => {
+      console.log('Selecting this dream to update: ', id);
+      this.props.dispatch({type: 'GET_DREAM_TO_UPDATE', payload: id});
+      this.props.history.push('/updateDream')
   }
-
 
 
 
@@ -66,18 +65,24 @@ class DreamItem extends Component {
         {details.map((details, i) => {
           return (
             <div key={i}>
+          <h1>ID: {details.id}</h1>
           <h2>Title: {details.title}</h2>
           <h5>Date: {details.to_char}</h5>
           <img src={details.image} alt="Dream"></img>
           <h5>Genre: {details.name}</h5>
           <p>{details.details}</p>
+              <Button className="delete-button" onClick={this.deleteDream}>Delete</Button>
+              <Button className="update-button" onClick={() => this.updateDream(details.id)}>Update</Button>
             </div>
           )
         })}
 
+          {/* The JSON STRINGIFY below is NOT working */}
+          {/* {JSON.stringify(details.id)}  */}
 
-          <Button className="delete-button" onClick={this.deleteDream}>Delete</Button>
-          <Button className="update-button" onClick={this.updateDream}>Update</Button>
+          {JSON.stringify(details)}
+          <br></br>
+
         </div>
 
       </div>
