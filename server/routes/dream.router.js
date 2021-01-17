@@ -76,40 +76,19 @@ router.post('/', rejectUnauthenticated, (req, res) => {
     });
 });
 
-// ---------------------------- POST to dream_genre table ----------------------------
-
-  // router.post('/', rejectUnauthenticated, (req, res) => {
-  //   console.log('INSIDE JUNCTION QUERY POST ROUTE------');
-  //     const createdDreamId = result.rows[0].id
-  //     const dreamGenreQuery = `
-  //       INSERT INTO "dream_genre" ("dream_id", "genre_id")
-  //       VALUES  ($1, $2);`;
-  //   // -------------------------------- SECOND QUERY MAKES GENRE FOR NEW DREAM    
-  //   pool.query(dreamGenreQuery, [createdDreamId, req.body.genre])
-  //     .then(result => {
-  //       console.log('DREAM POST ROUTE AFTER GOING TO DB');
-  //       res.sendStatus(201);
-  //     }).catch(err => {
-  //       console.log(err);
-  //       res.sendStatus(500);
-  // // catches first query
-  //   }).catch(err => {
-  //     console.log(err);
-  //     res.sendStatus(500)
-  //   })
-  // })
 
 
 
-// -------------------------------- GET 1 DREAM by ID   
+
+// ---------------------------- GET one dream by ID----------------------------
 router.get('/:id', (req, res) => {
   let id = req.params.id;
   // console.log('--- This is the ID of the dream you clicked on: ',id);
   const queryText =
-    `SELECT title, date, image, details, genre FROM dream_genre 
-    JOIN dream ON dream.id = dream_genre.dream_id 
-    JOIN genre ON dream_genre.genre_id = genre.id 
-    WHERE dream.id = $1;`
+    `SELECT TO_CHAR(NOW()::DATE, 'mm/dd/yyyy'), dream.title, dream.image, dream.details, genre.name FROM dream_genre
+    JOIN dream ON dream.id = dream_genre.dream_id
+    JOIN genre ON dream_genre.genre_id = genre.id
+    WHERE dream.id = $1`
   pool.query(queryText, [id])
     .then((result) => {
     console.log('This is the dream you\'ve selected: ', result.rows);

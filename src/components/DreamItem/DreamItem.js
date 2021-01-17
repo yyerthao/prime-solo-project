@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-// import details from '../../redux/reducers/details.reducer';
 import Nav from '../Nav/Nav';
 
 // Basic class component structure for React with default state
@@ -18,34 +17,24 @@ class DreamItem extends Component {
 
 
   render() {
-        // const {details} = this.props;
+        const {details} = this.props.store;
     return (
       <div>
         <Nav/>
-        {JSON.stringify(this.props.store.details)}
+        {/* {JSON.stringify(this.props.store.details)} */}
           
           {/* ---------------------------------------------  */}
-
-
-        {/* {details.map((details, i) => {
+        {details.map((details, i) => {
           return (
-            <div>
-            <h2>{details.title}</h2>
-            <img 
-            src={details.image} 
-            alt="Dream">
-            </img>
-            <h4>
-
-            Genre: {details.name}
-            </h4>
-            <p>
-                {details.details}
-            </p>
-          </div>
+            <div key={i}>
+          <h4>Title: {details.title}</h4>
+          <h5>Date: {details.to_char}</h5>
+          <img src={details.image} alt="Dream"></img>
+          <h5>Genre: {details.name}</h5>
+          <p>{details.details}</p>
+            </div>
           )
-        })} */}
-
+        })}
 
       </div>
     );
