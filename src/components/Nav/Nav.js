@@ -45,6 +45,7 @@ const Nav = (props) => {
           || About
         </Link>
       </div>
+      <hr></hr>
     </div>
   );
 };

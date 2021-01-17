@@ -56,7 +56,6 @@ class DreamItem extends Component {
     return (
       <div>
         <Nav/>
-        <hr></hr>
         {/* {JSON.stringify(this.props.store.details)} */}
           
           {/* ---------------------------------------------  */}

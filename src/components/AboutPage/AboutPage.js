@@ -1,5 +1,6 @@
 import React from 'react';
 import Nav from '../Nav/Nav';
+import '../AboutPage/AboutPage.css';
 
 
 // This is one of our simplest components
@@ -8,9 +9,9 @@ import Nav from '../Nav/Nav';
 // or even care what the redux state is, so it doesn't need 'connect()'
 
 const AboutPage = () => (
-  <div className="about-page-container">
+  <div>
     <Nav/>
-    <div>
+    <div className="about-page-container">
       <h1>About</h1>
       <p>
       The human mind always ticks. It interprets things in our wake and

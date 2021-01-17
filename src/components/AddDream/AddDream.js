@@ -101,9 +101,6 @@ handleChange = (event, input) => {
     return (
       <div className="container">
         <Nav/>
-        <hr></hr>
-        {/* <h2 className="sub-heading">Add Dream</h2> */}
-
 {/* ------------------------------------------------- INPUT FIELDS ------------------------------------------------------------------ */ }
         <div className="form-control-start">
         <FormControl>

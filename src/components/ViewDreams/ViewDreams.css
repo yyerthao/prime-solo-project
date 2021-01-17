@@ -11,14 +11,6 @@ img{
     margin-left: 0.5rem;
 }
 
-hr {
-    display: block;
-    height: 5px;
-    border: 0;
-    border-top: 2px solid #ccc;
-    padding: 0;
-    margin: 0 3rem;
-}
 
 .sub-heading{
     text-align: center;

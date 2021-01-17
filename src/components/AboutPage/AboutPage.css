@@ -1,0 +1,10 @@
+.about-page-container {
+  /* display: flex; */
+  /* justify-content: center; */
+  text-align: center;
+  margin-top: 2rem;
+}
+
+h1{
+    color: grey;
+}

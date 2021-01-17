@@ -34,7 +34,6 @@ render(){
     return(
       <div>
         <Nav/>
-        <hr></hr>
         {/* <h2 className="sub-heading">View Dreams</h2> */}
         {/* ----------------------------------------------------------------- */}
           <div className="center-div">
