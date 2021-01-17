@@ -89,7 +89,14 @@ JOIN genre ON dream_genre.genre_id = genre.id
 WHERE dream.id = 3;
 
 
+-- Works to retrieve dreams from specific user
 SELECT TO_CHAR(NOW() :: DATE, 'mm/dd/yyyy'), dream.title, dream.image, dream.details, genre.name FROM "user"
 	JOIN dream ON dream.user_id = "user".id
 	JOIN genre ON genre.id = dream.genre_id
 	WHERE "user".id = 2;
+
+-- Works to retrieve specific dream by dream ID
+SELECT TO_CHAR(NOW()::DATE, 'mm/dd/yyyy'), dream.title, dream.image, dream.details, genre.name FROM dream_genre
+    JOIN dream ON dream.id = dream_genre.dream_id
+    JOIN genre ON dream_genre.genre_id = genre.id
+    WHERE dream.id = 22;

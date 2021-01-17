@@ -47,8 +47,11 @@ class DreamItem extends Component {
   updateDream = () => {
     console.log('Updating dream')
     // will be dispatching action here for PUT route
+    this.props.dispatch({type: 'FETCH_DREAM'})
     this.props.history.push('/updateDream')
   }
+
+
 
 
   render() {

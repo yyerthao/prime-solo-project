@@ -20,22 +20,14 @@ const { rejectUnauthenticated,} = require('../modules/authentication-middleware'
 
 
 
-// ---------------------------- GET ALL DREAMs ----------------------------
+// ---------------------------- GET ALL DREAMS ----------------------------
 
 router.get('/', rejectUnauthenticated, (req, res) => {
-  // GET route code here
-  // let sqlText = `SELECT TO_CHAR(NOW() :: DATE, 'mm/dd/yyyy'), dream.title, dream.image, dream.details FROM "user"
-	// JOIN dream ON dream.user_id = "user".id
-	// WHERE "user".id = $1;
-  // `;
-  
 let sqlText =
 `SELECT TO_CHAR(NOW() :: DATE, 'mm/dd/yyyy'), dream.title, dream.image, dream.details, genre.name, dream.id FROM "user"
 	JOIN dream ON dream.user_id = "user".id
 	JOIN genre ON genre.id = dream.genre_id
 	WHERE "user".id = $1;`
-
-
   pool.query(sqlText, [req.user.id])
     .then((result) => {
       res.send(result.rows);
@@ -47,8 +39,6 @@ let sqlText =
 
 
 // ---------------------------- POST A DREAM ----------------------------
-
-
 router.post('/', rejectUnauthenticated, (req, res) => {
   console.log('made it to the dream POST route')
   console.log(req.body)
@@ -106,19 +96,19 @@ router.get('/:id', (req, res) => {
 
 
 
+// ---------------------------- PUT route to update one dream ----------------------------
 
-// add put route here
-// router.put('/:id', rejectUnauthenticated, (req, res) => {
-//   console.log('body', req.body);
-//   console.log('user', req.user);
-//   let sqlText = `UPDATE "dream" SET "title" = $2, "date" = $3, "image" = $4, "details" = $5 WHERE id = $1;`
-//   pool.query(sqlText, [req.params.id, req.body.title, req.body.date, req.body.image])
-//     .then(() => res.sendStatus(201))
-//     .catch((error) => {
-//       console.log('ERROR inside PUT route', error)
-//       res.sendStatus(501)
-//     });
-// });
+router.put('/:id', rejectUnauthenticated, (req, res) => {
+  console.log('body', req.body);
+  console.log('user', req.user);
+  let sqlText = `UPDATE "dream" SET "title" = $2, "date" = $3, "image" = $4, "details" = $5 WHERE id = $1;`
+  pool.query(sqlText, [req.params.id, req.body.title, req.body.date, req.body.image])
+    .then(() => res.sendStatus(201))
+    .catch((error) => {
+      console.log(' $$$ ---------------- ERROR inside PUT route', error)
+      res.sendStatus(501)
+    });
+});
 
 
 
