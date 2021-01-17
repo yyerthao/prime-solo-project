@@ -101,9 +101,11 @@ handleChange = (event, input) => {
     return (
       <div className="add-dream-div">
         <Nav/>
-        <h2>Add Dream</h2>
+        <h2 className="sub-heading">Add Dream</h2>
+        <hr></hr>
 
 {/* ------------------------------------------------- INPUT FIELDS ------------------------------------------------------------------ */ }
+        <div className="form-control-start">
         <FormControl>
               <TextField 
                 placeholder="Title" 
@@ -133,6 +135,7 @@ handleChange = (event, input) => {
                         value={this.state.details}
                         onChange={(event) => this.handleChange (event, 'details')}>
                       </textarea><br></br>
+              
 {/* ----------------------------------------------- DROP DOWN MENU -------------------------------------------------------------------- */ }
              <div> 
                {/* {
@@ -173,6 +176,8 @@ handleChange = (event, input) => {
         </FormControl>
 
       </div>
+    </div>
+
     );
   }
 }

@@ -34,8 +34,10 @@ render(){
     return(
       <div>
         <Nav/>
-        <h2>View Dreams</h2>
+        <h2 className="sub-heading">View Dreams</h2>
+        <hr></hr>
         {/* ----------------------------------------------------------------- */}
+          <div className="center-div">
           {dream.map((dream, i) => {
                 return (
                   // move below to new component 
@@ -44,7 +46,7 @@ render(){
                     <div className="img-div" key={i}>
                         <h4>{dream.title}</h4>
                           <h5>Genre:
-                            {JSON.stringify(dream)}
+                            {/* {JSON.stringify(dream)} */}
                             {dream.name}</h5>
                         <img
                             src={dream.image}
@@ -57,6 +59,8 @@ render(){
                 )
             })
           }
+        </div>
+
 
 {/* Just troubleshooting on DOM  */}
 {/* {JSON.stringify(this.props.store.dream)} */}

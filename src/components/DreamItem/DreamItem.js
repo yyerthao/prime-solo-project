@@ -24,6 +24,7 @@ class DreamItem extends Component {
         {/* {JSON.stringify(this.props.store.details)} */}
           
           {/* ---------------------------------------------  */}
+        <div className="center-div">
         {details.map((details, i) => {
           return (
             <div key={i}>
@@ -35,6 +36,7 @@ class DreamItem extends Component {
             </div>
           )
         })}
+        </div>
 
       </div>
     );
