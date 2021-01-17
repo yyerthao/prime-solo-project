@@ -59,7 +59,16 @@ router.post('/', rejectUnauthenticated, (req, res) => {
       VALUES ($1, $2, $3, $4, $5, $6)
       RETURNING "id";`;
   pool.query(queryText, [req.body.title, req.body.date, req.body.image, req.body.details, id, req.body.genre_id])
-    .then(() => {
+    .then((result) => {
+      console.log('RESULT: ', result)
+      const createdDreamId = result.rows[0].id
+      const dreamGenreQuery = `
+        INSERT INTO "dream_genre" ("dream_id", "genre_id")
+        VALUES  ($1, $2);`;
+        pool.query(dreamGenreQuery, [createdDreamId, req.body.genre_id])
+    })
+    .then(result => {
+    console.log('DREAM POST ROUTE AFTER GOING TO DB', result);      
       res.sendStatus(201); //do 201 
     }).catch((error) => {
       console.log(error);
@@ -70,13 +79,15 @@ router.post('/', rejectUnauthenticated, (req, res) => {
 // ---------------------------- POST to dream_genre table ----------------------------
 
   // router.post('/', rejectUnauthenticated, (req, res) => {
+  //   console.log('INSIDE JUNCTION QUERY POST ROUTE------');
   //     const createdDreamId = result.rows[0].id
   //     const dreamGenreQuery = `
-  //     INSERT INTO "dream_genre" ("dream_id", "genre_id")
-  //     VALUES  ($1, $2);`;
+  //       INSERT INTO "dream_genre" ("dream_id", "genre_id")
+  //       VALUES  ($1, $2);`;
   //   // -------------------------------- SECOND QUERY MAKES GENRE FOR NEW DREAM    
   //   pool.query(dreamGenreQuery, [createdDreamId, req.body.genre])
   //     .then(result => {
+  //       console.log('DREAM POST ROUTE AFTER GOING TO DB');
   //       res.sendStatus(201);
   //     }).catch(err => {
   //       console.log(err);
@@ -93,7 +104,7 @@ router.post('/', rejectUnauthenticated, (req, res) => {
 // -------------------------------- GET 1 DREAM by ID   
 router.get('/:id', (req, res) => {
   let id = req.params.id;
-  console.log(id);
+  // console.log('--- This is the ID of the dream you clicked on: ',id);
   const queryText =
     `SELECT title, date, image, details, genre FROM dream_genre 
     JOIN dream ON dream.id = dream_genre.dream_id 
@@ -101,8 +112,8 @@ router.get('/:id', (req, res) => {
     WHERE dream.id = $1;`
   pool.query(queryText, [id])
     .then((result) => {
-    console.log('----------$$$ ', result.rows[0]);
-    res.send(result.rows[0]);
+    console.log('This is the dream you\'ve selected: ', result.rows);
+    res.send(result.rows);
   })
   .catch((error) => {
     console.log('Error inside GET ID route:', error);

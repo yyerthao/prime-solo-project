@@ -14,18 +14,15 @@ import Nav from '../Nav/Nav';
 // the component name TemplateClass with the name for the new
 // component.
 class ViewDreams extends Component {
-  state = {
-    heading: 'View Dreams',
-  };
+
 
 componentDidMount(){
-console.log('Inside View Dreams');
 this.props.dispatch({type: 'FETCH_DREAM'});
 // swal.fire("Welcome to your dreams!");
 }
 
 selectDream = (id) => {
-console.log('Getting id details: ', id)
+console.log('This is the ID of the movive you\'ve clicked on: ', id)
 this.props.dispatch({type: 'GET_DETAIL', payload: id})
 this.props.history.push('/dreamItem') 
 }
@@ -46,7 +43,9 @@ render(){
 
                     <div className="img-div" key={i}>
                         <h4>{dream.title}</h4>
-                          <h5>Genre:{dream.name}</h5>
+                          <h5>Genre:
+                            {JSON.stringify(dream)}
+                            {dream.name}</h5>
                         <img
                             src={dream.image}
                             alt="Dream"
@@ -60,7 +59,7 @@ render(){
           }
 
 {/* Just troubleshooting on DOM  */}
-{JSON.stringify(this.props.store.dream)}
+{/* {JSON.stringify(this.props.store.dream)} */}
 
 
 

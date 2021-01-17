@@ -17,10 +17,10 @@ function* postDream(action) {
     console.log('Adding dream from user');
     try {
         yield axios.post('/api/dream', action.payload);
-        console.log('--------------------------- ', action.payload);
+        console.log('This is the dream sent to DB', action.payload);
         yield getDream();
     } catch (error) {
-        console.log('error with posting dream request', error);
+        console.log('POST ROUTE error from DB when attempting to post a dream to DB', error);
     }
 }
 
@@ -29,7 +29,7 @@ function* postDream(action) {
 function* getDetail(action) {
     try {
         // sending id of dream selected
-        console.log('--------- $$', action.payload);
+        console.log('You\'ve chosen a dream with ID #:', action.payload);
         
         const response = yield axios.get(`/api/dream/${action.payload}`) // 
         yield put({
@@ -37,7 +37,7 @@ function* getDetail(action) {
             payload: response.data
         })
     } catch (error) {
-        console.log('--------- error with DREAM fetch request', error);
+        console.log('GET ROUTE error from DB when attempting to get specific dream ID', error);
     }
 }
 
