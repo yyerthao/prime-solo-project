@@ -58,7 +58,7 @@ router.post('/', rejectUnauthenticated, (req, res) => {
       pool.query(dreamGenreQuery, [createdDreamId, req.body.genre_id])
     })
     .then(result => {
-    console.log('DREAM POST ROUTE AFTER GOING TO DB', result);      
+      console.log('DREAM POST ROUTE AFTER GOING TO DB', result);      
       res.sendStatus(201); //do 201 
     }).catch((error) => {
       console.log(error);
@@ -112,7 +112,6 @@ router.put('/:id', rejectUnauthenticated, (req, res) => {
       "genre_id" = $6 
       WHERE id = $7`;
                       // OK THIS QUERY IS WORKING, tested it ON POSTMAN
-                      // 
   pool.query(sqlText, 
       [req.body.title, 
       req.body.date, 
