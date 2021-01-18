@@ -45,7 +45,9 @@ class DreamItem extends Component {
           'Your dream has been deleted.',
           'success'
         )
+        // dispatch to delete dream in here
       }
+      this.props.history.push('/viewDreams')
     })
   }
 

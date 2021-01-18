@@ -74,7 +74,7 @@ Styling:
     - [] PUT ROUTE
     - [] DELETE ROUTE
     - [x] MATERIAL-UI cards
-    - [] Sweet Alerts for cancel confirmation.
+    - [] Sweet Alerts for cancel confirmation. (Downloaded however must create DELETE route first)
     - [] 
 
 

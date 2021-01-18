@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import Nav from '../Nav/Nav';
 import '../AddDream/AddDream.css';
+import Swal from 'sweetalert2';
+
 
 // Material-UI information
 import { withStyles } from '@material-ui/core/styles';
@@ -70,6 +72,24 @@ cancelSubmit = () => {
       details: '',
       genre_id: ''
     })
+    Swal.fire({
+     title: 'Confirm cancel?',
+     text: "You will be cancelling this dream submission!",
+     icon: 'warning',
+     showCancelButton: true,
+     confirmButtonColor: '#3085d6',
+     cancelButtonColor: '#d33',
+     confirmButtonText: 'Yes, cancel this submission!'
+   }).then((result) => {
+     if (result.isConfirmed) {
+       Swal.fire(
+         'Cancelled!',
+         'Submission of dream cancelled.',
+         'success'
+         )
+        }
+        this.props.history.push('/viewDreams');
+      });
 }
 
 handleSubmit = () => {
@@ -87,7 +107,7 @@ handleSubmit = () => {
 }
 
 
-
+// this just allows us to type inside input fields
 handleChange = (event, input) => {
   console.log('Details of dreams:', this.state);
   this.setState({
@@ -122,6 +142,7 @@ handleChange = (event, input) => {
                 value={this.state.image}
                 onChange={(event) => this.handleChange(event, 'image')}>
               </TextField><br></br>
+
                       <textarea
                         rows="10" 
                         cols="80"
@@ -173,10 +194,8 @@ handleChange = (event, input) => {
                   Submit Dream
               </Button>
         </FormControl>
-
       </div>
     </div>
-
     );
   }
 }
