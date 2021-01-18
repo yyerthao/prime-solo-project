@@ -46,6 +46,7 @@ class DreamItem extends Component {
           'success'
         )
       }
+      this.props.history.push('/viewDreams')
     })
   }
 

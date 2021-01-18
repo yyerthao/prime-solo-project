@@ -79,7 +79,8 @@ componentDidMount(){
          'Editing of dream cancelled.',
          'success'
        )
-     }
+      }
+      this.props.history.push('/viewDreams')
    });
    this.setState({
       title: this.props.store.update.title,

@@ -1,4 +1,4 @@
-const updatedDream = (state = {}, action) => {
+const updatedDream = (state = [], action) => {
     switch (action.type) {
         case 'SET_NEW_DREAM':
             return action.payload;

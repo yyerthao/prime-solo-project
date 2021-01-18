@@ -18,7 +18,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import PropTypes from 'prop-types';
-// import Paper from '@material-ui/core/Paper';
+import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
 
@@ -30,10 +30,10 @@ root: {
   flexGrow: 1,
 },
   card: {
-    maxWidth: 345,
+    maxWidth: 320,
   },
   media: {
-    height: 140,
+    height: 180,
     width: 320
   },
 };
@@ -66,23 +66,24 @@ this.props.history.push('/dreamItem')
 render(){
     const {dream} = this.props.store;
       const { classes } = this.props;
-          // const { spacing } = this.state;
+          const { spacing } = this.state;
 
     return(
       <div>
         <Nav/>
           <div className="center-div">
 
-            <Grid container className={classes.root} spacing={16}>
-              <Grid item xs={12}>
-                {/* <Grid container className={classes.demo} justify="center" spacing={Number(spacing)}>
+            <Grid container className={classes.root} spacing={10}>
+              <Grid item xs={10}>
+                <Grid container className={classes.demo} justify="center" spacing={Number(spacing)}>
                   {[0, 1, 2].map(value => (
                     <Grid key={value} item>
                       <Paper className={classes.paper} />
                     </Grid>
                   ))}
-                </Grid> */}
+                </Grid>
               </Grid>
+
 
 
 
@@ -138,6 +139,8 @@ render(){
           {/* -------------------------------END MAP---------------------------------- */}
 
         </Grid>
+
+
         </div>
 
 
