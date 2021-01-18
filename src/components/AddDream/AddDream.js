@@ -118,7 +118,6 @@ handleChange = (event, input) => {
 
 
   render() {
-    // const { classes } = this.props;
     return (
       <div className="container">
         <Nav/>

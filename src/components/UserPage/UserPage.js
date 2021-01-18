@@ -10,6 +10,8 @@ import '../UserPage/UserPage.css';
 // import {HashRouter as Router, Route, Link} from 'react-router-dom';
 // importing component AddDream from file
 // import AddDream from "../AddDream/AddDream";
+import '../UserPage/UserPage.css';
+
 import Nav from '../Nav/Nav';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -18,6 +20,7 @@ import Button from '@material-ui/core/Button';
 const styles = theme => ({
   button: {
     margin: theme.spacing(),
+
   },
 });
 
@@ -47,7 +50,14 @@ viewDreams = () => {
       <div>
         <Nav/>
         <h2 className="center-text" id="welcome">Hello, {this.props.store.user.username}!</h2>
-        <h3 className="center-text">What would you like to do?</h3>
+        <h3 className="center-text justified-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.Alias molestias totam ex 
+            reprehenderit, officia cumque minus repellendus, temporibus ad fugiat incidunt, 
+            consectetur assumenda beatae rerum dignissimos numquam autem aliquid amet. Lorem 
+            ipsum dolor sit amet consectetur adipisicing elit.Alias molestias totam ex reprehenderit, 
+            officia cumque minus repellendus, temporibus ad fugiat incidunt, consectetur assumenda 
+            beatae rerum dignissimos numquam autem aliquid amet.
+        </h3>
         {/* Your ID is {this.props.store.user.id} */}
       {
         /*  ------------------------- TO DO -------------------------
@@ -60,6 +70,8 @@ viewDreams = () => {
         <div className="container center-text">
 
             <Button className="add-dream-btn" onClick={this.addDream}>Add Dream</Button>
+
+              <span className="space-between-buttons"></span>
 
             <Button className="view-dream-btn" onClick={this.viewDreams}>View Dreams</Button>
 

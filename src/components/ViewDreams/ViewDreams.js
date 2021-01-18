@@ -17,7 +17,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
@@ -31,6 +31,7 @@ root: {
 },
   card: {
     maxWidth: 320,
+    margin: 20,
   },
   media: {
     height: 180,
@@ -49,7 +50,6 @@ class ViewDreams extends Component {
 
 componentDidMount(){
 this.props.dispatch({type: 'FETCH_DREAM'});
-// swal.fire("Welcome to your dreams!");
 }
 
 selectDream = (id) => {
@@ -59,7 +59,7 @@ this.props.history.push('/dreamItem')
 }
 
   state = {
-    spacing: '16',
+    spacing: '10',
   };
 
 
@@ -74,7 +74,7 @@ render(){
           <div className="center-div">
 
             <Grid container className={classes.root} spacing={10}>
-              <Grid item xs={10}>
+              <Grid item xs={10} >
                 <Grid container className={classes.demo} justify="center" spacing={Number(spacing)}>
                   {[0, 1, 2].map(value => (
                     <Grid key={value} item>
@@ -83,28 +83,9 @@ render(){
                   ))}
                 </Grid>
               </Grid>
-
-
-
-
-        {/* ----------------------------------MAPPING OUT DREAMS------------------------------- */}
+{/* ----------------------------------MAPPING OUT DREAMS------------------------------- */}
           {dream.map((dream, i) => {
                 return (
-                  // move below to new component 
-                  // utilize props
-
-                    // <div className="img-div" key={i}>
-                    //     <h4>{dream.title}</h4>
-                    //       <h5>Genre:
-                    //         {dream.name}</h5>
-                    //     <img
-                    //         src={dream.image}
-                    //         alt="Dream"
-                    //         onClick={() => this.selectDream(dream.id)} 
-                    //         >
-                    //     </img>
-                    //     <h5>{dream.to_char}</h5>
-                    // </div>
 
              <div className="card-layout" key={i}>     
               <Card className={classes.card}>
@@ -136,27 +117,15 @@ render(){
                 )
             })
           }
-          {/* -------------------------------END MAP---------------------------------- */}
-
         </Grid>
-
-
         </div>
-
-
-{/* Just troubleshooting on DOM  */}
-{/* {JSON.stringify(this.props.store.dream)} */}
-
-
-
-
       </div>
     )
   }
 }
 
-ViewDreams.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
+// ViewDreams.propTypes = {
+//   classes: PropTypes.object.isRequired,
+// };
 
 export default connect(mapStoreToProps)(withStyles(styles)(ViewDreams));
