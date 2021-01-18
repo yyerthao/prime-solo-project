@@ -79,16 +79,17 @@ componentDidMount(){
          'Editing of dream cancelled.',
          'success'
        )
+       //dispatch to delete dream in here 
       }
       this.props.history.push('/viewDreams')
    });
-   this.setState({
-      title: this.props.store.update.title,
-      to_char: this.props.store.update.date,
-      image: this.props.store.update.image,
-      details: this.props.store.update.details,
-      genre_id: this.props.store.genre.name,
-   })
+  //  this.setState({
+  //     title: this.props.store.update.title,
+  //     to_char: this.props.store.update.date,
+  //     image: this.props.store.update.image,
+  //     details: this.props.store.update.details,
+  //     genre_id: this.props.store.genre.name,
+  //  })
  }
 
 
@@ -140,22 +141,22 @@ handleChange = (event, input) => {
 {/* ------------------------------------------------- INPUT FIELDS ------------------------------------------------------------------ */ }
           <div className="form-control-start">
             <FormControl>
-                {/* {update.map((update, i)=>{
-                  return ( */}
-                    <FormControl>
+                {update.map((update, i)=>{
+                  return (
+                    <FormControl key={i}>
                     {/* <div key={i}> */}
                         <TextField 
-                          placeholder="Title"
+                          placeholder={update.title}
                               value={this.state.title}
                           onChange={(event) => this.handleChange(event, 'title')}>
                         </TextField>
                         <TextField 
-                            placeholder="Date"
+                            placeholder={update.to_char}
                               value={this.state.to_char}
                               onChange={(event) => this.handleChange(event, 'to_char')}>
                         </TextField>
                         <TextField 
-                            placeholder="Image Url"
+                            placeholder={update.image}
                               value={this.state.image}
                             onChange={(event) => this.handleChange(event, 'image')}>
                         </TextField><br></br>
@@ -165,8 +166,8 @@ handleChange = (event, input) => {
                             id="textarea"
                           className="dream-input-box" 
                         type="text" 
-                          placeholder="Enter dream here"
-                            value={this.state.details}
+                          placeholder={update.details}
+                            value={update.details}
                               onChange={(event) => this.handleChange (event, 'details')}>
                             </textarea><br></br>
 
@@ -178,9 +179,9 @@ handleChange = (event, input) => {
 
                             
                           </FormControl>
-                        {/* </div> 
+                        // </div> 
                          )})
-                      }  */}
+                      }  
 
 {/* ----------------------------------------------- DROP DOWN MENU -------------------------------------------------------------------- */ }
                   <div> 

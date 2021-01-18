@@ -73,7 +73,7 @@ cancelSubmit = () => {
       genre_id: ''
     })
     Swal.fire({
-     title: 'Confirm cancel adding dream?',
+     title: 'Confirm cancel?',
      text: "You will be cancelling this dream submission!",
      icon: 'warning',
      showCancelButton: true,
@@ -83,7 +83,7 @@ cancelSubmit = () => {
    }).then((result) => {
      if (result.isConfirmed) {
        Swal.fire(
-         'Deleted!',
+         'Cancelled!',
          'Submission of dream cancelled.',
          'success'
          )
