@@ -64,18 +64,28 @@ Styling:
 ----------------------------------------------------------------------------------------------------
 ---------------------------------------- ### Friday 1-15-2021 --------------------------------------
     - [x] DB final set up for dream_genre junction table
-    - [] GET dream by ID for the Dream Item View 
+    - [x] GET dream by ID for the Dream Item View 
 
 ----------------------------------------------------------------------------------------------------
 -------------------------------------------- ### WEEKEND -------------------------------------------
     - [x] Update GET query in dream.router.js to retrieve correct genre to display on DOM
     - [x] npm install sweetalert2 
-    - [] GET dream by ID for the Dream Item View 
+    - [x] GET dream by ID for the Dream Item View 
     - [] PUT ROUTE
     - [] DELETE ROUTE
-    - [] MATERIAL-UI cards
+    - [x] MATERIAL-UI cards
     - [] Sweet Alerts for cancel confirmation.
     - [] 
+
+
+
+
+----------------------------------------------------------------------------------------------------
+----------------------------------------- ### NPM INSTALLS ------------------------------------------
+- [x] npm install $@material-ui/core
+- [x] npm install @material-ui/icons
+- [x] npm install sweetalert2
+- [x] npm install ra-input-rich-text --save-dev
 
 
 

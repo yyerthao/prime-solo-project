@@ -27,20 +27,12 @@ class LandingPage extends Component {
       <div className="center">
         <h1 className ="app-name"> The Dream App </h1>
           <hr></hr>
-        <div>
-          {/* There used to be text inside here, all the text in here were originally 
-          on the left side of the DOM ... reediting to utilize my links onto DOM */}
-
-          <div>
-            <p>
-            The human mind always ticks. It interprets things in our wake and
-            </p>
-            <p>
-            it interprets things while we sleep. 
-            This process is called dreaming. 
-            </p>
+            <div className="center-landing-text">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.Alias molestias totam ex reprehenderit, officia cumque minus repellendus, temporibus ad fugiat incidunt, consectetur assumenda beatae rerum dignissimos numquam autem aliquid amet.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.Alias molestias totam ex reprehenderit, officia cumque minus repellendus, temporibus ad fugiat incidunt, consectetur assumenda beatae rerum dignissimos numquam autem aliquid amet.
+              </p>
             <br></br>
-          </div>
           <div className="container-in-line">
             <h4>Existing User?</h4>
               <button onClick={this.onLogin}>

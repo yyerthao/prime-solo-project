@@ -86,40 +86,48 @@ handleChange = (event, input) => {
 
         
           <div className="form-control-start">
-              <FormControl>
                 <div>
-                  
-                </div>
-                    <TextField 
-                      placeholder="Title"
-                      value={this.state.title}
-                      onChange={(event) => this.handleChange(event, 'title')}>
-                    </TextField>
-
-                            <TextField 
-                              placeholder="Date"
+                
+                {update.map((update, i)=>{
+                  return (
+                    <div key={i}>
+                      <FormControl>
+                        <TextField 
+                          placeholder="Title"
+                              value={this.state.title}
+                          onChange={(event) => this.handleChange(event, 'title')}>
+                        </TextField>
+                        <TextField 
+                            placeholder="Date"
                               value={this.state.date}
                               onChange={(event) => this.handleChange(event, 'date')}>
-                            </TextField>
-
-                    <TextField 
-                      placeholder="Image Url"
-                      value={this.state.image}
-                      onChange={(event) => this.handleChange(event, 'image')}>
-                    </TextField><br></br>
-
-                            <textarea
-                              rows="10" 
+                        </TextField>
+                        <TextField 
+                            placeholder="Image Url"
+                              value={this.state.image}
+                            onChange={(event) => this.handleChange(event, 'image')}>
+                        </TextField><br></br>
+                        <textarea
+                          rows="10" 
                               cols="80"
-                              id="textarea"
-                              className="dream-input-box" 
-                              type="text" 
-                              placeholder="Enter dream here"
-                              value={this.state.details}
+                            id="textarea"
+                          className="dream-input-box" 
+                        type="text" 
+                          placeholder="Enter dream here"
+                            value={this.state.details}
                               onChange={(event) => this.handleChange (event, 'details')}>
                             </textarea><br></br>
+                          </FormControl>
+                        </div>
+                    )})
+                  } 
+
+
+
+
+
                   
-                    
+                  </div>
       {/* ----------------------------------------------- DROP DOWN MENU -------------------------------------------------------------------- */ }
                   <div> 
                     {/* {
@@ -147,22 +155,25 @@ handleChange = (event, input) => {
 
 
             <Button
+              color="secondary"
               className="submit-dream-btn"
               onClick={this.cancelSubmit}>
                 Cancel
             </Button>
 
-              <Button 
+              <Button
+                color="primary" 
                 className="submit-dream-btn"
                 onClick={this.handleSubmit}>
                   Submit Dream
               </Button>
-        </FormControl>
 
 
          </div>                         
-        <Button onClick={this.saveUpdate}>Update</Button>
+        {/* <Button onClick={this.saveUpdate}>Update</Button> */}
 
+
+        
       </div>
     );
   }

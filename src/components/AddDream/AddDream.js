@@ -122,7 +122,6 @@ handleChange = (event, input) => {
                 value={this.state.image}
                 onChange={(event) => this.handleChange(event, 'image')}>
               </TextField><br></br>
-
                       <textarea
                         rows="10" 
                         cols="80"
@@ -134,6 +133,10 @@ handleChange = (event, input) => {
                         onChange={(event) => this.handleChange (event, 'details')}>
                       </textarea><br></br>
               
+              <br></br>
+
+
+
 {/* ----------------------------------------------- DROP DOWN MENU -------------------------------------------------------------------- */ }
              <div> 
                {/* {
@@ -161,12 +164,14 @@ handleChange = (event, input) => {
 
 
             <Button
+              color="secondary"
               className="submit-dream-btn"
               onClick={this.cancelSubmit}>
                 Cancel
             </Button>
 
               <Button 
+                color="primary"
                 className="submit-dream-btn"
                 onClick={this.handleSubmit}>
                   Submit Dream
