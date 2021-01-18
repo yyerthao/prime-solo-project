@@ -48,17 +48,30 @@ class UpdateDream extends Component {
   
 
     state = {
-      title: this.props.store.update.title,
-      to_char: this.props.store.update.date,
-      image: this.props.store.update.image,
-      details: this.props.store.update.details,
-      genre_id: '',
+      // title: this.props.store.update.title,
+      // to_char: this.props.store.update.to_char,
+      // image: this.props.store.update.image,
+      // details: this.props.store.update.details,
+      // genre_id: '',
       // value: RichTextEditor.createEmptyValue()
+      title: '',
+      to_char: '',
+      image: '',
+      details: '',
+      genre_id: '',
     };
 
 
 componentDidMount(){
   this.props.dispatch({type: 'FETCH_GENRE'});
+  this.setState({
+    title: this.props.store.update.title,
+    to_char: this.props.store.update.to_char,
+    image: this.props.store.update.image,
+    details: this.props.store.update.details,
+    genre_id: '',
+    })
+
 }
 
  cancelSubmit = () => {
@@ -71,11 +84,11 @@ componentDidMount(){
      showCancelButton: true,
      confirmButtonColor: '#3085d6',
      cancelButtonColor: '#d33',
-     confirmButtonText: 'Yes, delete it!'
+     confirmButtonText: 'Yes, cancel edit!'
    }).then((result) => {
      if (result.isConfirmed) {
        Swal.fire(
-         'Deleted!',
+         'Cancelled!',
          'Editing of dream cancelled.',
          'success'
        )
@@ -147,17 +160,17 @@ handleChange = (event, input) => {
                     {/* <div key={i}> */}
                         <TextField 
                           placeholder={update.title}
-                              value={this.state.title}
+                              defaultValue={this.state.title}
                           onChange={(event) => this.handleChange(event, 'title')}>
                         </TextField>
                         <TextField 
                             placeholder={update.to_char}
-                              value={this.state.to_char}
+                              defaultValue={this.state.to_char}
                               onChange={(event) => this.handleChange(event, 'to_char')}>
                         </TextField>
                         <TextField 
                             placeholder={update.image}
-                              value={this.state.image}
+                              defaultValue={this.state.image}
                             onChange={(event) => this.handleChange(event, 'image')}>
                         </TextField><br></br>
                         <textarea
@@ -167,8 +180,8 @@ handleChange = (event, input) => {
                           className="dream-input-box" 
                         type="text" 
                           placeholder={update.details}
-                            value={update.details}
-                              onChange={(event) => this.handleChange (event, 'details')}>
+                            defaultValue={update.details}
+                              onChange={(event) => this.handleChange (event, 'update.details')}>
                             </textarea><br></br>
 
                                 {/* <RichTextEditor
