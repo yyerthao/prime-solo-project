@@ -54,10 +54,10 @@ class UpdateDream extends Component {
       // details: this.props.store.update.details,
       // genre_id: '',
       // value: RichTextEditor.createEmptyValue()
-      title: '',
-      to_char: '',
-      image: '',
-      details: '',
+      title: this.props.store.update.title,
+      to_char: this.props.store.update.to_char,
+      image: this.props.store.update.image,
+      details: this.props.store.update.details,
       genre_id: '',
     };
 
@@ -180,8 +180,8 @@ handleChange = (event, input) => {
                           className="dream-input-box" 
                         type="text" 
                           placeholder={update.details}
-                            defaultValue={update.details}
-                              onChange={(event) => this.handleChange (event, 'update.details')}>
+                            defaultValue={update[0]?.details}
+                              onChange={(event) => this.handleChange (event, 'details')}>
                             </textarea><br></br>
 
                                 {/* <RichTextEditor
