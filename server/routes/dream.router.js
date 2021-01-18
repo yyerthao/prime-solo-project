@@ -24,7 +24,7 @@ const { rejectUnauthenticated,} = require('../modules/authentication-middleware'
 
 router.get('/', rejectUnauthenticated, (req, res) => {
 let sqlText =
-    `SELECT TO_CHAR(NOW() :: DATE, 'mm/dd/yyyy'), dream.title, dream.image, dream.details, genre.name, dream.id FROM "user"
+    `SELECT TO_CHAR(date, 'mm-dd-yyyy'), dream.title, dream.image, dream.details, genre.name, dream.id FROM "user"
     JOIN dream ON dream.user_id = "user".id
     JOIN genre ON genre.id = dream.genre_id
     WHERE "user".id = $1;`
@@ -75,10 +75,11 @@ router.get('/:id', rejectUnauthenticated, (req, res) => {
     let id = req.params.id;
   // console.log('--- This is the ID of the dream you clicked on: ',id);
   const queryText =
-    `SELECT TO_CHAR(NOW()::DATE, 'mm/dd/yyyy'), dream.title, dream.image, dream.details, genre.name, dream.id FROM dream_genre
+    `SELECT TO_CHAR(date, 'mm-dd-yyyy'), dream.title, dream.image, dream.details, genre.name, dream.id FROM dream_genre
     JOIN dream ON dream.id = dream_genre.dream_id
     JOIN genre ON dream_genre.genre_id = genre.id
     WHERE dream.id = $1`
+    
   pool.query(queryText, [id])
     .then((result) => {
     console.log('This is the dream you\'ve selected: ', result.rows);
