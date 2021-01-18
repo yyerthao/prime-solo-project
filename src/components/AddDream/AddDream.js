@@ -122,7 +122,6 @@ handleChange = (event, input) => {
                 value={this.state.image}
                 onChange={(event) => this.handleChange(event, 'image')}>
               </TextField><br></br>
-
                       <textarea
                         rows="10" 
                         cols="80"
@@ -134,12 +133,12 @@ handleChange = (event, input) => {
                         onChange={(event) => this.handleChange (event, 'details')}>
                       </textarea><br></br>
               
+              <br></br>
+
+
+
 {/* ----------------------------------------------- DROP DOWN MENU -------------------------------------------------------------------- */ }
              <div> 
-               {/* {
-                 JSON.stringify(this.props)
-               } */}
-                    {/* START OF DROP DOWN MENU */}
                     <FormControl>
                         <InputLabel>
                             Genre
@@ -148,7 +147,7 @@ handleChange = (event, input) => {
                             className="dropdown"
                             value={this.state.genre_id} 
                             onChange={(event) => this.handleChange(event, 'genre_id')}>
-                        {/* ------------------------------------------------------------------MAPPING OUT ARRAY OF GENRES REDUCER */}
+{/* ----------------------------------------------- MAPPING OUT ARRAY OF GENRES REDUCER */}
                             
                             {this.props.store.genre.map((genre, i) =>
                                 <MenuItem key={i} value={genre.id}>
@@ -161,12 +160,14 @@ handleChange = (event, input) => {
 
 
             <Button
+              color="secondary"
               className="submit-dream-btn"
               onClick={this.cancelSubmit}>
                 Cancel
             </Button>
 
               <Button 
+                color="primary"
                 className="submit-dream-btn"
                 onClick={this.handleSubmit}>
                   Submit Dream

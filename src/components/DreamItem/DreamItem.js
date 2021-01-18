@@ -74,8 +74,14 @@ class DreamItem extends Component {
               <img src={details.image} alt="Dream"></img>
               <h5>Genre: {details.name}</h5>
               <p>{details.details}</p>
-                  <Button className="delete-button" onClick={this.deleteDream}>Delete</Button>
-                  <Button className="update-button" onClick={() => this.updateDream(details.id)}>Update</Button>
+                  <Button
+                      color="secondary" 
+                      className="delete-button" 
+                      onClick={this.deleteDream}>Delete</Button>
+                  <Button 
+                      color="primary"
+                      className="update-button" 
+                      onClick={() => this.updateDream(details.id)}>Update</Button>
           </div>
               )
             })}

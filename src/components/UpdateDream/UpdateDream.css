@@ -1,0 +1,19 @@
+.submit-dream-btn {
+    text-align: center;
+    float: right;
+    margin-right: 10rem;
+    margin-left: 10rem;
+    position: relative;
+}
+
+  .dropdown {
+      width: 25rem;
+      margin-bottom: 2rem;
+      box-shadow: 5px 5px 5px rgba(122, 121, 122, 0.338);
+  }
+
+  .form-control-start {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+  }
