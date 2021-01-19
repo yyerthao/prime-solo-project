@@ -27,8 +27,8 @@ class DreamItem extends Component {
 
  
 
-  deleteDream = () => {
-    console.log('Deleting dream')
+  deleteDream = (id) => {
+    console.log('Deleting dream with id # ', id)
     // will be dispatching action for delete route here
     Swal.fire({
       title: 'Are you sure?',
@@ -40,6 +40,7 @@ class DreamItem extends Component {
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
+        this.props.dispatch({type:'DELETE_DREAM', payload: id})
         Swal.fire(
           'Deleted!',
           'Your dream has been deleted.',
@@ -64,7 +65,7 @@ class DreamItem extends Component {
     return (
       <div>
         <Nav/>
-        {/* {JSON.stringify(this.props.store.details)} */}
+        {JSON.stringify(details)}
           
           {/* ---------------------------------------------  */}
         <div className="center-div">
@@ -77,10 +78,13 @@ class DreamItem extends Component {
               <h5>Genre: {details.name}</h5>
               <p>{details.details}</p>
                   <Button
+                      variant="contained"
                       color="secondary" 
                       className="delete-button" 
-                      onClick={this.deleteDream}>Delete</Button>
+                      onClick={()=> this.deleteDream(details.id)}>Delete</Button>
+                      <span className="space-between-buttons"></span>
                   <Button 
+                      variant="contained"
                       color="primary"
                       className="update-button" 
                       onClick={() => this.updateDream(details.id)}>Update</Button>

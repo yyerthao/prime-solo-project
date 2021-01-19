@@ -3,6 +3,16 @@ import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import '../LoginForm/LoginForm.css'
 
+import { withStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+
+const styles = theme => ({
+  button: {
+    margin: theme.spacing(),
+  },
+});
+
+
 class LoginForm extends Component {
   state = {
     username: '',
@@ -34,6 +44,8 @@ class LoginForm extends Component {
   render() {
     return (
       <div className="container">
+        <h1 className="app-name">The Dream App</h1>
+        <hr></hr>
         <h2 className="instruction-text">Please Enter Your Credentials</h2>
       <form className="formPanel" onSubmit={this.login}>
         <h2>Login</h2>
@@ -67,7 +79,8 @@ class LoginForm extends Component {
           </label>
         </div>
         <div>
-          <input className="btn" type="submit" name="submit" value="Log In" />
+          
+          <Button variant="contained" className="btn" type="submit" name="submit" value="Log In">Log In</Button>
         </div>
       </form>
       </div>
@@ -75,4 +88,4 @@ class LoginForm extends Component {
   }
 }
 
-export default connect(mapStoreToProps)(LoginForm);
+export default connect(mapStoreToProps)(withStyles(styles)(LoginForm));

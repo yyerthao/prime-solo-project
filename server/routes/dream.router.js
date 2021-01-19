@@ -100,10 +100,12 @@ router.get('/:id', rejectUnauthenticated, (req, res) => {
 // ---------------------------- PUT route to update specific dream ----------------------------
 
 router.put('/:id', rejectUnauthenticated, (req, res) => {
-  console.log('This is the dream you are trying to update: ', req.body.id);
+  console.log('This is the dream you are trying to update ROUTER: ', req.body);
+  console.log('This is the user\'s information:', req.user)
   let id = req.body.id;
-  let sqlText = 
-      `UPDATE "dream" SET 
+  console.log('ID of the dream you are updating: ', req.body.id);
+  let sqlText =
+    `UPDATE "dream" SET 
       "title" = $1, 
       "date" = $2, 
       "image" = $3, 
@@ -112,20 +114,58 @@ router.put('/:id', rejectUnauthenticated, (req, res) => {
       "genre_id" = $6 
       WHERE id = $7`;
                       // OK THIS QUERY IS WORKING, tested it ON POSTMAN
-  pool.query(sqlText, 
+  pool.query
+      (sqlText, 
       [req.body.title, 
       req.body.date, 
       req.body.image, 
       req.body.details,
-      req.body.user_id, 
-      req.body.genre_id, 
+      req.body.user_id,
+      req.body.genre_id,
       id])  
     .then(() => res.sendStatus(201))
     .catch((error) => {
-      console.log(' $$$ ---------------- ERROR inside PUT route', error)
+      console.log('$$$ ---------------- ERROR inside PUT route', error)
       res.sendStatus(501)
     });
-});
+  });
+
+
+
+
+
+
+// router.put('/', rejectUnauthenticated, (req, res) => {
+//   console.log('made it to the dream PUT route')
+//   console.log(req.body)
+//   let id = req.user.id;
+//   let queryText = `
+//       UPDATE "dream" SET ("title", "date", "image", "details", "user_id", "genre_id")
+//       VALUES ($1, $2, $3, $4, $5, $6)
+//       RETURNING "id";`;
+//   pool.query(queryText, [req.body.title, req.body.date, req.body.image, req.body.details, id, req.body.genre_id])
+//     .then((result) => {
+//       console.log('RESULT: ', result)
+//       const newcreatedDreamId = result.rows[0].id
+//       const newdreamGenreQuery = `
+//         UPDATE "dream_genre" SET ("dream_id", "genre_id")
+//         VALUES  ($1, $2);`;
+//       pool.query(newdreamGenreQuery, [newcreatedDreamId, req.body.genre_id])
+//     })
+//     .then(result => {
+//       console.log('DREAM PUT ROUTE AFTER GOING TO DB', result);
+//       res.sendStatus(201); //do 201 
+//     }).catch((error) => {
+//       console.log(error);
+//       res.sendStatus(500);
+//     });
+// });
+
+
+
+
+
+
 
 
 // add delete route

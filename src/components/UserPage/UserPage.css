@@ -39,6 +39,8 @@
   }
 
   .justified-text {
+    margin: 2rem 35rem;
     text-align: justify;
-    margin: 0 32rem;
+    color: rgb(68, 65, 65);
+
   }

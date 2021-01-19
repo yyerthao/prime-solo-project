@@ -85,29 +85,32 @@ Grid
 /* ------------------------------------------------------------------------------------------------------ */
 
 .center{
-  font-family: sans-serif;
   text-align: center;
 }
 
 .center-landing-text{
-  margin: 5rem 26rem;
+  margin: 2rem 32rem;
   text-align: justify;
 }
 
 .app-name{
     font-size: 75px;
-    /* text-shadow: 20px 20px 20px rgba(235, 229, 229, 0.644); */
-    color: rgb(90, 89, 89);
+    text-shadow: 10px 10px 10px rgba(34, 34, 34, 0.479);
+    color: rgb(71, 71, 71);
     border-radius: 1rem;
     margin-bottom: 0.5rem;
+    	-webkit-text-stroke-width: 2.5px;
+    	-webkit-text-stroke-color:  rgba(255, 255, 255, 0.671);
   }
 
 .container-in-line{
   display: inline;
 }
 
-p{
-  color: rgb(117, 116, 116);
+.p-center-landing-text {
+    margin: 0 35rem;
+    text-align: justify;
+    color: rgb(68, 65, 65);
 }
 
 hr {
@@ -119,5 +122,8 @@ hr {
   margin: 0 3rem;
 }
 
+.space-between-buttons{
+  margin: 2rem 5rem;
+}
 
 /* ------------------------------------------------------------------------------------------------------ */

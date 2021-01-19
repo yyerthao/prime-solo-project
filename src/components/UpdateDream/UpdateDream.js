@@ -5,9 +5,10 @@ import UpdateDreamNav from '../UpdateDreamNav/UpdateDreamNav';
 import Swal from 'sweetalert2';
 
 
+
 import { withStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 import { FormControl } from '@material-ui/core';
 import InputLabel from '@material-ui/core/InputLabel';
 import Select from '@material-ui/core/Select';
@@ -48,16 +49,10 @@ class UpdateDream extends Component {
   
 
     state = {
-      // title: this.props.store.update.title,
-      // to_char: this.props.store.update.to_char,
-      // image: this.props.store.update.image,
-      // details: this.props.store.update.details,
-      // genre_id: '',
-      // value: RichTextEditor.createEmptyValue()
-      title: this.props.store.update.title,
-      to_char: this.props.store.update.to_char,
-      image: this.props.store.update.image,
-      details: this.props.store.update.details,
+      title: '',
+      to_char: '',
+      image: '',
+      details: '',
       genre_id: '',
     };
 
@@ -106,7 +101,7 @@ componentDidMount(){
  }
 
 
-updateDream = () => {
+updateDream = (id) => {
   console.log('Updating dream')
   this.props.dispatch({type: 'UPDATE_DREAM',payload: this.state});
   this.setState({
@@ -159,18 +154,18 @@ handleChange = (event, input) => {
                     <FormControl key={i}>
                     {/* <div key={i}> */}
                         <TextField 
-                          placeholder={update.title}
-                              defaultValue={this.state.title}
+                          placeholder={this.state.title}
+                              defaultValue={update.title}
                           onChange={(event) => this.handleChange(event, 'title')}>
                         </TextField>
                         <TextField 
-                            placeholder={update.to_char}
-                              defaultValue={this.state.to_char}
+                            placeholder={this.state.to_char}
+                              defaultValue={update.to_char}
                               onChange={(event) => this.handleChange(event, 'to_char')}>
                         </TextField>
                         <TextField 
-                            placeholder={update.image}
-                              defaultValue={this.state.image}
+                            placeholder={this.state.image}
+                              defaultValue={update.image}
                             onChange={(event) => this.handleChange(event, 'image')}>
                         </TextField><br></br>
                         <textarea
@@ -179,8 +174,8 @@ handleChange = (event, input) => {
                             id="textarea"
                           className="dream-input-box" 
                         type="text" 
-                          placeholder={update.details}
-                            defaultValue={update[0]?.details}
+                          placeholder={this.state.details}
+                            defaultValue={update.details}
                               onChange={(event) => this.handleChange (event, 'details')}>
                             </textarea><br></br>
 
@@ -219,23 +214,29 @@ handleChange = (event, input) => {
 
 
             <Button
+              variant="contained"
               color="secondary"
-              className="submit-dream-btn"
+              // className={classes.button}
               onClick={this.cancelSubmit}>
                 Cancel
             </Button>
 
-              <Button
-                color="primary" 
-                className="submit-dream-btn"
-                onClick={this.updateDream}>
-                  Update
-              </Button>
+            <span className="space-between-buttons"></span>    
+
+            <Button
+              variant="contained"
+              color="primary" 
+              // className={classes.button}
+              onClick={()=>this.updateDream(update.id)}>
+                Update
+            </Button>
+
             </FormControl>
          </div>                         
       </div>
     );
   }
 }
+
 
 export default connect(mapStoreToProps)(withStyles(styles)(UpdateDream));

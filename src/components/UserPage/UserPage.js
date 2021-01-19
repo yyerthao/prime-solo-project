@@ -50,7 +50,7 @@ viewDreams = () => {
       <div>
         <Nav/>
         <h2 className="center-text" id="welcome">Hello, {this.props.store.user.username}!</h2>
-        <h3 className="center-text justified-text">
+        <h3 className="justified-text">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.Alias molestias totam ex 
             reprehenderit, officia cumque minus repellendus, temporibus ad fugiat incidunt, 
             consectetur assumenda beatae rerum dignissimos numquam autem aliquid amet. Lorem 

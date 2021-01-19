@@ -20,6 +20,6 @@ export default function* rootSaga() {
     userSaga(),
     dream(),
     genre(),
-    update()
+    update(),
   ]);
 }

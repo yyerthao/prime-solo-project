@@ -42,11 +42,10 @@ function* getDetail(action) {
 }
 
 
-
 function* dream() {
     yield takeLatest('POST_DREAM', postDream);
     yield takeLatest('FETCH_DREAM', getDream);
-    yield takeLatest('GET_DETAIL', getDetail)
+    yield takeLatest('GET_DETAIL', getDetail);
 }
 
 export default dream;

@@ -4,7 +4,19 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
+
+import { withStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+
 import './LandingPage.css';
+
+
+
+const styles = theme => ({
+  button: {
+    margin: theme.spacing(),
+  },
+});
 
 // CUSTOM COMPONENTS
 
@@ -27,21 +39,19 @@ class LandingPage extends Component {
       <div className="center">
         <h1 className ="app-name"> The Dream App </h1>
           <hr></hr>
-            <div className="center-landing-text">
-              <p>
+              <p className="p-center-landing-text">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.Alias molestias totam ex reprehenderit, officia cumque minus repellendus, temporibus ad fugiat incidunt, consectetur assumenda beatae rerum dignissimos numquam autem aliquid amet.
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.Alias molestias totam ex reprehenderit, officia cumque minus repellendus, temporibus ad fugiat incidunt, consectetur assumenda beatae rerum dignissimos numquam autem aliquid amet.
               </p>
             <br></br>
-          <div className="container-in-line">
-            <h4>Existing User?</h4>
-              <button onClick={this.onLogin}>
+
+              <Button variant="contained" onClick={this.onLogin}>
                   Log In
-              </button>
-              <h4>New User?</h4>
-                <button onClick={this.onRegister}>
-                    Register
-                </button>
+              </Button>
+              <span className="space-between-buttons"></span>
+              <Button variant="contained" onClick={this.onRegister}>
+                  Register
+              </Button>
 
 {/* ---------------------------------------------------------------------------------- */}
           {/* <div className="grid-col grid-col_8"> */}
@@ -61,10 +71,8 @@ class LandingPage extends Component {
             </center> */}
 {/* ---------------------------------------------------------------------------------- */}
           </div>
-        </div>
-      </div>
     );
   }
 }
 
-export default connect(mapStoreToProps)(LandingPage);
+export default connect(mapStoreToProps)(withStyles(styles)(LandingPage));
