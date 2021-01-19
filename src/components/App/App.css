@@ -2,8 +2,7 @@ html,
 body,
 #react-root {
   height: 100%;
-  font-family: 'IBM Plex Mono', monospace;
-  /* font-family: sans-serif; */
+  font-family: 'Playfair Display', serif;
   font-weight: bold;
 }
 
