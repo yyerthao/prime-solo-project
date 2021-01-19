@@ -49,6 +49,7 @@ class UpdateDream extends Component {
   
 
     state = {
+      dreamID: '',
       title: '',
       to_char: '',
       image: '',
@@ -60,6 +61,7 @@ class UpdateDream extends Component {
 componentDidMount(){
   this.props.dispatch({type: 'FETCH_GENRE'});
   this.setState({
+    dreamID: this.props.store.update.id,
     title: this.props.store.update.title,
     to_char: this.props.store.update.to_char,
     image: this.props.store.update.image,
@@ -91,20 +93,14 @@ componentDidMount(){
       }
       this.props.history.push('/viewDreams')
    });
-  //  this.setState({
-  //     title: this.props.store.update.title,
-  //     to_char: this.props.store.update.date,
-  //     image: this.props.store.update.image,
-  //     details: this.props.store.update.details,
-  //     genre_id: this.props.store.genre.name,
-  //  })
  }
 
 
-updateDream = (id) => {
-  console.log('Updating dream')
-  this.props.dispatch({type: 'UPDATE_DREAM',payload: this.state});
+updateDream = (dreamID) => {
+  console.log('Updating dream', dreamID)
+  this.props.dispatch({type: 'UPDATE_DREAM',payload: {id: dreamID, state: this.state}});
   this.setState({
+      dreamID: '',
       title: '',
       date: '',
       image: '',
@@ -116,20 +112,6 @@ updateDream = (id) => {
   this.props.history.push('/viewDreams');
 }
 
-
-  // onChange = (value) => {
-  //   this.setState({
-  //     value
-  //   });
-  //   if (this.props.onChange) {
-  //     // Send the changes up to the parent component as an HTML string.
-  //     // This is here to demonstrate using `.toString()` but in a real app it
-  //     // would be better to avoid generating a string on each change.
-  //     this.props.onChange(
-  //       value.toString('html')
-  //     );
-  //   }
-  // };
 
 
 handleChange = (event, input) => {
@@ -155,7 +137,7 @@ handleChange = (event, input) => {
                     {/* <div key={i}> */}
                         <TextField 
                           placeholder={this.state.title}
-                              defaultValue={update.title}
+                          defaultValue={update.title}
                           onChange={(event) => this.handleChange(event, 'title')}>
                         </TextField>
                         <TextField 
@@ -178,20 +160,11 @@ handleChange = (event, input) => {
                             defaultValue={update.details}
                               onChange={(event) => this.handleChange (event, 'details')}>
                             </textarea><br></br>
-
-                                {/* <RichTextEditor
-                                  value={this.state.value}
-                                  onChange={this.onChange}
-                                /> */}
+                            {/* CHECKING ID of dream */}
+                            {JSON.stringify(update.id)}
 
 
-                            
-                          </FormControl>
-                        // </div> 
-                         )})
-                      }  
 
-{/* ----------------------------------------------- DROP DOWN MENU -------------------------------------------------------------------- */ }
                   <div> 
                           <FormControl>
                               <InputLabel>
@@ -210,26 +183,32 @@ handleChange = (event, input) => {
                               </Select>
                           </FormControl>
                     </div>
+                              <Button
+                                variant="contained"
+                                color="secondary"
+                                // className={classes.button}
+                                onClick={this.cancelSubmit}>
+                                  Cancel
+                              </Button>
+
+                              <span className="space-between-buttons"></span>    
+                              
+                              <Button
+                                variant="contained"
+                                color="primary" 
+                                // className={classes.button}
+                                onClick={()=>this.updateDream(update.id)}>
+                                  Update
+                              </Button>
+                          </FormControl>
+                        // </div> 
+                         )})
+                      }  
+
+{/* ----------------------------------------------- DROP DOWN MENU -------------------------------------------------------------------- */ }
 {/* ------------------------------------------------ BUTTONS ------------------------------------------------------------------- */ }
 
 
-            <Button
-              variant="contained"
-              color="secondary"
-              // className={classes.button}
-              onClick={this.cancelSubmit}>
-                Cancel
-            </Button>
-
-            <span className="space-between-buttons"></span>    
-
-            <Button
-              variant="contained"
-              color="primary" 
-              // className={classes.button}
-              onClick={()=>this.updateDream(update.id)}>
-                Update
-            </Button>
 
             </FormControl>
          </div>                         
