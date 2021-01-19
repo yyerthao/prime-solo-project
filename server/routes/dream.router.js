@@ -81,7 +81,7 @@ router.get('/:id', rejectUnauthenticated, (req, res) => {
     
   pool.query(queryText, [id])
     .then((result) => {
-    console.log('This is the dream you\'ve selected: ', result.rows);
+    console.log('POST This is the dream you\'ve selected: ', result.rows);
     res.send(result.rows);
   })
     .catch((error) => {
@@ -126,7 +126,7 @@ router.put('/:id', rejectUnauthenticated, (req, res) => {
       dreamID
     ])
      .then((result) => {
-         console.log('PUT This is the dream you\'ve updated: ', result.rows);
+         console.log('PUT This is the dream you\'ve updated: ', result.rows[0]);
          res.send(result.rows);
        })
        .catch((error) => {
