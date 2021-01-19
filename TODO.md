@@ -71,15 +71,8 @@ Styling:
     - [x] Update GET query in dream.router.js to retrieve correct genre to display on DOM
     - [x] npm install sweetalert2 
     - [x] GET dream by ID for the Dream Item View 
-    - [] PUT ROUTE
-    - [] DELETE ROUTE
     - [x] MATERIAL-UI cards
     - [x] Sweet Alerts for cancel confirmation. (Downloaded however must create DELETE route first)
-    - [] 
-
-
-
-
 
 ----------------------------------------------------------------------------------------------------
 ----------------------------------------- ### NPM INSTALLS ------------------------------------------
@@ -90,7 +83,16 @@ Styling:
 
 
 
+
 ----------------------------------------------------------------------------------------------------
 ---------------------------------------- ### Tuesday 1-19-2021 ------------------------------------
 - [] DELETE ROUTE 
-- [] PUT ROUTE
+- [] PUT ROUTE KIND OF WORKING
+
+
+
+
+<!-- SUPER IMPORT TO READ ON WEDNESDAY -->
+COME BACK TO READ ME FOR NEXT DAY ASSIGNMENT!
+- [] PUT ROUTE, almost done, need to update junction table so genre ID changes
+- [] DELETE ROUTE, read the document Mary sent you!

@@ -127,14 +127,16 @@ router.put('/:id', rejectUnauthenticated, (req, res) => {
     ])
      .then((result) => {
       console.log('RESULT: ', result)
-      const updatedDreamID = result.rows[0].id
+      // const updatedDreamID = result.rows[0].id
       const updatedDreamQuery = `
-        UPDATE "dream_genre" SET ("dream_id", "genre_id")
-        VALUES  ($1, $2);`;
-      pool.query(updatedDreamQuery, [updatedDreamID, req.body.genre_id])
+      UPDATE "dream_genre"
+      SET "genre_id" = $1
+      WHERE id = $2;
+      `;
+      pool.query(updatedDreamQuery, [req.body.genre_id, dreamID])
     })
     .then(result => {
-      console.log('DREAM PUT ROUTE AFTER GOING TO DB', result);
+      // console.log('DREAM PUT ROUTE AFTER GOING TO DB', result);
       res.sendStatus(201); //do 201 
     }).catch((error) => {
       console.log(error);
