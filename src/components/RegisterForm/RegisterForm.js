@@ -41,6 +41,8 @@ class RegisterForm extends Component {
   render() {
     return (
       <div>
+        <h1 className="app-name">The Dream App</h1>
+        <hr></hr>
         <h2 className="center-text">Create a username and password </h2>
       <form className="formPanel" onSubmit={this.registerUser}>
         <h2>Register User</h2>

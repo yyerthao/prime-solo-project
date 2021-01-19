@@ -99,8 +99,8 @@ Grid
     color: rgb(71, 71, 71);
     border-radius: 1rem;
     margin-bottom: 0.5rem;
-    	-webkit-text-stroke-width: 2.5px;
-    	-webkit-text-stroke-color:  rgba(255, 255, 255, 0.671);
+    	-webkit-text-stroke-width: 1px;
+    	-webkit-text-stroke-color:  rgba(255, 255, 255, 0.534);
   }
 
 .container-in-line{
@@ -108,7 +108,7 @@ Grid
 }
 
 .p-center-landing-text {
-    margin: 0 35rem;
+    margin: 2rem 35rem;
     text-align: justify;
     color: rgb(68, 65, 65);
 }

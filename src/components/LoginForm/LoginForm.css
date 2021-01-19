@@ -7,14 +7,13 @@
 } */
 
 .app-name {
-    font-family: 'IBM Plex Mono', monospace;
     font-size: 75px;
     text-shadow: 10px 10px 10px rgba(34, 34, 34, 0.479);
     color: rgb(71, 71, 71);
     border-radius: 1rem;
     margin-bottom: 0.5rem;
-    -webkit-text-stroke-width: 2.5px;
-    -webkit-text-stroke-color: rgba(255, 255, 255, 0.801);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(255, 255, 255, 0.534);
     text-align: center;
 }
 
