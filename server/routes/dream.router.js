@@ -58,7 +58,6 @@ router.post('/', rejectUnauthenticated, (req, res) => {
       pool.query(dreamGenreQuery, [createdDreamId, req.body.genre_id])
     })
     .then(result => {
-      console.log('DREAM POST ROUTE AFTER GOING TO DB', result);      
       res.sendStatus(201); //do 201 
     }).catch((error) => {
       console.log(error);
@@ -96,15 +95,16 @@ router.get('/:id', rejectUnauthenticated, (req, res) => {
 
 
 
-
 // ---------------------------- PUT route to update specific dream ----------------------------
-
 router.put('/:id', rejectUnauthenticated, (req, res) => {
-  console.log('This is the dream you are trying to update ROUTER: ', req.body);
-  console.log('This is the user\'s information:', req.user)
-  let id = req.body.id;
-  console.log('ID of the dream you are updating: ', req.body.id);
-  let sqlText =
+  console.log('ROUTER PUT: This is the dream you are trying to update ROUTER: ', req.body); // not coming through
+  console.log('ROUTER PUT: This is the user\'s information:', req.user) // OK 
+  let dreamID = req.params.id;
+  let userID = req.user.id;
+
+  console.log('ROUTER PUT: ID of the dream you are updating: ', dreamID);
+  console.log('ROUTER PUT: user ID:', userID);
+  let queryText =
     `UPDATE "dream" SET 
       "title" = $1, 
       "date" = $2, 
@@ -113,22 +113,27 @@ router.put('/:id', rejectUnauthenticated, (req, res) => {
       "user_id" = $5, 
       "genre_id" = $6 
       WHERE id = $7`;
-                      // OK THIS QUERY IS WORKING, tested it ON POSTMAN
+                                // OK THIS QUERY IS WORKING, tested it ON POSTMAN
   pool.query
-      (sqlText, 
-      [req.body.title, 
-      req.body.date, 
-      req.body.image, 
-      req.body.details,
-      req.body.user_id,
-      req.body.genre_id,
-      id])  
-    .then(() => res.sendStatus(201))
-    .catch((error) => {
-      console.log('$$$ ---------------- ERROR inside PUT route', error)
-      res.sendStatus(501)
-    });
-  });
+      (queryText, 
+      [
+      req.body.dreamDetails.title, 
+      req.body.dreamDetails.to_char,
+      req.body.dreamDetails.image,
+      req.body.dreamDetails.details,
+      userID,
+      req.body.dreamDetails.genre_id,
+      dreamID
+    ])
+     .then((result) => {
+         console.log('PUT This is the dream you\'ve updated: ', result.rows);
+         res.send(result.rows);
+       })
+       .catch((error) => {
+         console.log('Error inside PUT ID route:', error);
+         res.sendStatus(500);
+       });
+     });
 
 
 

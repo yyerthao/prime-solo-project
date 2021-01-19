@@ -46,10 +46,9 @@ const styles = theme => ({
 // component.
 
 class UpdateDream extends Component {
-  
+
 
     state = {
-      dreamID: '',
       title: '',
       to_char: '',
       image: '',
@@ -61,7 +60,6 @@ class UpdateDream extends Component {
 componentDidMount(){
   this.props.dispatch({type: 'FETCH_GENRE'});
   this.setState({
-    dreamID: this.props.store.update.id,
     title: this.props.store.update.title,
     to_char: this.props.store.update.to_char,
     image: this.props.store.update.image,
@@ -97,10 +95,9 @@ componentDidMount(){
 
 
 updateDream = (dreamID) => {
-  console.log('Updating dream', dreamID)
-  this.props.dispatch({type: 'UPDATE_DREAM',payload: {id: dreamID, state: this.state}});
+  console.log('DREAM ID to update:', dreamID)
+  this.props.dispatch({type: 'UPDATE_DREAM',payload: {id: dreamID, dreamDetails: this.state}});
   this.setState({
-      dreamID: '',
       title: '',
       date: '',
       image: '',
@@ -160,10 +157,8 @@ handleChange = (event, input) => {
                             defaultValue={update.details}
                               onChange={(event) => this.handleChange (event, 'details')}>
                             </textarea><br></br>
-                            {/* CHECKING ID of dream */}
-                            {JSON.stringify(update.id)}
-
-
+{/* CHECKING ID of dream */}
+{JSON.stringify(update.id)}
 
                   <div> 
                           <FormControl>

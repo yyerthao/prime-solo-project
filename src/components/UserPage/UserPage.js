@@ -3,7 +3,7 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import LogOutButton from '../LogOutButton/LogOutButton';
+// import LogOutBut/ton from '../LogOutButton/LogOutButton';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import '../UserPage/UserPage.css';
 // importing HashRouter,Router,Route, Link to utilize this.props.history.push
@@ -11,6 +11,7 @@ import '../UserPage/UserPage.css';
 // importing component AddDream from file
 // import AddDream from "../AddDream/AddDream";
 import '../UserPage/UserPage.css';
+import '../ViewDreams/ViewDreams';
 
 import Nav from '../Nav/Nav';
 import { withStyles } from '@material-ui/core/styles';
@@ -28,8 +29,6 @@ const styles = theme => ({
 
 
 class UserPage extends Component {
-  // this component doesn't do much to start, just renders some user info to the DOM
-
 
 
 addDream = () => {
@@ -58,7 +57,7 @@ viewDreams = () => {
             officia cumque minus repellendus, temporibus ad fugiat incidunt, consectetur assumenda 
             beatae rerum dignissimos numquam autem aliquid amet.
         </h3>
-        {/* Your ID is {this.props.store.user.id} */}
+
       {
         /*  ------------------------- TO DO -------------------------
         - [] LINK to add dream -> brings users to add dream view
@@ -67,20 +66,13 @@ viewDreams = () => {
         - [] STRETCH: time lapse video 
         - [] STRETCH: add a random quotes generator inside of here
       */}
+
+
         <div className="container center-text">
-
             <Button className="add-dream-btn" onClick={this.addDream}>Add Dream</Button>
-
               <span className="space-between-buttons"></span>
-
             <Button className="view-dream-btn" onClick={this.viewDreams}>View Dreams</Button>
 
-
-          {/* <Route exact path="/viewDreams" component={ViewDreams}></Route> */}
-
-
-
-          {/* <LogOutButton className="log-in center"/> */}
         </div>
       </div>
     );
