@@ -71,8 +71,8 @@ render(){
     return(
       <div>
         <Nav/>
+        <h1 className="center margin-bottom">Your Dreams</h1>
           <div className="center-div">
-
             <Grid container className={classes.root} spacing={10}>
               <Grid item xs={10} >
                 <Grid container className={classes.demo} justify="center" spacing={Number(spacing)}>
