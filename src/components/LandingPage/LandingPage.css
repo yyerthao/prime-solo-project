@@ -88,8 +88,8 @@ Grid
   text-align: center;
 }
 
-.center-landing-text{
-  margin: 2rem 32rem;
+.app-subheading {
+  margin: 2rem 28rem;
   text-align: justify;
 }
 
@@ -99,13 +99,13 @@ Grid
     color: rgb(71, 71, 71);
     border-radius: 1rem;
     margin-bottom: 0.5rem;
-    	-webkit-text-stroke-width: 1px;
-    	-webkit-text-stroke-color:  rgba(255, 255, 255, 0.534);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color:  rgba(255, 255, 255, 0.534);
   }
 
-.container-in-line{
+/* .container-in-line{
   display: inline;
-}
+} */
 
 .p-center-landing-text {
     margin: 2rem 35rem;
