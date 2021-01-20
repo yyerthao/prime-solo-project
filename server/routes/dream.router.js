@@ -24,7 +24,7 @@ const { rejectUnauthenticated,} = require('../modules/authentication-middleware'
 
 router.get('/', rejectUnauthenticated, (req, res) => {
 let sqlText =
-    `SELECT TO_CHAR(date, 'mm-dd-yyyy') as date, dream.title, dream.image, dream.details, genre.name, dream.id FROM "user"
+    `SELECT TO_CHAR(date, 'mm-dd-yyyy'), dream.title, dream.image, dream.details, genre.name, dream.id FROM "user"
     JOIN dream ON dream.user_id = "user".id
     JOIN genre ON genre.id = dream.genre_id
     WHERE "user".id = $1;`
