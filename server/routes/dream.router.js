@@ -24,7 +24,7 @@ const { rejectUnauthenticated,} = require('../modules/authentication-middleware'
 
 router.get('/', rejectUnauthenticated, (req, res) => {
 let sqlText =
-    `SELECT TO_CHAR(date, 'mm-dd-yyyy'), dream.title, dream.image, dream.details, genre.name, dream.id FROM "user"
+    `SELECT TO_CHAR(date, 'mm-dd-yyyy') as date, dream.title, dream.image, dream.details, genre.name, dream.id FROM "user"
     JOIN dream ON dream.user_id = "user".id
     JOIN genre ON genre.id = dream.genre_id
     WHERE "user".id = $1;`
@@ -51,7 +51,7 @@ router.post('/', rejectUnauthenticated, (req, res) => {
   pool.query(queryText, [req.body.title, req.body.date, req.body.image, req.body.details, id, req.body.genre_id])
       .then((result) => {
       console.log('RESULT: ', result)
-      const createdDreamId = result.rows[0].id
+      const createdDreamId = result.rows[0].id // dream_id 
       const dreamGenreQuery = `
         INSERT INTO "dream_genre" ("dream_id", "genre_id")
         VALUES  ($1, $2);`;
@@ -112,7 +112,8 @@ router.put('/:id', rejectUnauthenticated, (req, res) => {
       "details" = $4,
       "user_id" = $5, 
       "genre_id" = $6 
-      WHERE id = $7`;
+      WHERE id = $7
+      RETURNING dream.id;`;
                                 // OK THIS QUERY IS WORKING, tested it ON POSTMAN
   pool.query
       (queryText, 
@@ -126,17 +127,18 @@ router.put('/:id', rejectUnauthenticated, (req, res) => {
       dreamID
     ])
      .then((result) => {
-      console.log('RESULT: ', result)
-      // const updatedDreamID = result.rows[0].id
+      console.log('JUNCTION RESULT: ', result)
+      console.log('JUNCTION RESULT.ROWS: ', result.rows); //
+      // const createdDreamId = result.rows[0].id 
       const updatedDreamQuery = `
-      UPDATE "dream_genre"
-      SET "genre_id" = $1
-      WHERE id = $2;
-      `;
-      pool.query(updatedDreamQuery, [req.body.genre_id, dreamID])
+        UPDATE "dream_genre"
+        SET "genre_id" = $1
+        WHERE dream_id = $2;
+      `; // this query is working, tested it inside POSTICO
+      pool.query(updatedDreamQuery, [req.body.dreamDetails.genre_id, dreamID])
     })
     .then(result => {
-      // console.log('DREAM PUT ROUTE AFTER GOING TO DB', result);
+      console.log('DREAM PUT ROUTE AFTER GOING TO DB', result);
       res.sendStatus(201); //do 201 
     }).catch((error) => {
       console.log(error);

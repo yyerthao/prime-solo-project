@@ -2,7 +2,7 @@
 <!-- ![MIT LICENSE](https://img.shields.io/github/license/yyerthao/prime-solo-project.svg?style=flat-square) -->
 ![REPO SIZE](https://img.shields.io/github/repo-size/yyerthao/prime-solo-project.svg?style=flat-square)
 ![TOP_LANGUAGE](https://img.shields.io/github/languages/top/yyerthao/prime-solo-project.svg?style=flat-square)
-![FORKS](https://img.shields.io/github/forks/scottbromander/the_marketplace.svg?style=social)
+![FORKS](https://img.shields.io/github/forks/yyerthao/prime-solo-project.svg?style=social)
 
 # Solo Project
 
