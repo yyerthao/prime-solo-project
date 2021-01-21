@@ -40,10 +40,6 @@ const styles = theme => ({
   },
 });
 
-// Basic class component structure for React with default state
-// value setup. When making a new component be sure to replace
-// the component name TemplateClass with the name for the new
-// component.
 
 class UpdateDream extends Component {
 
@@ -58,15 +54,15 @@ class UpdateDream extends Component {
 
 
 componentDidMount(){
-  this.props.dispatch({type: 'FETCH_GENRE'});
+  this.props.dispatch({type: 'FETCH_GENRE'}); // grabs all genres from DB for dropdown menu
+  console.log('WOOT THERE IT IS')
   this.setState({
-    title: this.props.store.update.title,
-    to_char: this.props.store.update.to_char,
-    image: this.props.store.update.image,
-    details: this.props.store.update.details,
-    genre_id: '',
+    title: this.props.store.details[0].title,
+    to_char: this.props.store.details[0].to_char,
+    image: this.props.store.details[0].image,
+    details: this.props.store.details[0].details,
+    genre_id: this.props.store.details[0].genre_id,
     })
-
 }
 
  cancelSubmit = () => {
@@ -124,7 +120,11 @@ handleChange = (event, input) => {
     return (
       <div className="container">
         <UpdateDreamNav/>
-        {JSON.stringify(update)}
+        <p>THIS.STATE: {JSON.stringify(this.state)}</p>
+        {/*  */}
+        <p>details: {JSON.stringify(this.props.store.details)}</p>
+        <br></br>
+        
 {/* ------------------------------------------------- INPUT FIELDS ------------------------------------------------------------------ */ }
           <div className="form-control-start">
             <FormControl>
@@ -134,17 +134,17 @@ handleChange = (event, input) => {
                     {/* <div key={i}> */}
                         <TextField 
                           placeholder={this.state.title}
-                          defaultValue={update.title}
+                          value={this.state.title}
                           onChange={(event) => this.handleChange(event, 'title')}>
                         </TextField>
                         <TextField 
                             placeholder={this.state.to_char}
-                              defaultValue={update.to_char}
+                              value={this.state.to_char}
                               onChange={(event) => this.handleChange(event, 'to_char')}>
                         </TextField>
                         <TextField 
                             placeholder={this.state.image}
-                              defaultValue={update.image}
+                              value={this.state.image}
                             onChange={(event) => this.handleChange(event, 'image')}>
                         </TextField><br></br>
                         <textarea
@@ -154,11 +154,10 @@ handleChange = (event, input) => {
                           className="dream-input-box" 
                         type="text" 
                           placeholder={this.state.details}
-                            defaultValue={update.details}
+                            value={this.state.details}
                               onChange={(event) => this.handleChange (event, 'details')}>
                             </textarea><br></br>
-{/* CHECKING ID of dream */}
-{JSON.stringify(update.id)}
+
 
                   <div> 
                           <FormControl>

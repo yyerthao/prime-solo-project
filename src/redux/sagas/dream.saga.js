@@ -2,7 +2,7 @@ import {put, takeLatest} from 'redux-saga/effects';
 import axios from 'axios';
 
 
-
+// gets all dreams
 function* getDream() {
     console.log('Fetching dream from DB working OK');
     try{
