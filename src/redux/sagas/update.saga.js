@@ -33,30 +33,10 @@ function* updateDream(action) {
 }
 
 
-// ---------------------------------- DELETING NEW DREAM 
-
-function* getDreamToDelete(action) {
-    console.log('Deleting dream from user', action);
-    try {
-        yield axios.delete(`/api/dream/${action.payload.id}`, action.payload);
-        console.log('SAGA DELETE dream', action);
-        console.log('SAGA DELETE dream', action.payload);
-        yield put({
-            type: 'DREAMS_AFTER_DELETE'
-        });
-    } catch (error) {
-        console.log('DELETE ROUTE error', error);
-    }
-}
-
-
-
-
 function* genre() {
     yield takeLatest('GET_NEW_DREAM', getDreamToUpdate);
     yield takeLatest('UPDATE_DREAM', updateDream);
     // getting dream to delete with saga function below
-    yield takeLatest('DELETE_DREAM', getDreamToDelete)
 
 }
 

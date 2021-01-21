@@ -5,6 +5,7 @@ import dream from './dream.reducer';
 import genre from './genre.reducer';
 import details from './details.reducer';
 import update from './update.reducer';
+import afterDelete from './afterDelete.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -18,7 +19,8 @@ const rootReducer = combineReducers({
   dream, // accesses dreams from DB "dream" table
   genre, // accesses genre ids from DB "genre" table
   details,
-  update
+  update,
+  afterDelete
 });
 
 export default rootReducer;
