@@ -175,14 +175,14 @@ handleChange = (event, input) => {
                           </FormControl>
                     </div>
                               <Button
-                                variant="contained"
+                                // variant="contained"
                                 color="secondary"
                                 className="update-button"
                                 onClick={this.cancelSubmit}>
                                   Cancel
                               </Button>
                               <Button
-                                  variant="contained"
+                                  // variant="contained"
                                   color="primary"
                                   className="update-button" 
                                 onClick={()=>this.updateDream(update.id)}>

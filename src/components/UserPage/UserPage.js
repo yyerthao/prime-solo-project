@@ -14,7 +14,7 @@ import '../UserPage/UserPage.css';
 import '../ViewDreams/ViewDreams';
 import Quotes from '../Quotes/Quotes';
 
-import Nav from '../Nav/Nav';
+import NavUser from '../NavUser/NavUser';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 
@@ -48,7 +48,7 @@ viewDreams = () => {
   render() {
     return (
       <div>
-        <Nav/>
+        <NavUser/>
         <h2 className="center-text " id="welcome">{this.props.store.user.username}! a quote to brighten your day.</h2>
         <br></br>
           <Quotes/>

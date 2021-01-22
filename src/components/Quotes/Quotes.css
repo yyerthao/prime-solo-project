@@ -5,8 +5,7 @@
 }
 
 p, .quote{
-    display: justify;
-    text-align: center;
-    margin: 0 10rem;
+    text-align: justify;
+    margin: 0 13rem;
 }
 

@@ -84,15 +84,11 @@ Styling:
 
 
 
-----------------------------------------------------------------------------------------------------
----------------------------------------- ### Tuesday 1-19-2021 ------------------------------------
-- [] DELETE ROUTE 
-- [] PUT ROUTE KIND OF WORKING
 
 
 
 
-<!-- SUPER IMPORT TO READ ON WEDNESDAY -->
+<!------------------------------------ SUPER IMPORT TO READ ON WEDNESDAY ------------------------------------>
 COME BACK TO READ ME FOR NEXT DAY ASSIGNMENT!
-- [] PUT ROUTE, almost done, need to update junction table so genre ID changes
-- [] DELETE ROUTE, read the document Mary sent you!
+- [x] PUT ROUTE, almost done, need to update junction table so genre ID changes
+- [x] DELETE ROUTE, read the document Mary sent you!

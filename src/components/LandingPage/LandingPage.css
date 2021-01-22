@@ -103,10 +103,6 @@ Grid
     -webkit-text-stroke-color:  rgb(255, 255, 255);
   }
 
-/* .container-in-line{
-  display: inline;
-} */
-
 .p-center-landing-text {
     margin: 2rem 35rem;
     text-align: justify;
@@ -124,6 +120,12 @@ hr {
 
 .space-between-buttons{
   margin: 2rem 5rem;
+}
+
+.landing-text-justified{
+  margin: 0 25rem;
+  margin-bottom: 2rem;
+  text-align: justify;
 }
 
 
