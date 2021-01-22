@@ -11,10 +11,16 @@ import '../AboutPage/AboutPage.css';
 const AboutPage = () => (
   <div>
     <Nav/>
-      <div className="about-page-container">
-        <p>
+      <div className="about-page-container center">
+        <p className="about-page-justified">
           Every writer who has been diagnosed with writer's block, knows how painful it can be.
-          This diagnosis strikes aggressively, and often. The Dream Catcher application 
+          It strikes aggressively, and often. The Dream App allows a solution for writers to store  
+          and manage their dreams. 
+          <br></br>
+          <br></br>
+          Dreams, in true form, are our mind's interpretations of things we have may  
+          encountered well and up front in our wake state, or things we merely brushed while en route 
+          somewhere. 
         </p>
 
 

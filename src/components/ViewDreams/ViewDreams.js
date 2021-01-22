@@ -69,9 +69,9 @@ render(){
           const { spacing } = this.state;
 
     return(
-      <div>
+      <div className="center">
         <Nav/>
-          <div className="center-div">
+          <div className="center-div center">
             <Grid container className={classes.root} spacing={10}>
               <Grid item xs={10} >
                 <Grid container className="center" justify="center" spacing={Number(spacing)}>
@@ -86,7 +86,7 @@ render(){
           {dream.map((dream, i) => {
                 return (
 
-             <div className="card-layout" key={i}>     
+             <div className="card-layout center" key={i}>     
               <Card className={classes.card}>
                   <CardActionArea>
                     <CardMedia

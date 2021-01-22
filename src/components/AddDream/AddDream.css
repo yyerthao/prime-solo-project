@@ -49,7 +49,7 @@
 .form-control-start{
   display: flex;
   justify-content: center;
-  margin-top: 2rem;
+  padding-top: 40px;
 }
 
 

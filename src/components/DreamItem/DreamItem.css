@@ -1,5 +1,9 @@
-/* .center-div {
-    margin: 3rem 33%;
+/* .background-photo {
+background: url(color-block.jpg) no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
 } */
 
 hr {
@@ -12,7 +16,8 @@ hr {
 }
 
 .dream-container{
-  margin: 0 0 30px;
+  margin: 0 0 30rem;
+  text-align: justify;
 }
 
 .space-between-buttons{
@@ -21,4 +26,13 @@ margin: 1rem 8rem;
 
 .margin-bottom{
   margin-bottom: 2rem;
+}
+
+p{
+  text-align: justify;
+  margin: 0 10rem;
+}
+
+.margin-text{
+  margin: 0 7rem;
 }

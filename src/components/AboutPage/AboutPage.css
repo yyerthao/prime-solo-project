@@ -1,8 +1,6 @@
 .about-page-container {
-  /* display: flex; */
-  /* justify-content: center; */
-  text-align: center;
-  margin: 2rem 25rem;
+  margin: 0 20rem;
+  padding-top: 40px;
   border-radius: 0.1rem;
 }
 
@@ -12,4 +10,9 @@ h1{
 
 p{
   padding: 0;
+  color: rgb(95, 93, 93);
 }
+
+ .about-page-justified {
+    text-align: justify;
+  }

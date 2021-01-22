@@ -62,10 +62,10 @@ class DreamItem extends Component {
         {/* {JSON.stringify(details)} */}
           
           {/* ---------------------------------------------  */}
-        <div className="center center-div">
+        <div className="center center-div ">
         {details.map((details, i) => {
           return (
-          <div key={i}>
+          <div className="margin-text" key={i}>
               <h1>{details.title}</h1>
               <h3>{details.to_char}</h3>
               <img src={details.image} alt="Dream"></img>
