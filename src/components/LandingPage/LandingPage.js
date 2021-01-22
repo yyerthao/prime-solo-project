@@ -37,11 +37,9 @@ class LandingPage extends Component {
   render() {
     return (
       <div className="center">
-        <h1 className ="app-name"> Le Dream App </h1>
+        <h1 className ="app-name">The Dream Catcher</h1>
           <hr></hr>
               <h4 className="app-subheading">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.Alias molestias totam ex reprehenderit, officia cumque minus repellendus, temporibus ad fugiat incidunt, consectetur assumenda beatae rerum dignissimos numquam autem aliquid amet.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.Alias molestias totam ex reprehenderit, officia cumque minus repellendus, temporibus ad fugiat incidunt, consectetur assumenda beatae rerum dignissimos numquam autem aliquid amet.
               </h4>
             <br></br>
 

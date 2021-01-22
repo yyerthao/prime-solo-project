@@ -23,6 +23,7 @@ import AddDream from '../AddDream/AddDream';
 import ViewDreams from '../ViewDreams/ViewDreams';
 import DreamItem from '../DreamItem/DreamItem';
 import UpdateDream from '../UpdateDream/UpdateDream';
+import Quotes from '../Quotes/Quotes';
 
 import './App.css';
 
@@ -126,6 +127,12 @@ class App extends Component {
             exact
             path="/updateDream"
             component={UpdateDream}
+          />
+
+            <ProtectedRoute
+            // logged in shows UserPage else shows LoginPage
+            exact
+            component={Quotes}
           />
 
 

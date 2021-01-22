@@ -12,6 +12,7 @@ import '../UserPage/UserPage.css';
 // import AddDream from "../AddDream/AddDream";
 import '../UserPage/UserPage.css';
 import '../ViewDreams/ViewDreams';
+import Quotes from '../Quotes/Quotes';
 
 import Nav from '../Nav/Nav';
 import { withStyles } from '@material-ui/core/styles';
@@ -48,7 +49,8 @@ viewDreams = () => {
     return (
       <div>
         <Nav/>
-        <h2 className="center-text" id="welcome">Hello, {this.props.store.user.username}!</h2>
+        <h2 className="center-text " id="welcome">Hello, {this.props.store.user.username}!</h2>
+          <Quotes/>
         <h4 className="justified-text">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.Alias molestias totam ex 
             reprehenderit, officia cumque minus repellendus, temporibus ad fugiat incidunt, 

@@ -1,5 +1,5 @@
 .center-div{
-    margin: 3rem 33%;
+    margin: 0 10rem;
 }
 
 img{
@@ -23,3 +23,14 @@ img{
     position: inline-block;
 }
 
+.MuiGrid-root, .MuiGrid-item {
+    padding: 0;
+}
+
+.space-between-buttons {
+    margin: 1rem 8rem;
+}
+
+.update-button{
+    width: 5rem;
+}

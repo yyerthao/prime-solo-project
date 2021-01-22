@@ -120,10 +120,7 @@ handleChange = (event, input) => {
     return (
       <div className="container">
         <UpdateDreamNav/>
-        <p>THIS.STATE: {JSON.stringify(this.state)}</p>
-        {/*  */}
-        <p>details: {JSON.stringify(this.props.store.details)}</p>
-        <br></br>
+        
         
 {/* ------------------------------------------------- INPUT FIELDS ------------------------------------------------------------------ */ }
           <div className="form-control-start">
@@ -180,20 +177,18 @@ handleChange = (event, input) => {
                               <Button
                                 variant="contained"
                                 color="secondary"
-                                // className={classes.button}
+                                className="update-button"
                                 onClick={this.cancelSubmit}>
                                   Cancel
                               </Button>
-
-                              <span className="space-between-buttons"></span>    
-                              
                               <Button
-                                variant="contained"
-                                color="primary" 
-                                // className={classes.button}
+                                  variant="contained"
+                                  color="primary"
+                                  className="update-button" 
                                 onClick={()=>this.updateDream(update.id)}>
                                   Update
                               </Button>
+                              
                           </FormControl>
                         // </div> 
                          )})
