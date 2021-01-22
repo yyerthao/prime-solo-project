@@ -36,7 +36,6 @@ function* updateDream(action) {
 function* genre() {
     yield takeLatest('GET_NEW_DREAM', getDreamToUpdate);
     yield takeLatest('UPDATE_DREAM', updateDream);
-    // getting dream to delete with saga function below
 
 }
 
