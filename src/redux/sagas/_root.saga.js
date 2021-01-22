@@ -5,6 +5,7 @@ import userSaga from './user.saga';
 import dream from './dream.saga';
 import genre from './genre.saga';
 import update from './update.saga';
+import deleteDream from './deleteDream.saga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -21,5 +22,6 @@ export default function* rootSaga() {
     dream(),
     genre(),
     update(),
+    deleteDream()
   ]);
 }

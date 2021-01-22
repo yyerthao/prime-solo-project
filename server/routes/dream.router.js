@@ -81,7 +81,7 @@ router.get('/:id', rejectUnauthenticated, (req, res) => {
     
   pool.query(queryText, [id])
     .then((result) => {
-    console.log('POST This is the dream you\'ve selected: ', result.rows);
+    // console.log('GET This is the dream you\'ve selected: ', result.rows); // WORKING
     res.send(result.rows);
   })
     .catch((error) => {
@@ -160,49 +160,63 @@ router.put('/:id', rejectUnauthenticated, (req, res) => {
 
 // ---------------------------- DELETE route to delete specific dream ----------------------------
 
-router.put('/:id', rejectUnauthenticated, (req, res) => {
-  console.log('ROUTER DELETE: This is the dream you are trying to delete: ', req.body); // not coming through
-  console.log('ROUTER DELETE: This is the user\'s information:', req.user) // OK 
-  let dreamID = req.params.id;
-  let userID = req.user.id;
+// router.delete('/:id', rejectUnauthenticated, (req, res) => {
+//   console.log('ROUTER DELETE: This is the dream you are trying to delete: ', req.body); // not coming through
+//   console.log('ROUTER DELETE: This is the user\'s information:', req.user) // OK 
+//   let dreamID = req.params.id;
+//   let userID = req.user.id;
 
-  console.log('ROUTER DELETE: ID of the dream you are updating: ', dreamID);
-  console.log('ROUTER DELETE: user ID:', userID);
-  let queryText =
-    `DELETE FROM "dream"
-    WHERE id = $1;`;
-  // OK THIS QUERY IS WORKING, tested it ON POSTMAN
-  pool.query(queryText,
-      [
-        req.body.dreamDetails.title,
-        req.body.dreamDetails.to_char,
-        req.body.dreamDetails.image,
-        req.body.dreamDetails.details,
-        userID,
-        req.body.dreamDetails.genre_id,
-        dreamID
-      ])
-    .then((result) => {
-      console.log('JUNCTION RESULT: ', result)
-      console.log('JUNCTION RESULT.ROWS: ', result.rows); //
-      // const createdDreamId = result.rows[0].id 
-      const updatedDreamQuery = `
-        UPDATE "dream_genre"
-        SET "genre_id" = $1
-        WHERE dream_id = $2;
-      `; // this query is working, tested it inside POSTICO
-      pool.query(updatedDreamQuery, [req.body.dreamDetails.genre_id, dreamID])
+//   console.log('ROUTER DELETE: ID of the dream you are updating: ', dreamID);
+//   console.log('ROUTER DELETE: user ID:', userID);
+//   let queryText =
+//     `DELETE FROM "dream"
+//     WHERE id = $1;`;
+//   // OK THIS QUERY IS WORKING, tested it ON POSTMAN
+//   pool.query(queryText,
+//       [
+//         req.body.dreamDetails.title,
+//         req.body.dreamDetails.to_char,
+//         req.body.dreamDetails.image,
+//         req.body.dreamDetails.details,
+//         userID,
+//         req.body.dreamDetails.genre_id,
+//         dreamID
+//       ])
+//     .then((result) => {
+//       console.log('JUNCTION RESULT: ', result)
+//       console.log('JUNCTION RESULT.ROWS: ', result.rows); //
+//       // const createdDreamId = result.rows[0].id 
+//       const updatedDreamQuery = `
+//         UPDATE "dream_genre"
+//         SET "genre_id" = $1
+//         WHERE dream_id = $2;
+//       `; // this query is working, tested it inside POSTICO
+//       pool.query(updatedDreamQuery, [req.body.dreamDetails.genre_id, dreamID])
+//     })
+//     .then(result => {
+//       console.log('DREAM UPDATED AND BACK FROM DB');
+//       res.sendStatus(201); //do 201 
+//     }).catch((error) => {
+//       console.log(error);
+//       res.sendStatus(500);
+//     });
+// });
+
+
+
+router.delete('/:id', rejectUnauthenticated, (req, res) => {
+  let id = req.params.id
+  console.log('ID of dream to delete', id);
+  const sqlText = 'DELETE FROM "dream" WHERE id=$1';
+  pool.query(sqlText, [id])
+    .then(() => {
+      res.sendStatus(200);
     })
-    .then(result => {
-      console.log('DREAM UPDATED AND BACK FROM DB');
-      res.sendStatus(201); //do 201 
-    }).catch((error) => {
-      console.log(error);
+    .catch((err) => {
+      console.log('Error completing DELETE query', err);
       res.sendStatus(500);
     });
 });
-
-
 
 
 
