@@ -49,17 +49,17 @@ viewDreams = () => {
     return (
       <div>
         <NavUser/>
-        <h2 className="center-text " id="welcome">{this.props.store.user.username}! a quote to brighten your day.</h2>
         <br></br>
-          <Quotes/>
-        {/* <h4 className="justified-text">
+        <h4 className="justified-text">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.Alias molestias totam ex 
             reprehenderit, officia cumque minus repellendus, temporibus ad fugiat incidunt, 
             consectetur assumenda beatae rerum dignissimos numquam autem aliquid amet. Lorem 
             ipsum dolor sit amet consectetur adipisicing elit.Alias molestias totam ex reprehenderit, 
             officia cumque minus repellendus, temporibus ad fugiat incidunt, consectetur assumenda 
             beatae rerum dignissimos numquam autem aliquid amet.
-        </h4> */}
+        {/* <h2 className="center-text " id="welcome">{this.props.store.user.username}! a quote to brighten your day.</h2> */}
+        </h4>
+          <Quotes/>
 
       {
         /*  ------------------------- TO DO -------------------------

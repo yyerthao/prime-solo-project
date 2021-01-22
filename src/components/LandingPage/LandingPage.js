@@ -35,10 +35,7 @@ class LandingPage extends Component {
       <div className="center">
         <h1 className ="app-name">The Dream App</h1>
           <hr></hr>
-              <h4 className="app-subheading">
-              </h4>
-            <br></br>
-                    <p className="center landing-text-justified">
+                    <p className = "grid-col_6 center landing-text-justified" >
                         Every writer who has been diagnosed with writer's block, knows how distressing it can be.
                         It strikes aggressively, often, and sometimes never truly leaves. The Dream App allows a solution 
                         to this.

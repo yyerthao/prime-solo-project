@@ -23,9 +23,6 @@ img{
     position: inline-block;
 }
 
-.MuiGrid-root, .MuiGrid-item {
-    padding: 0;
-}
 
 .space-between-buttons {
     margin: 1rem 8rem;

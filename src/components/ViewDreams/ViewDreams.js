@@ -74,7 +74,7 @@ render(){
           <div className="center-div center">
             <Grid container className={classes.root} spacing={10}>
               <Grid item xs={10} >
-                <Grid container className="center" justify="center" spacing={Number(spacing)}>
+                <Grid container className="center" spacing={Number(spacing)}>
                   {[0, 1, 2].map(value => (
                     <Grid key={value} item>
                       <Paper className="center"/>
