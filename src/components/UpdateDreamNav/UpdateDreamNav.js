@@ -35,9 +35,9 @@ const Nav = (props) => {
               || Add Dream ||
             </Link>
             <Link className="nav-link" to="/viewDreams">
-              View Dreams ||
+              View Dreams
             </Link>
-            <LogOutButton className="nav-link" />
+            {/* <LogOutButton className="nav-link" /> */}
           </>
         )}
         {/* Always show this link since the about page is not protected */}

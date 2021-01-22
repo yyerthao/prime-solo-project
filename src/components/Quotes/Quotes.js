@@ -58,7 +58,7 @@ componentDidMount() {
  render() {
       const { quote, author } = this.state //Destructuring
       return (
-         <div className="center quote-text">
+         <div className="center quote-text box">
             <div id='quote-box'>
                <div className="center quote-text" id='text'><p>{quote}</p></div>
                <div id='author'><h5>{author}</h5></div>

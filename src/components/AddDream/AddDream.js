@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-import Nav from '../Nav/Nav';
+import UpdateDreamNav from '../UpdateDreamNav/UpdateDreamNav';
 import '../AddDream/AddDream.css';
 import Swal from 'sweetalert2';
 
@@ -120,7 +120,7 @@ handleChange = (event, input) => {
   render() {
     return (
       <div className="container">
-        <Nav/>
+        <UpdateDreamNav/>
 {/* ------------------------------------------------- INPUT FIELDS ------------------------------------------------------------------ */ }
         <div className="form-control-start">
         <FormControl>

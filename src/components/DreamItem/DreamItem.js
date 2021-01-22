@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-import Nav from '../Nav/Nav';
+import UpdateDreamNav from '../UpdateDreamNav/UpdateDreamNav';
 import Swal from 'sweetalert2';
 
 import { withStyles } from '@material-ui/core/styles';
@@ -58,7 +58,7 @@ class DreamItem extends Component {
         const {details} = this.props.store;
     return (
       <div>
-        <Nav/>
+        <UpdateDreamNav/>
         {/* {JSON.stringify(details)} */}
           
           {/* ---------------------------------------------  */}
