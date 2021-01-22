@@ -25,9 +25,9 @@ import DreamItem from '../DreamItem/DreamItem';
 import UpdateDream from '../UpdateDream/UpdateDream';
 import Quotes from '../Quotes/Quotes';
 
-import './App.css';
+import './TheDreamApp.css';
 
-class App extends Component {
+class TheDreamApp extends Component {
   componentDidMount() {
     this.props.dispatch({ type: 'FETCH_USER' });
   }
@@ -148,4 +148,4 @@ class App extends Component {
   }
 }
 
-export default connect()(App);
+export default connect()(TheDreamApp);

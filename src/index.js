@@ -8,7 +8,7 @@ import logger from 'redux-logger';
 import rootReducer from './redux/reducers/_root.reducer'; // imports ./redux/reducers/index.js
 import rootSaga from './redux/sagas/_root.saga'; // imports ./redux/sagas/index.js
 
-import App from './components/App/App';
+import TheDreamApp from './components/TheDreamApp/TheDreamApp';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -33,7 +33,7 @@ sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <TheDreamApp />
   </Provider>,
   document.getElementById('react-root'),
 );
