@@ -1,12 +1,12 @@
 .justified-text{
-    margin: 2rem 28rem;
     text-align: justify;
     color: rgb(68, 65, 65);
 
 }
 
-.quote-text{
-    text-align: justify;
+p, .quote{
+    display: justify;
+    text-align: center;
     margin: 0 10rem;
 }
 

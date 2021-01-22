@@ -58,16 +58,11 @@ componentDidMount() {
  render() {
       const { quote, author } = this.state //Destructuring
       return (
-         <div className="center quote-text box">
-            <div id='quote-box'>
-               <div className="center quote-text" id='text'><p>{quote}</p></div>
-               <div id='author'><h5>{author}</h5></div>
-
-               <div>
-                  <a href={`https://twitter.com/intent/tweet?text=${quote} ${author}`} target='_blank' rel="noopener noreferrer" title="Post this quote on twitter!"><style>font-size: 0</style></a>
+         <div className="center quote">
+               <p className="center quote">{quote}</p>
+                  <h5>{author}</h5>
+                  <a href={`https://twitter.com/intent/tweet?text=${quote} ${author}`} target='_blank' rel="noopener noreferrer" title="Twitter random quote generator"><style>font-size: 0</style></a>
                   {/* <Button variant="contained" onClick={this.getNewQuote}>Give Me A New Quote</Button> */}
-               </div>
-            </div>
          </div>
       )
    }

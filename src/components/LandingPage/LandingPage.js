@@ -3,12 +3,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-
-
+import Quotes from '../Quotes/Quotes';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-
 import './LandingPage.css';
+
+
+
 
 
 
@@ -18,13 +19,9 @@ const styles = theme => ({
   },
 });
 
-// CUSTOM COMPONENTS
 
 class LandingPage extends Component {
-  state = {
-    heading: '',
-    // heading: 'Class Component',
-  };
+
 
   onLogin = (event) => {
     this.props.history.push('/login');
@@ -42,6 +39,7 @@ class LandingPage extends Component {
               <h4 className="app-subheading">
               </h4>
             <br></br>
+              <Quotes/>
 
               <Button variant="contained" onClick={this.onLogin}>
                   Log In
@@ -50,6 +48,7 @@ class LandingPage extends Component {
               <Button variant="contained" onClick={this.onRegister}>
                   Register
               </Button>
+              <br></br>
 
 {/* ---------------------------------------------------------------------------------- */}
           {/* <div className="grid-col grid-col_8"> */}
