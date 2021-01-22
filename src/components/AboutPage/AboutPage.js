@@ -12,34 +12,10 @@ const AboutPage = () => (
   <div>
     <Nav/>
       <div className="about-page-container">
-        <h1>About</h1>
         <p>
-          The human mind always ticks. 
+          Every writer who has been diagnosed with writer's block, knows how painful it can be.
+          This diagnosis strikes aggressively, and often. The Dream Catcher application 
         </p>
-        <p>
-          It interprets things in our wake and while we sleep. 
-          This process is called dreaming. 
-        </p>
-        <p>
-          And while we sleep in our slumbers, our mind wanders, interprets
-        </p>
-        <p>
-          things we may have 
-          
-        </p>
-        <p>
-          
-        </p>
-        <p>
-          
-        </p>
-        <p>
-          
-        </p>
-        <p>
-          
-        </p>
-        <br></br>
 
 
     </div>

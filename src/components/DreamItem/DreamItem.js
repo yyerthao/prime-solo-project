@@ -17,12 +17,6 @@ const styles = theme => ({
 
 
 
-
-
-// Basic class component structure for React with default state
-// value setup. When making a new component be sure to replace
-// the component name TemplateClass with the name for the new
-// component.
 class DreamItem extends Component {
 
  
@@ -65,18 +59,18 @@ class DreamItem extends Component {
     return (
       <div>
         <Nav/>
-        {JSON.stringify(details)}
+        {/* {JSON.stringify(details)} */}
           
           {/* ---------------------------------------------  */}
-        <div className="center-div">
+        <div className="center center-div">
         {details.map((details, i) => {
           return (
           <div key={i}>
-              <h2>Title: {details.title}</h2>
-              <h5>Date: {details.to_char}</h5>
+              <h1>{details.title}</h1>
+              <h3>{details.to_char}</h3>
               <img src={details.image} alt="Dream"></img>
-              <h5>Genre: {details.name}</h5>
-              <p>{details.details}</p>
+              <h3>Genre: {details.name}</h3>
+              <p className="center-div margin-bottom">{details.details}</p>
                   <Button
                       variant="contained"
                       color="secondary" 
@@ -92,9 +86,6 @@ class DreamItem extends Component {
               )
             })}
 
-  
-
-          {/* {JSON.stringify(details)} */}
           <br></br>
 
         </div>

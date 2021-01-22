@@ -2,30 +2,6 @@ import {takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
 
 
-// function* dreamsAfterDelete() {
-//     console.log('Fetching dream from DB working OK');
-//     try {
-//         const response = yield axios.get('/api/dream')
-//         yield put({
-//             type: 'AFTER_DELETE_DREAMS',
-//             payload: response.data
-//         })
-//     } catch (error) {
-//         console.log('error with dream fetch request', error);
-//     }
-// }
-
-// function* getDreamToDelete(action) { // action = ID of dream to delete from DB
-//   console.log('ACTION.PAYLOAD: ', action.payload); // ID of dream to delete, just testing here
-//   try {
-//     yield axios.delete('/api/dream', action.payload); // api/dream 
-//     yield dreamsAfterDelete(); // this will set dream again 
-//   } catch (error) {
-//     console.error('Error with deleting dream data in saga', error);
-//   }
-// }
-
-
 
 
 // ---------------------------------- DELETING :: DELETING NEW DREAM 
@@ -38,9 +14,6 @@ function* getDreamToDelete(action) { //action = ID of dream to delete
         console.log('DELETE ROUTE error', error);
     }
 }
-
-
-
 
 
 

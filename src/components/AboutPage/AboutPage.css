@@ -2,9 +2,8 @@
   /* display: flex; */
   /* justify-content: center; */
   text-align: center;
-  margin: 2rem 20rem;
-  border-radius: 0.3rem;
-  background: rgba(255, 255, 255, 0.527);
+  margin: 2rem 25rem;
+  border-radius: 0.1rem;
 }
 
 h1{
