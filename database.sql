@@ -4,6 +4,7 @@
 -- ex. SELECT * FROM "user";
 -- Otherwise you will have errors!
 
+
 ----------------------------------------------------------------------
 ------------------------------- TABLES -------------------------------
 
@@ -27,14 +28,14 @@ CREATE TABLE "dream" (
   	"image"  VARCHAR(1000),
 	"details" TEXT,
 	"user_id" INT REFERENCES "user",
-	"genre_id" INT REFERENCES "genre"
+	"genre_id" INT REFERENCES "genre" ON DELETE CASCADE
 );
 
 
 CREATE TABLE "dream_genre" (
 	"id" SERIAL PRIMARY KEY,
-	"dream_id" INT REFERENCES "dream",
-	"genre_id" INT REFERENCES "genre"
+	"dream_id" INT REFERENCES "dream" ON DELETE CASCADE,
+	"genre_id" INT REFERENCES "genre" ON DELETE CASCADE	
 );
 
 
@@ -42,6 +43,24 @@ CREATE TABLE "dream_genre" (
 
 ----------------------------------------------------------------------
 ------------------------------- INSERTS -------------------------------
+
+-- user
+INSERT INTO "public"."user"("username", "password") 
+VALUES('winston', '$2a$10$iUtHAJ9xfQEUHatMeZJrHuCoZ7t8hQ/sN67YcnqCtcRaP1z93TvpS');
+
+
+-- genre
+INSERT INTO "genre" ("id", "name") VALUES ('1', 'Happy');
+INSERT INTO "genre" ("id", "name") VALUES ('2', 'Sad');
+INSERT INTO "genre" ("id", "name") VALUES ('3', 'Scary');
+INSERT INTO "genre" ("id", "name") VALUES ('4', 'Funny');
+INSERT INTO "genre" ("id", "name") VALUES ('5', 'Weird');
+INSERT INTO "genre" ("id", "name") VALUES ('6', 'Adventure');
+INSERT INTO "genre" ("id", "name") VALUES ('7', 'Defied Gravity');
+INSERT INTO "genre" ("id", "name") VALUES ('8', 'Time travel');
+INSERT INTO "genre" ("id", "name") VALUES ('9', 'Late to high school');
+INSERT INTO "genre" ("id", "name") VALUES ('10', 'Regular late');
+
 
 -- dream
 INSERT INTO "dream" (title, date, image, details, user_id, genre_id)
@@ -58,26 +77,14 @@ INSERT INTO "dream" (title, date, image, details, user_id, genre_id)
 VALUES ('Scary Stories', '04-09-2018', 'https://pyxis.nymag.com/v1/imgs/ec9/989/f972cf762131d519bc0b10676a1e5ac964-05-scary-stories-to-tell-in-the-dark-led.rsocial.w1200.jpg', 'Dreamt about my favorite series of scary stories growing up and I was actually in one of them. I ran from the ghost but I was not able to move anywhere at all.', 1, 3);
 
 
--- genre
-INSERT INTO "genre" ("id", "name") VALUES ('1', 'Happy');
-INSERT INTO "genre" ("id", "name") VALUES ('2', 'Sad');
-INSERT INTO "genre" ("id", "name") VALUES ('3', 'Scary');
-INSERT INTO "genre" ("id", "name") VALUES ('4', 'Funny');
-INSERT INTO "genre" ("id", "name") VALUES ('5', 'Weird');
-INSERT INTO "genre" ("id", "name") VALUES ('6', 'Adventure');
-INSERT INTO "genre" ("id", "name") VALUES ('7', 'Defied Gravity');
-INSERT INTO "genre" ("id", "name") VALUES ('8', 'Time travel');
-INSERT INTO "genre" ("id", "name") VALUES ('9', 'Late to high school');
-INSERT INTO "genre" ("id", "name") VALUES ('10', 'Regular late');
-
 
 -- dream_genre
-INSERT INTO "dream_genre" ("dream_id", "genre_id") VALUES (3, 1);
-INSERT INTO "dream_genre" ("dream_id", "genre_id") VALUES (4, 2);
-INSERT INTO "dream_genre" ("dream_id", "genre_id") VALUES (5, 3);
+INSERT INTO "dream_genre" ("dream_id", "genre_id") VALUES (2, 1);
+
 
 ----------------------------------------------------------------------
 ------------------------------- SELECTS ------------------------------
+
 
 SELECT * FROM "user";
 SELECT * FROM "genre";
@@ -91,6 +98,8 @@ SELECT TO_CHAR(date, 'mm-dd-yyyy') AS date, dream.title, dream.image, dream.deta
 	JOIN genre ON genre.id = dream.genre_id
 	WHERE "user".id = 1;
 	
+	
+	
 
 -- Works to retrieve specific dream by dream ID
 SELECT TO_CHAR(date, 'mm-dd-yyyy'), dream.title, dream.image, dream.details, genre.name, dream.id FROM dream_genre
@@ -98,12 +107,22 @@ SELECT TO_CHAR(date, 'mm-dd-yyyy'), dream.title, dream.image, dream.details, gen
     JOIN genre ON dream_genre.genre_id = genre.id
     WHERE dream.id = 3;
     
+    
+    
+    SELECT TO_CHAR(date, 'mm-dd-yyyy'), dream.title, dream.image, dream.details, genre.name, dream.id FROM dream
+    JOIN genre on dream.genre_id = genre.id
+    WHERE dream.id = 20;
+    
 
 ----------------------------------------------------------------------
 ------------------------------- UPDATES ------------------------------
 
 UPDATE "dream_genre" SET 
-      "genre_id" = 5
-      WHERE dream_id = 14; -- id is the id of the dream_genre table id ... 
+      "genre_id" = 8
+      WHERE dream_id = 20; -- id is the id of the dream_genre table id ... 
       
-SELECT * FROM "dream_genre";
+SELECT * FROM "dream_genre"; 
+
+
+
+

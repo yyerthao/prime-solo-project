@@ -19,16 +19,12 @@ body {
       -o-background-size: cover;
       background-size: cover;
     }
-    
-
-
+  
 
 img {
   display: inline-block;
   max-width: 100%;
 }
-
-
 
 
 /* --------------------------------------------------------------------------------
