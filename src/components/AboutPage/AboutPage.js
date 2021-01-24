@@ -1,6 +1,7 @@
 import React from 'react';
 import Nav from '../Nav/Nav';
 import '../AboutPage/AboutPage.css';
+import video2 from '../AboutPage/writing.mp4';
 
 
 // This is one of our simplest components
@@ -27,12 +28,18 @@ const AboutPage = () => (
           left to do is exract the details of one's minds onto paper, and perhaps several years of editing.
           <br></br>
           <br></br>
-          
-          
-
-
+          Utilization of this application will save users some time on content creation. This will replace 
+          traditional dream diaries and enable for image features and genre categorization.
+          <br></br>
+          <br></br>
 
         </p>
+          <div className="video-container">
+              <video loop autoPlay muted className="about-video">
+                  <source src={video2} type="video/mp4"/>
+              </video>
+          </div>
+  
 
 
 
