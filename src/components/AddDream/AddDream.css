@@ -1,8 +1,7 @@
 
 /* ------------------------------------- ADD DREAM CSS  -------------------------------------*/
 
-/* .center-button, */
-/* .view-dream-btn, */
+
 .submit-dream-btn {
     text-align: center;
     float: right;
@@ -10,26 +9,6 @@
     margin-left: 10rem;
     position: relative;
 } 
-
-
-/* footer{
-    margin-top: 80px;
-} */
-
-/* .dream-input-box{
-    width: 20rem;
-} */
-
-/* .center{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-} */
-
-/* .add-dream-div{
-    margin-left: 18rem;
-}  */
-
 
 .dropdown {
     width: 25rem;

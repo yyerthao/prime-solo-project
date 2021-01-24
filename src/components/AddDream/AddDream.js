@@ -119,7 +119,7 @@ handleChange = (event, input) => {
 
   render() {
     return (
-      <div className="container">
+      <div>
         <UpdateDreamNav/>
 {/* ------------------------------------------------- INPUT FIELDS ------------------------------------------------------------------ */ }
         <div className="form-control-start">
