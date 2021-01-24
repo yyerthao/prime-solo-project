@@ -59,6 +59,7 @@ viewDreams = () => {
                         <hr className="below-video-hr" width="50%"></hr>
                         <hr className="hr-hr" width="50%"></hr>
               </div>
+              <br></br>
           <Quotes/>
       </div>
     );
