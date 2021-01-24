@@ -88,7 +88,14 @@ Styling:
 
 
 
-<!------------------------------------ SUPER IMPORT TO READ ON WEDNESDAY ------------------------------------>
-COME BACK TO READ ME FOR NEXT DAY ASSIGNMENT!
-- [x] PUT ROUTE, almost done, need to update junction table so genre ID changes
-- [x] DELETE ROUTE, read the document Mary sent you!
+<!------------------------------------ SUPER IMPORT TO READ ON SUNDAY ------------------------------------>
+ - [] 
+ - [] 
+ - [] 
+ - [] 
+
+ #video{
+     position: fixed;
+     z-index: -1;
+     width: 100%;
+ }
