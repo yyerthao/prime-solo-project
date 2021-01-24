@@ -60,40 +60,32 @@ class DreamItem extends Component {
     return (
       <div>
         <UpdateDreamNav/>
-        {/* {JSON.stringify(details)} */}
-          
-          {/* ---------------------------------------------  */}
-        <div className="center center-div ">
-        {details.map((details, i) => {
-          return (
-          <div className="margin-text" key={i}>
-              <h1 className="title-margin">{details.title}</h1>
-              <h3 className="date-margin">{details.to_char}</h3>
-              <img src={details.image} alt="Dream" className="dream-image"></img>
-              <h3>Genre: {details.name}</h3>
-              <p className="justified-text-dream-details margin-bottom">{details.details}</p>
-                  <Button
-                      variant="contained"
-                      color="secondary" 
-                      className="delete-button" 
-                      onClick={()=> this.deleteDream(details.id)}>Delete</Button>
-                      <span className="space-between-buttons"></span>
-                  <Button 
-                      variant="contained"
-                      color="primary"
-                      className="update-button" 
-                      onClick={() => this.updateDream(details.id)}>Update</Button>
-          </div>
-              )
-            })}
-
-          <br></br>
-
-        </div>
-
-      </div>
-    );
-  }
+          <div className="center center-div ">
+            {details.map((details, i) => {
+               return (
+                  <div className="margin-text" key={i}>
+                    <h1 className="title-margin">{details.title}</h1>
+                    <h3 className="date-margin">{details.to_char}</h3>
+                    <img src={details.image} alt="Dream" className="dream-image"></img>
+                    <h3>Genre: {details.name}</h3>
+                    <p className="justified-text-dream-details margin-bottom">{details.details}</p>
+                      <Button
+                        variant="contained"
+                        color="secondary" 
+                        className="delete-button" 
+                        onClick={()=> this.deleteDream(details.id)}>Delete</Button>
+                        <span className="space-between-buttons"></span>
+                      <Button 
+                        variant="contained"
+                        color="primary"
+                        className="update-button" 
+                        onClick={() => this.updateDream(details.id)}>Update</Button>
+                    </div>
+                  )})}
+                </div>
+            </div>
+          );
+       }
 }
 
 export default connect(mapStoreToProps)(withStyles(styles)(DreamItem));
