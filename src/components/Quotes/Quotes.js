@@ -58,13 +58,13 @@ componentDidMount() {
       const { quote, author } = this.state //Destructuring
       return (
          <div className="center">
+               <Button variant="contained" onClick={this.getNewQuote}>GET INSPIRED</Button>
             <div className="center box-container">
                {/* <hr className="quote-hr"></hr>
                <hr className="second-quote-hr"></hr> */}
                   <h4 className="quote-text">"{quote}"</h4>
                      <h5 className="quote-author">- {author}</h5>
                      <a href={`https://type.fit/api/quotes=${quote} ${author}`} target='_blank' rel="noopener noreferrer" title="Twitter random quote generator"><style>font-size: 0</style></a>
-               <Button variant="contained" onClick={this.getNewQuote}>GET INSPIRED</Button>
                <br></br>
                <br></br>
             </div>

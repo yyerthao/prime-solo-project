@@ -44,21 +44,24 @@ viewDreams = () => {
         <NavUser/>
             <div>
               <div className="button-container center-text">
-                <p className="justified-text margin-bottom"> Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Eligendi soluta rerum mollitia, saepe commodi dolore provident 
-                maiores vitae aut debitis modi tempora minima quis, placeat rem 
-                facilis voluptatum dignissimos beatae! 
-                </p>
                   <Button variant="contained" className="add-dream-btn" onClick={this.addDream}>Add Dream</Button>
                     <span className="space-between-buttons"></span>
                   <Button variant="contained" className="view-dream-btn" onClick={this.viewDreams}>View Dreams</Button>
               </div>
+              <div>
+                <p className="user-page-greeting">
+                  Think outside the box.Lorem ipsum, dolor sit amet consectetur adipisicing elit.Perferendis quo iste perspiciatis, laboriosam pariatur nihil sequi molestias omnis tempore alias!Commodi et modi, laboriosam eveniet sapiente sequi neque!Omnis, corrupti.
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.Perferendis quo iste perspiciatis, laboriosam pariatur nihil sequi molestias omnis tempore alias!Commodi et modi, laboriosam eveniet sapiente sequi neque!Omnis, corrupti.
+                </p>
+              </div>
+                  <div className="video-container">
                     <video loop autoPlay muted className="center-video">
-                        <source src={video1} type="video/mp4" />
+                        <source src={video1} type="video/mp4"/>
                     </video>
+                  </div>
                         <hr className="below-video-hr" width="50%"></hr>
                         <hr className="hr-hr" width="50%"></hr>
-              </div>
+                </div>
               <br></br>
           <Quotes/>
       </div>
