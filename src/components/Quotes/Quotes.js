@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import axios from 'axios';import { withStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
+// import Button from '@material-ui/core/Button';
 import  './Quotes.css';
 
 
@@ -66,9 +66,12 @@ componentDidMount() {
                   <h4 className="quote-text">"{quote}"</h4>
                      <h5 className="quote-author">- {author}</h5>
                      <a href={`https://type.fit/api/quotes=${quote} ${author}`} target='_blank' rel="noopener noreferrer" title="Twitter random quote generator"><style>font-size: 0</style></a>
-               <Button className="quote-button" variant="contained" onClick={this.getNewQuote}>Give Me A New Quote</Button>
+               <br></br>
                <br></br>
             </div>
+            {/* <div className="button-quote">
+               <Button variant="contained" onClick={this.getNewQuote}>Give Me A New Quote</Button>
+            </div> */}
          </div>
       )
    }
