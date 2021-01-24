@@ -154,8 +154,6 @@ handleChange = (event, input) => {
                             value={this.state.details}
                               onChange={(event) => this.handleChange (event, 'details')}>
                             </textarea><br></br>
-
-
                   <div> 
                           <FormControl>
                               <InputLabel>
@@ -177,14 +175,15 @@ handleChange = (event, input) => {
                               <Button
                                 // variant="contained"
                                 color="secondary"
-                                className="update-button"
+                                // className="update-button"
                                 onClick={this.cancelSubmit}>
                                   Cancel
                               </Button>
+                                <span className="space-between-buttons-update"></span>
                               <Button
-                                  // variant="contained"
+                                // variant="contained"
                                   color="primary"
-                                  className="update-button" 
+                                  // className="update-button" 
                                 onClick={()=>this.updateDream(update.id)}>
                                   Update
                               </Button>

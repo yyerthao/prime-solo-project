@@ -7,17 +7,18 @@
 }
 
   .dropdown {
-      width: 25rem;
-      margin-bottom: 2rem;
-      box-shadow: 5px 5px 5px rgba(122, 121, 122, 0.338);
+    width: 25rem;
+    margin-bottom: 2rem;
+    box-shadow: 5px 5px 5px rgba(122, 121, 122, 0.338);
   }
 
   .form-control-start {
-      display: flex;
-      justify-content: center;
-      margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
   }
 
-  .space-between-buttons{
-      margin: 1rem 8rem;
+  .space-between-buttons-update {
+    margin: 1rem 8rem;
+    display: block;
   }
