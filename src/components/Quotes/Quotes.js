@@ -58,7 +58,7 @@ componentDidMount() {
       const { quote, author } = this.state //Destructuring
       return (
          <div className="center">
-               <Button variant="contained" onClick={this.getNewQuote}>GET INSPIRED</Button>
+               <Button color="primary" variant="contained" onClick={this.getNewQuote}>GET INSPIRED</Button>
             <div className="center box-container">
                {/* <hr className="quote-hr"></hr>
                <hr className="second-quote-hr"></hr> */}

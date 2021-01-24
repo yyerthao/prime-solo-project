@@ -46,6 +46,7 @@ const Nav = (props) => {
         </Link>
       </div>
       <hr></hr>
+      <hr></hr>
     </div>
   );
 };

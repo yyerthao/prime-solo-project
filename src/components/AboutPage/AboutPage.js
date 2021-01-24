@@ -1,7 +1,7 @@
 import React from 'react';
 import Nav from '../Nav/Nav';
 import '../AboutPage/AboutPage.css';
-import video2 from '../AboutPage/writing.mp4';
+import video2 from '../AboutPage/transform.mp4';
 
 
 // This is one of our simplest components
@@ -25,24 +25,20 @@ const AboutPage = () => (
           <br></br>
           <br></br>          
           The Dream App concept is simple but effective, "The creativity has already been done." All that's 
-          left to do is exract the details of one's minds onto paper, and perhaps several years of editing.
+          left to do is exract the details of one's dreams onto paper, and ... perhaps several years of editing (but we'll
+          cross that bridge too!)
           <br></br>
           <br></br>
-          Utilization of this application will save users some time on content creation. This will replace 
-          traditional dream diaries and enable for image features and genre categorization.
+          Utilization of this application will save users some time on the start of content creation. This will replace 
+          traditional dream diaries with its unique features of image url and genre categorization.
           <br></br>
           <br></br>
-
         </p>
           <div className="video-container">
-              <video loop autoPlay muted className="about-video">
-                  <source src={video2} type="video/mp4"/>
+              <video loop autoPlay muted className="about-video" width="50" height="500">
+                  <source src={video2} type="video/mp4" alt=""/>
               </video>
           </div>
-  
-
-
-
     </div>
   </div>
 );
