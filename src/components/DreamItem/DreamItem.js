@@ -9,6 +9,7 @@ import Button from '@material-ui/core/Button';
 import '../DreamItem/DreamItem.css';
 
 
+
 const styles = theme => ({
   button: {
     margin: theme.spacing(),
@@ -66,11 +67,11 @@ class DreamItem extends Component {
         {details.map((details, i) => {
           return (
           <div className="margin-text" key={i}>
-              <h1>{details.title}</h1>
-              <h3>{details.to_char}</h3>
-              <img src={details.image} alt="Dream"></img>
+              <h1 className="title-margin">{details.title}</h1>
+              <h3 className="date-margin">{details.to_char}</h3>
+              <img src={details.image} alt="Dream" className="dream-image"></img>
               <h3>Genre: {details.name}</h3>
-              <p className="center-div margin-bottom">{details.details}</p>
+              <p className="justified-text-dream-details margin-bottom">{details.details}</p>
                   <Button
                       variant="contained"
                       color="secondary" 
