@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import axios from 'axios';import { withStyles } from '@material-ui/core/styles';
-// import Button from '@material-ui/core/Button';
+import Button from '@material-ui/core/Button';
 import  './Quotes.css';
 
 
@@ -39,7 +39,6 @@ componentDidMount() {
             let data = res.data.quotes
             let quoteNum = Math.floor(Math.random() * data.length) //quote number
             let randomQuote = data[quoteNum] //actual quote
-
             this.setState({
                quote: randomQuote['quote'],
                author: randomQuote['author']
@@ -58,12 +57,12 @@ componentDidMount() {
  render() {
       const { quote, author } = this.state //Destructuring
       return (
-         <div className="center quote margin-text">
-               <p className="center">Quote of the day: </p>
-               <p className="center quote justify">{quote}</p>
-                  <h5>{author}</h5>
+         <div className="box-container">
+               <h3 className="QOTD-header">QOTD: </h3>
+               <h4 className="quote-text">"{quote}"</h4>
+                  <h5 className="quote-author">- {author}</h5>
+                  <Button className="quote-button" variant="contained" onClick={this.getNewQuote}>Give Me A New Quote</Button>
                   <a href={`https://type.fit/api/quotes=${quote} ${author}`} target='_blank' rel="noopener noreferrer" title="Twitter random quote generator"><style>font-size: 0</style></a>
-                  {/* <Button variant="contained" onClick={this.getNewQuote}>Give Me A New Quote</Button> */}
          </div>
       )
    }

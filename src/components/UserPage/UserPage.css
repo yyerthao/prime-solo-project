@@ -10,21 +10,19 @@
 }
 
 
-  .add-dream-btn,
+  /* .add-dream-btn,
   .view-dream-btn{
     text-align: center;
     border: 1px solid rgb(68, 68, 68);
     border-radius: 2.5px;
-    margin-left: 5px;
-    margin-right: 5px;
     background-color: grey;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.253);
     color: white;
     justify-content: center;
-  }
+  } */
 
     .view-dream-btn {
-      margin-left: 8rem;
+      margin-left: 3rem;
   }
 
 
@@ -35,13 +33,13 @@
 
 
   .space-between-buttons{
-    margin: 0 8rem;
+    /* margin: 0 8rem; */
     border-left: 1px solid rgb(102, 101, 101);
     height: 30px;
   }
 
   .justified-text {
-    margin: 2rem 28rem;
+    margin: 0 28rem;
     text-align: justify;
     color: rgb(68, 65, 65);
 
@@ -53,4 +51,8 @@
 
   a{
     font-size: 20px;
+  }
+
+  .padding-top{
+    padding-top: 40px;
   }

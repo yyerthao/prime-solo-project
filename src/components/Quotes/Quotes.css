@@ -4,12 +4,31 @@
 
 }
 
-p, .quote{
+
+
+.box-container{
+    margin: 0 35rem;
+    padding: 1rem 10px;
     text-align: justify;
-    margin: 0 13rem;
+    background-color: rgba(0, 128, 128, 0.212);
+    border-radius: 0.3rem;
 }
 
+.quote-button{
+    align-content: center;
+    margin: 0 auto;
+}
 
-margin-text{
-    margin: 0 10rem;
+.quote-text{
+    color: rgb(105, 102, 102);
+    margin: 0.3rem 2rem;
+}
+
+.quote-author{
+    margin: 1rem 2rem;
+    margin-bottom: 1rem;
+}
+
+.QOTD-header{
+    margin: 0px;
 }
