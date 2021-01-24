@@ -49,34 +49,23 @@ viewDreams = () => {
     return (
       <div>
         <NavUser/>
-        <br></br>
-        <h4 className="justified-text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.Alias molestias totam ex 
-            reprehenderit, officia cumque minus repellendus, temporibus ad fugiat incidunt, 
-            consectetur assumenda beatae rerum dignissimos numquam autem aliquid amet. Lorem 
-            ipsum dolor sit amet consectetur adipisicing elit.Alias molestias totam ex reprehenderit, 
-            officia cumque minus repellendus, temporibus ad fugiat incidunt, consectetur assumenda 
-            beatae rerum dignissimos numquam autem aliquid amet.
-        {/* <h2 className="center-text " id="welcome">{this.props.store.user.username}! a quote to brighten your day.</h2> */}
-        </h4>
-          <Quotes/>
-
-      {
-        /*  ------------------------- TO DO -------------------------
-        - [] LINK to add dream -> brings users to add dream view
-        - [] LINK to view dreams -> brings uers to view dreams view
-        - [] Welcome message
-        - [] STRETCH: time lapse video 
-        - [] STRETCH: add a random quotes generator inside of here
-      */}
-
-
+          <h4 className="padding-top justified-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.Alias molestias totam ex 
+              reprehenderit, officia cumque minus repellendus, temporibus ad fugiat incidunt, 
+              consectetur assumenda beatae rerum dignissimos numquam autem aliquid amet. Lorem 
+              ipsum dolor sit amet consectetur adipisicing elit.Alias molestias totam ex reprehenderit, 
+              officia cumque minus repellendus, temporibus ad fugiat incidunt, consectetur assumenda 
+              beatae rerum dignissimos numquam autem aliquid amet.
+          {/* <h2 className="center-text " id="welcome">{this.props.store.user.username}! a quote to brighten your day.</h2> */}
+          </h4>
         <div className="container center-text">
-            <Button className="add-dream-btn" onClick={this.addDream}>Add Dream</Button>
+            <Button variant="contained" className="add-dream-btn" onClick={this.addDream}>Add Dream</Button>
               <span className="space-between-buttons"></span>
-            <Button className="view-dream-btn" onClick={this.viewDreams}>View Dreams</Button>
+            <Button variant="contained" className="view-dream-btn" onClick={this.viewDreams}>View Dreams</Button>
 
+          <br></br> {/* this is just a temporary place holder */}
         </div>
+          <Quotes/>
       </div>
     );
   }

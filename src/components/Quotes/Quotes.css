@@ -4,12 +4,34 @@
 
 }
 
-p, .quote{
+
+
+.box-container{
+    margin: 0 35rem;
+    padding: 1rem 10px;
     text-align: justify;
-    margin: 0 13rem;
+    border-radius: 0.3rem;
 }
 
 
-margin-text{
-    margin: 0 10rem;
+.quote-text{
+    color: rgb(105, 102, 102);
+    margin: 0rem 2rem;
 }
+
+.quote-author{
+    margin: 1rem 2rem;
+    margin-bottom: 5rem;
+}
+
+
+.quote-header{
+    padding-bottom: 0rem;
+    margin-bottom: 0.5rem;
+    color: rgb(78, 80, 80);
+}
+
+.second-quote-hr{
+    margin-bottom: 0.5rem;
+}
+
