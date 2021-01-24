@@ -10,18 +10,13 @@
     margin: 0 35rem;
     padding: 1rem 10px;
     text-align: justify;
-    background-color: rgba(0, 128, 128, 0.212);
     border-radius: 0.3rem;
 }
 
-.quote-button{
-    align-content: center;
-    margin: 0 auto;
-}
 
 .quote-text{
     color: rgb(105, 102, 102);
-    margin: 0.3rem 2rem;
+    margin: 0rem 2rem;
 }
 
 .quote-author{
@@ -29,6 +24,13 @@
     margin-bottom: 1rem;
 }
 
-.QOTD-header{
-    margin: 0px;
+
+.quote-header{
+    padding-bottom: 0rem;
+    margin-bottom: 0.5rem;
+    color: rgb(78, 80, 80);
+}
+
+.second-quote-hr{
+    margin-bottom: 0.5rem;
 }
