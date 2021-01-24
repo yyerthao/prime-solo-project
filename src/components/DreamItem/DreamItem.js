@@ -68,7 +68,7 @@ class DreamItem extends Component {
                     <h3 className="date-margin">{details.to_char}</h3>
                     <img src={details.image} alt="Dream" className="dream-image"></img>
                     <h3>Genre: {details.name}</h3>
-                    <p className="justified-text-dream-details margin-bottom">{details.details}</p>
+                    <p className="justified-text-dream-details">{details.details}</p>
                       <Button
                         variant="contained"
                         color="secondary" 

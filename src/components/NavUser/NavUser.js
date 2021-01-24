@@ -47,7 +47,6 @@ const NavUser = (props) => {
             </Link>
       </div>
       <hr></hr>
-      <hr></hr>
     </div>
   );
 };

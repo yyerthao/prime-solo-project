@@ -59,12 +59,12 @@ componentDidMount() {
       return (
          <div className="center">
             <div className="center box-container">
-               <Button variant="contained" onClick={this.getNewQuote}>GET INSPIRED</Button>
-               <hr className="quote-hr"></hr>
-               <hr className="second-quote-hr"></hr>
+               {/* <hr className="quote-hr"></hr>
+               <hr className="second-quote-hr"></hr> */}
                   <h4 className="quote-text">"{quote}"</h4>
                      <h5 className="quote-author">- {author}</h5>
                      <a href={`https://type.fit/api/quotes=${quote} ${author}`} target='_blank' rel="noopener noreferrer" title="Twitter random quote generator"><style>font-size: 0</style></a>
+               <Button variant="contained" onClick={this.getNewQuote}>GET INSPIRED</Button>
                <br></br>
                <br></br>
             </div>
