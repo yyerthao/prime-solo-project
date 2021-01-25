@@ -74,12 +74,12 @@ cancelSubmit = () => {
     })
     Swal.fire({
      title: 'Confirm cancel?',
-     text: "You will be cancelling this dream submission!",
+     text: "Ponder on that a bit more will you?",
      icon: 'warning',
      showCancelButton: true,
      confirmButtonColor: '#3085d6',
      cancelButtonColor: '#d33',
-     confirmButtonText: 'Yes, cancel this submission!'
+     confirmButtonText: 'Yes! I am sure'
    }).then((result) => {
      if (result.isConfirmed) {
        Swal.fire(

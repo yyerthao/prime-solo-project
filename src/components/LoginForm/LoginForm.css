@@ -28,27 +28,5 @@ hr {
 
 
 
-.nav-link-login {
-  color: rgb(77, 75, 75);
-  text-align: center;
-  padding: 10px 10px;
-  text-decoration: none;
-  font-size: 15px;
-  border:none;
-  cursor: pointer;
-  outline:0;
-}
-
-.nav-link:hover {
-  background-color: #a4a8a850;
-}
-
-.nav-right {
-  display: flex;
-  justify-content: center;
-}
 
 
-a{
-  font-size: 25px;
-}

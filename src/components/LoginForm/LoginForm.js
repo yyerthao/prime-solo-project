@@ -46,11 +46,6 @@ class LoginForm extends Component {
     return (
       <div className="container">
         <h1 className="app-name">The Dream App</h1>
-          <div className="nav-link-login nav-link-hover">
-            {/* <Link to="/home">
-              Home
-                </Link>*/}
-          </div>
         <hr></hr>
         <h2 className="instruction-text">Please Enter Your Credentials</h2>
       <form className="formPanel" onSubmit={this.login}>
