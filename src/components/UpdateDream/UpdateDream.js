@@ -174,7 +174,7 @@ handleChange = (event, input) => {
                     </div>
                             <div className="update-button-container">
                               <Button
-                                style={{maxWidth: '90px', maxHeight: '36px', minWidth: '90px', minHeight: '36px', marginLeft:"22rem"}}
+                                style={{maxWidth: '90px', maxHeight: '36px', minWidth: '90px', minHeight: '36px', marginRight:"22rem"}}
                                 variant="contained"
                                 color="secondary"
                                 // className="update-button"

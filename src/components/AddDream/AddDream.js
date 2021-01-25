@@ -175,20 +175,25 @@ handleChange = (event, input) => {
               </div>
 {/* ------------------------------------------------ BUTTONS ------------------------------------------------------------------- */ }
 
+          <div className="buttons-in-line">
 
             <Button
+              style={{maxWidth: '5.5rem', maxHeight: '36px', minWidth: '4rem', minHeight: '36px', marginLeft:"25rem"}}
+              variant="contained"
               color="secondary"
               className="submit-dream-btn"
               onClick={this.cancelSubmit}>
                 Cancel
             </Button>
-
               <Button 
+                style={{maxWidth: '5.5rem', maxHeight: '36px', minWidth: '4rem', minHeight: '36px', marginRight:'8rem'}}
+                variant="contained"
                 color="primary"
                 className="submit-dream-btn"
                 onClick={this.handleSubmit}>
-                  Submit Dream
+                  Submit
               </Button>
+            </div>
         </FormControl>
       </div>
     </div>
