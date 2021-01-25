@@ -17,7 +17,7 @@ An application where users can store and manage their dreams. The concept of The
 ## Screen Shot
 
 ![intro](LandingPage.png) 
-![intro](About.png) 
+![intro](AboutPage.png) 
 
 ### Prerequisites
 
@@ -62,12 +62,13 @@ Link to software that is required to install the app.
 
 * Video by Vimeo from Pexels: https://www.pexels.com/video/time-lapse-video-of-milky-way-galaxy-857134/
 * Video by Taryn Elliott from Pexels: https://www.pexels.com/video/a-woman-writing-on-a-journal-4596337/
+* Application background, Yer Thao
 
 ## Acknowledgement
 Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality. 
 Additional, sincere thank you the following:
-* Mary Mosman, my Prime instructor
-* Vatti 
+* Mary Mosman, my wonderful Prime instructor
+* Vatti, my cohort and peers
 
 ## Support
 If you have suggestions or issues, please email me at [maivyerthao@gmail.com@gmail.com](www.google.com)
