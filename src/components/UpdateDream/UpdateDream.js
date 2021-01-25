@@ -172,8 +172,10 @@ handleChange = (event, input) => {
                               </Select>
                           </FormControl>
                     </div>
+                            <div className="update-button-container">
                               <Button
-                                // variant="contained"
+                                style={{maxWidth: '90px', maxHeight: '36px', minWidth: '90px', minHeight: '36px', marginLeft:"22rem"}}
+                                variant="contained"
                                 color="secondary"
                                 // className="update-button"
                                 onClick={this.cancelSubmit}>
@@ -181,12 +183,14 @@ handleChange = (event, input) => {
                               </Button>
                                 <span className="space-between-buttons-update"></span>
                               <Button
-                                // variant="contained"
-                                  color="primary"
-                                  // className="update-button" 
+                                style={{maxWidth: '90px', maxHeight: '36px', minWidth: '90px', minHeight: '36px', marginLeft:"8rem"}}
+                                variant="contained"
+                                color="primary"
+                                // className="update-button" 
                                 onClick={()=>this.updateDream(update.id)}>
                                   Update
                               </Button>
+                            </div>
                               
                           </FormControl>
                         // </div> 
