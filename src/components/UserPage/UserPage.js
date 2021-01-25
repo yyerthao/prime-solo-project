@@ -43,10 +43,12 @@ viewDreams = () => {
       <div>
         <NavUser/>
             <div>
-              <div className="button-container center-text">
+              <div className="button-container center-text padding-top">
                 <h4 className="user-page-greeting">
                   Though there may be hindrances within the creative journey, dreams persevere.
-                  Utilize your mind's natural creative element. Explore the known and unknown. Think outside the box.
+                  Utilize your mind's natural creative element by exploring the known and unknown.
+                  As there are endless x amounts of ideas and possibilities for content creation,
+                  why not utilize what has been effortlessly given to you while you were sleeping?
                 </h4>
                   <Button variant="contained" className="add-dream-btn" onClick={this.addDream}>Add Dream</Button>
                     <span className="space-between-buttons"></span>

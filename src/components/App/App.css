@@ -19,7 +19,7 @@ body {
       -o-background-size: cover;
       background-size: cover;
     color: rgb(78, 80, 80);
-    }
+}
   
 
 img {
@@ -78,8 +78,8 @@ Button
 
 .btn_asLink:hover {
   background-color: transparent;
-  border-color: #008183;
-  color: #008183;
+  border-color: #1b1d9b;
+  color: #1847c9;
 }
 
 

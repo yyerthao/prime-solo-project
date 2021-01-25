@@ -1,5 +1,5 @@
 import React from 'react';
-import Nav from '../Nav/Nav';
+import NavAbout from '../NavAbout/NavAbout';
 import '../AboutPage/AboutPage.css';
 import video2 from '../AboutPage/transform.mp4';
 
@@ -11,7 +11,7 @@ import video2 from '../AboutPage/transform.mp4';
 
 const AboutPage = () => (
   <div>
-    <Nav/>
+    <NavAbout/>
       <div className="about-page-container center">
         <p className="about-page-justified">
           Every writer who has been diagnosed with writer's block, knows how distressing it can be.

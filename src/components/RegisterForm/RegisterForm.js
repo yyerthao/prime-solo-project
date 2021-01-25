@@ -4,7 +4,7 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 import '../RegisterForm/RegisterForm.css';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 
 const styles = theme => ({
@@ -45,15 +45,6 @@ class RegisterForm extends Component {
     return (
       <div>
         <h1 className="app-name">The Dream App</h1>
-          <div className="nav-link-about nav-link-hover">
-            <Link to="/home">
-              Home
-            </Link>
-            <span className="space-between-buttons"></span>
-            <Link to="/about">
-              About
-            </Link>
-          </div>
           <hr></hr>
         <h2 className="center-text">Create a username and password </h2>
       <form className="formPanel" onSubmit={this.registerUser}>
@@ -91,6 +82,15 @@ class RegisterForm extends Component {
           <Button variant="contained" className="btn" type="submit" name="submit" value="Register">Register</Button>
         </div>
       </form>
+          {/* <div className="nav-link-about">
+            <Link to="/home">
+              Home
+            </Link>
+            <span className="space-between-buttons-main"></span>
+            <Link to="/about">
+              About
+            </Link>
+          </div> */}
       </div>
 
     );

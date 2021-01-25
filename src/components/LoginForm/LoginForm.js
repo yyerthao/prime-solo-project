@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import '../LoginForm/LoginForm.css'
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -47,13 +47,9 @@ class LoginForm extends Component {
       <div className="container">
         <h1 className="app-name">The Dream App</h1>
           <div className="nav-link-login nav-link-hover">
-            <Link to="/home">
+            {/* <Link to="/home">
               Home
-            </Link>
-            <span className="space-between-buttons"></span>
-            <Link to="/about">
-              About
-            </Link>
+                </Link>*/}
           </div>
         <hr></hr>
         <h2 className="instruction-text">Please Enter Your Credentials</h2>
