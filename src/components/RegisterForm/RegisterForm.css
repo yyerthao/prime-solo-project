@@ -69,3 +69,6 @@ hr {
 a{
   font-size: 25px;
 }
+.space-between-buttons-main{
+    margin: 2rem 7rem;
+}
