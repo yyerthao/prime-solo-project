@@ -44,9 +44,7 @@ const NavAbout = (props) => {
         {/* <Link className="nav-link" to="/home">
           ||  Home
         </Link> */}
-        <Link className="nav-link" to="/home">
-         ||  Home ||
-        </Link>
+
         <Link className="nav-link" to="/about">
          About
         </Link>
