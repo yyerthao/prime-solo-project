@@ -53,7 +53,7 @@ this.props.dispatch({type: 'FETCH_DREAM'});
 }
 
 selectDream = (id) => {
-console.log('This is the ID of the movive you\'ve clicked on: ', id)
+console.log('This is the ID of the detail you\'ve clicked on: ', id)
 this.props.dispatch({type: 'GET_DETAIL', payload: id})
 this.props.history.push('/dreamItem') 
 }

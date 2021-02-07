@@ -23,6 +23,8 @@ import AddDream from '../AddDream/AddDream';
 import ViewDreams from '../ViewDreams/ViewDreams';
 import DreamItem from '../DreamItem/DreamItem';
 import UpdateDream from '../UpdateDream/UpdateDream';
+import Canvas from '../Canvas/Canvas';
+import DrawPad from '../DrawPad/DrawPad';
 import Quotes from '../Quotes/Quotes';
 
 import './App.css';
@@ -132,8 +134,23 @@ class App extends Component {
             <ProtectedRoute
             // logged in shows UserPage else shows LoginPage
             exact
+            path="/canvas"
+            component={Canvas}
+            />
+
+            <ProtectedRoute
+            // logged in shows UserPage else shows LoginPage
+            exact
+            path="/drawPad"
+            component={DrawPad}
+            />
+
+            <ProtectedRoute
+            // logged in shows UserPage else shows LoginPage
+            exact
             component={Quotes}
           />
+
 
 
             {/* If none of the other routes matched, we will show a 404. */}

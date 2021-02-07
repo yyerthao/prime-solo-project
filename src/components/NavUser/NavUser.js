@@ -45,6 +45,9 @@ const NavUser = (props) => {
             <Link className="nav-link" to="/about">
               || About
             </Link>
+            <Link className="nav-link" to="/drawPad">
+              || Draw
+            </Link>
       </div>
       <hr></hr>
       <hr></hr>
