@@ -45,6 +45,9 @@ const NavAbout = (props) => {
           ||  Home
         </Link> */}
 
+        <Link className="nav-link" to="/drawPad">
+         Draw
+        </Link>
         <Link className="nav-link" to="/about">
          About
         </Link>

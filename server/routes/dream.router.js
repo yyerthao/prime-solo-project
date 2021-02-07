@@ -45,16 +45,16 @@ router.post('/', rejectUnauthenticated, (req, res) => {
     console.log('isAuthenticated?', req.isAuthenticated());
   let id = req.user.id;
   let queryText = `
-      INSERT INTO "dream" ("title", "date", "image", "details", "user_id", "genre_id")
-      VALUES ($1, $2, $3, $4, $5, $6)
-      RETURNING "id";`;
+    INSERT INTO "dream" ("title", "date", "image", "details", "user_id", "genre_id")
+    VALUES ($1, $2, $3, $4, $5, $6)
+    RETURNING "id";`;
   pool.query(queryText, [req.body.title, req.body.date, req.body.image, req.body.details, id, req.body.genre_id])
-      .then((result) => {
-      console.log('RESULT: ', result)
-      const createdDreamId = result.rows[0].id // dream_id 
-      const dreamGenreQuery = `
-        INSERT INTO "dream_genre" ("dream_id", "genre_id")
-        VALUES  ($1, $2);`;
+    .then((result) => {
+    console.log('RESULT: ', result)
+    const createdDreamId = result.rows[0].id // dream_id 
+    const dreamGenreQuery = `
+      INSERT INTO "dream_genre" ("dream_id", "genre_id")
+      VALUES  ($1, $2);`;
       pool.query(dreamGenreQuery, [createdDreamId, req.body.genre_id])
     })
     .then(result => {
