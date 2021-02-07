@@ -45,7 +45,7 @@ const Nav = (props) => {
           ||  Home
         </Link> */}
         <Link className="nav-link" to="/drawPad">
-         || DrawPad
+         || Draw
         </Link>
         <Link className="nav-link" to="/about">
          || About
